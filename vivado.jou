@@ -1,0 +1,16 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Thu Oct 26 13:39:55 2023
+# Process ID: 24796
+# Current directory: C:/EE2026 lab/Project/Tetris_EE2026_
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent20800 C:\EE2026 lab\Project\Tetris_EE2026_\tetris.xpr
+# Log file: C:/EE2026 lab/Project/Tetris_EE2026_/vivado.log
+# Journal file: C:/EE2026 lab/Project/Tetris_EE2026_\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.xpr}
+update_compile_order -fileset sources_1
+add_files -norecurse {{C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/new/rng_block.v}}
+update_compile_order -fileset sources_1
