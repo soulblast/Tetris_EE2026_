@@ -1,0 +1,84 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Thu Oct 26 21:22:37 2023
+| Host         : soulblast running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_keyboard_control_sets_placed.rpt
+| Design       : top_keyboard
+| Device       : xc7a35t
+-----------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    16 |
+| Unused register locations in slices containing registers |    44 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      2 |            4 |
+|      8 |            4 |
+|     10 |            1 |
+|     14 |            1 |
+|    16+ |            6 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              40 |           10 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              32 |            4 |
+| Yes          | No                    | No                     |             146 |           23 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              26 |            3 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++------------------+---------------------------------+---------------------------+------------------+----------------+
+|   Clock Signal   |          Enable Signal          |      Set/Reset Signal     | Slice Load Count | Bel Load Count |
++------------------+---------------------------------+---------------------------+------------------+----------------+
+|  CLK50MHZ_BUFG   | uut/db_clk/O_i_1_n_0            |                           |                1 |              2 |
+|  CLK50MHZ_BUFG   | uut/db_clk/clear                |                           |                1 |              2 |
+|  CLK50MHZ_BUFG   | uut/db_data/Iv_i_1__0_n_0       |                           |                1 |              2 |
+|  CLK50MHZ_BUFG   | uut/db_data/O_i_1__0_n_0        |                           |                1 |              2 |
+| ~uut/db_clk/clk  | uut/cnt                         | uut/cnt[3]_i_1_n_0        |                1 |              8 |
+|  CLOCK_IBUF_BUFG |                                 |                           |                3 |              8 |
+|  CLOCK_IBUF_BUFG | get_tx/running_reg_0[0]         |                           |                2 |              8 |
+|  CLOCK_IBUF_BUFG | get_tx/count                    | get_tx/p_0_in             |                1 |              8 |
+|  CLK50MHZ_BUFG   | uut/db_data/count[4]_i_1__0_n_0 | uut/db_data/Iv_i_1__0_n_0 |                1 |             10 |
+|  CLK50MHZ_BUFG   |                                 |                           |                4 |             14 |
+| ~uut/db_clk/clk  |                                 |                           |                3 |             18 |
+|  CLOCK_IBUF_BUFG | get_tx/shift[8]_i_1_n_0         |                           |                3 |             18 |
+|  CLK50MHZ_BUFG   | uut/oflag_i_1_n_0               |                           |                4 |             32 |
+|  CLOCK_IBUF_BUFG |                                 | get_tx/p_0_in             |                4 |             32 |
+|  CLOCK_IBUF_BUFG | uut/E[0]                        |                           |                5 |             32 |
+|  CLOCK_IBUF_BUFG | get_tx/E[0]                     |                           |                5 |             48 |
++------------------+---------------------------------+---------------------------+------------------+----------------+
+
+

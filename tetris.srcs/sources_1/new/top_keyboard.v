@@ -1,10 +1,10 @@
 `timescale 1ns / 1ps
 
 module top_keyboard(
-    input         clk,
+    input         CLOCK,
     input         PS2Data,
     input         PS2Clk,
-    output        tx
+    output        RsTx
 );
     wire        tready;
     wire        ready;
@@ -19,7 +19,7 @@ module top_keyboard(
     wire        flag;
     reg         cn=0;
     
-    always @(posedge(clk))begin
+    always @(posedge(CLOCK))begin
         CLK50MHZ<=~CLK50MHZ;
     end
     
@@ -44,7 +44,7 @@ module top_keyboard(
             bcount <= 3'd2;
         end
     
-    always@(posedge clk)
+    always@(posedge CLOCK)
         if (flag == 1'b1 && cn == 1'b1) begin
             start <= 1'b1;
             keycodev <= keycode;
@@ -59,7 +59,7 @@ module top_keyboard(
     );
     
     uart_buf_con tx_con (
-        .clk    (clk   ),
+        .clk    (CLOCK ),
         .bcount (bcount),
         .tbuf   (tbuf  ),  
         .start  (start ), 
@@ -70,10 +70,10 @@ module top_keyboard(
     );
     
     uart_tx get_tx (
-        .clk    (clk),
+        .clk    (CLOCK ),
         .start  (tstart),
         .tbus   (tbus),
-        .tx     (tx),
+        .tx     (RsTx),
         .ready  (tready)
     );
     
