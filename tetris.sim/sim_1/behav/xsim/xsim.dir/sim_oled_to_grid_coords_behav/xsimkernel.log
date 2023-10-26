@@ -1,0 +1,4 @@
+Running: xsim.dir/sim_oled_to_grid_coords_behav/xsimk.exe -simmode gui -wdb sim_oled_to_grid_coords_behav.wdb -simrunnum 0 -socket 54950
+Design successfully loaded
+Design Loading Memory Usage: 5872 KB (Peak: 5872 KB)
+Design Loading CPU Usage: 0 ms
