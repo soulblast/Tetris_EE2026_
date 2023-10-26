@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Thu Oct 26 13:37:31 2023
+# Process ID: 24836
+# Current directory: C:/EE2026 lab/Project/Tetris_EE2026_
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent20116 C:\EE2026 lab\Project\Tetris_EE2026_\tetris.xpr
+# Log file: C:/EE2026 lab/Project/Tetris_EE2026_/vivado.log
+# Journal file: C:/EE2026 lab/Project/Tetris_EE2026_\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.xpr}
+INFO: [Project 1-313] Project file moved from 'D:/EE2026Lab/Tetris_EE2026' since last save.
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-2] IPUserFilesDir: Could not find the directory 'C:/EE2026 lab/Project/Tetris_EE2026_/tetris.ip_user_files', nor could it be found using path 'D:/EE2026Lab/Tetris_EE2026/tetris.ip_user_files'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 797.250 ; gain = 69.828
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Oct 26 13:38:55 2023...

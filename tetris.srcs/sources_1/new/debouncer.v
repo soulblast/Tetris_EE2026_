@@ -2,7 +2,7 @@
 
 
 
-module debouncer(
+module own_debouncer(
     input clk,
     input key_press,
     output reg key_out
