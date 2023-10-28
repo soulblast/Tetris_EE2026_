@@ -46,10 +46,22 @@ module main(input CLOCK, output [0:7] JC);
         .vccen(JC[6]),
         .pmoden(JC[7]));
   
+ //
+ // I = 0;
+ // O = 1;
+ // J = 2;
+ // L = 3;
+ // T = 4;
+ // Z = 5;
+ // S = 6;
+  
   //GRID>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
     wire [15:0] oled_grid; 
     show_grid grid_0(.CLOCK(CLOCK), .oled_grid(oled_grid), .pix_index(pix_index)); 
-     
+    wire [15:0] block_color;
+    wire block_posx;
+    slow_drop drop0(.CLOCK(CLOCK), .block_pos(block_posx));
+    tetrimino un0(.posx(), posy(), rotation(), block(), blk1(), blk2(), blk3(), blk4()); 
     always @ (posedge CLOCK) begin
         oled_data <= oled_grid;
     end

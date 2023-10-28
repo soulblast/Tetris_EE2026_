@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 22.10.2023 17:42:10
+// Create Date: 28.10.2023 18:05:46
 // Design Name: 
-// Module Name: rng_block
+// Module Name: slow_drop
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,15 +20,16 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module rng_block(input next, output reg nextblock);
-
-always @ (*)
-    begin
-
-    if (next == 0) 
+module slow_drop(
+    input CLOCK,
+    output reg block_posx
+    );
+    wire clock1hz;
+    flexi_clock_D(CLOCK, 1000000000, clock1hz); // drops by 1 block every second
+    
+    always @ (posedge clock1hz)
         begin
-          nextblock <= {$random} % 5;   
-        
+            block_posx <= block_posx + 1;
         end
-    end
+    
 endmodule

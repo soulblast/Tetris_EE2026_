@@ -30,10 +30,15 @@ module show_grid (input CLOCK, output reg [15:0] oled_grid,
 //    reg [15:0] oled_D = 16'h07E0;  
     reg [15:0] green = 16'b00000_111111_00000, red = 16'b11111_000000_00000, blue = 16'b00000_000000_11111,
                 black = 16'b00000_000000_00000, cur_colour = 16'b00000_000000_11111, grey = 16'b00100_000100_00100;
-  
+   
+    
    /************ ALWAYS LOOP ***********************************************/
     //40 by 80 grid; ie 10 by 20 blocks
-    always @ (posedge CLOCK) begin   
+    always @ (posedge CLOCK) begin  
+        
+    
+    
+     
         if(g_row % 2 == 1 && g_col % 2 == 1) //odd odd = grey
             oled_grid <= green;
         else if(g_row % 2 == 1 && g_col % 2 == 0)

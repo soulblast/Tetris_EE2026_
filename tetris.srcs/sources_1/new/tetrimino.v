@@ -30,11 +30,6 @@ module tetrimino(
     output reg [12:0] blk3,
     output reg [12:0] blk4);
     
-    parameter I = 0;
-    parameter O = 1;
-    parameter J = 2;
-    parameter L = 3;
-    parameter T = 4;
     
     wire [12:0] posxy;
     assign posxy = posx + 10 * posy;
@@ -42,7 +37,7 @@ module tetrimino(
    always @ (*)
     begin
         case (block)
-        I: begin
+        0: begin
            case (rotation)
            0: begin //horizontal
               blk1 = posxy;
@@ -75,14 +70,14 @@ module tetrimino(
         end       
         
         
-        O: begin // square
+        1: begin // square
              blk1 = posxy;
              blk2 = posxy + 1;
              blk3 = posxy - 9;
              blk4 = posxy - 10;
         end
         
-        T: begin   
+        4: begin   
            case (rotation)           //      # 
            0: begin                 //      ###
               blk1 = posxy;
@@ -115,7 +110,7 @@ module tetrimino(
            endcase
         end
            
-        L: begin
+        3: begin
            case (rotation)       //         #
            0: begin              //       ###  
               blk1 = posxy;
@@ -147,7 +142,7 @@ module tetrimino(
            endcase
         end
            
-        J: begin
+        2: begin
            case (rotation)
            0: begin                 //   #
               blk1 = posxy;         //   ###
