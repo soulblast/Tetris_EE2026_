@@ -37,38 +37,37 @@ module tetrimino(
    always @ (*)
     begin
         case (block)
-        0: begin
+        0: begin  // I
            case (rotation)
-           0: begin //horizontal
+           0: begin //horizontal    //    ##X#
               blk1 = posxy;
-              blk2 = posxy + 1;
-              blk3 = posxy + 2;
-              blk4 = posxy + 3;
+              blk2 = posxy - 1;
+              blk3 = posxy - 2;
+              blk4 = posxy + 1;
            end
-              
-           1: begin // vertical
-              blk1 = posxy;
-              blk2 = posxy - 10;
-              blk3 = posxy - 20;
-              blk4 = posxy - 30;
+                                       
+           1: begin // vertical        //   # 
+              blk1 = posxy;            //   #
+              blk2 = posxy - 10;       //   X
+              blk3 = posxy - 20;       //   #
+              blk4 = posxy + 10;
            end
            
-           2: begin // horizontal
-              blk1 = posxy;
-              blk2 = posxy + 1;
-              blk3 = posxy + 2;
-              blk4 = posxy + 3;
+           2: begin // horizontal        //   #X##
+              blk1 = posxy;               
+              blk2 = posxy - 1;
+              blk3 = posxy + 1;
+              blk4 = posxy + 2;
            end
                   
-           3: begin // vertical
-              blk1 = posxy;
-              blk2 = posxy - 10;
-              blk3 = posxy - 20;
-              blk4 = posxy - 30;
+           3: begin // vertical        //    #
+              blk1 = posxy;            //    X
+              blk2 = posxy - 10;       //    #
+              blk3 = posxy + 10;       //    # 
+              blk4 = posxy + 20;
            end
            endcase
         end       
-        
         
         1: begin // square
              blk1 = posxy;
@@ -77,23 +76,23 @@ module tetrimino(
              blk4 = posxy - 10;
         end
         
-        4: begin   
+        2: begin   // T
            case (rotation)           //      # 
-           0: begin                 //      ###
+           0: begin                 //      #X#
               blk1 = posxy;
               blk2 = posxy + 1;
               blk3 = posxy - 1;
               blk4 = posxy - 10;
            end 
                                    //     #      
-                                   //     ##            
+                                   //     X#            
            1: begin                //     #
               blk1 = posxy;
               blk2 = posxy + 1;
               blk3 = posxy - 10;
               blk4 = posxy + 10;
            end  
-                                   //     ###          
+                                   //     #X#          
            2: begin                //      #
               blk1 = posxy;        
               blk2 = posxy - 1;
@@ -102,7 +101,7 @@ module tetrimino(
            end
            
            3: begin               //      #
-              blk1 = posxy;       //     ##
+              blk1 = posxy;       //     #X
               blk2 = posxy - 1;   //      #
               blk3 = posxy - 10;
               blk4 = posxy + 10;
@@ -110,9 +109,9 @@ module tetrimino(
            endcase
         end
            
-        3: begin
+        3: begin // L
            case (rotation)       //         #
-           0: begin              //       ###  
+           0: begin              //       #X#  
               blk1 = posxy;
               blk2 = posxy - 1;
               blk3 = posxy + 1;
@@ -120,13 +119,13 @@ module tetrimino(
            end
            
            1: begin               //      # 
-              blk1 = posxy;       //      #
+              blk1 = posxy;       //      X
               blk2 = posxy - 10;  //      ## 
               blk3 = posxy + 10;
               blk4 = posxy + 11;            
            end
            
-           2: begin                   //   ###
+           2: begin                   //   #X#
               blk1 = posxy;           //   #
               blk2 = posxy - 1;
               blk3 = posxy + 1;
@@ -134,7 +133,7 @@ module tetrimino(
            end
                
            3: begin                   //     ##
-              blk1 = posxy;           //      #
+              blk1 = posxy;           //      X
               blk2 = posxy - 10;      //      #
               blk3 = posxy - 11;
               blk4 = posxy + 10;    
@@ -142,23 +141,23 @@ module tetrimino(
            endcase
         end
            
-        2: begin
+        4: begin // J
            case (rotation)
            0: begin                 //   #
-              blk1 = posxy;         //   ###
+              blk1 = posxy;         //   #x#
               blk2 = posxy - 1;         
               blk3 = posxy - 11;
               blk4 = posxy + 1;          
            end
            
            1: begin                  //     ##
-              blk1 = posxy;          //     #
+              blk1 = posxy;          //     x
               blk2 = posxy - 10;     //     #
               blk3 = posxy - 9;
               blk4 = posxy + 10;          
            end
            
-           2: begin                 //   ###
+           2: begin                 //   #x#
               blk1 = posxy;         //     # 
               blk2 = posxy - 1;
               blk3 = posxy + 1;
@@ -166,13 +165,78 @@ module tetrimino(
            end
            
            3: begin
-              blk1 = posxy;         //        #
-              blk2 = posxy - 10;    //        #
-              blk3 = posxy + 10;    //       ##
+              blk1 = posxy;         //      #
+              blk2 = posxy - 10;    //      x
+              blk3 = posxy + 10;    //     ##
               blk4 = posxy + 9;           
            end                               
            endcase 
         end 
+
+        5: begin // Z
+           case (rotation)
+           0: begin                 //   ##
+              blk1 = posxy;         //    X#
+              blk2 = posxy + 1;         
+              blk3 = posxy - 10;
+              blk4 = posxy - 11;          
+           end
+           
+           1: begin                  //      #
+              blk1 = posxy;          //     X#
+              blk2 = posxy - 9;      //     #
+              blk3 = posxy + 1;
+              blk4 = posxy + 10;          
+           end
+           
+           2: begin                 //   #X
+              blk1 = posxy;         //    ## 
+              blk2 = posxy - 1;
+              blk3 = posxy + 10;
+              blk4 = posxy + 11;          
+           end
+           
+           3: begin
+              blk1 = posxy;         //        #
+              blk2 = posxy - 10;    //       #X
+              blk3 = posxy - 1;     //       #
+              blk4 = posxy + 9;           
+           end                               
+           endcase 
+        end 
+
+        6: begin // S
+           case (rotation)
+           0: begin                 //     ##
+              blk1 = posxy;         //    #X
+              blk2 = posxy - 1;         
+              blk3 = posxy - 10;
+              blk4 = posxy - 9;          
+           end
+           
+           1: begin                  //      #
+              blk1 = posxy;          //      X#
+              blk2 = posxy - 10;     //       #
+              blk3 = posxy + 1;
+              blk4 = posxy + 11;          
+           end
+           
+           2: begin                 //     X#
+              blk1 = posxy;         //    ## 
+              blk2 = posxy + 1;
+              blk3 = posxy + 10;
+              blk4 = posxy + 9;          
+           end
+           
+           3: begin
+              blk1 = posxy;         //      #
+              blk2 = posxy - 1;     //      #X
+              blk3 = posxy - 11;    //       #
+              blk4 = posxy + 10;           
+           end                               
+           endcase 
+        end 
+
         endcase     
     end 
 endmodule

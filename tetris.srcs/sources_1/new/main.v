@@ -49,9 +49,9 @@ module main(input CLOCK, output [0:7] JC);
  //
  // I = 0;
  // O = 1;
- // J = 2;
+ // T = 2;  // swapped T and J  index
  // L = 3;
- // T = 4;
+ // J = 4;
  // Z = 5;
  // S = 6;
   
