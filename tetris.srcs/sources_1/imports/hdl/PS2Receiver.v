@@ -1,24 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: Digilent Inc.
-// Engineer: Thomas Kappenman
-// 
-// Create Date: 03/03/2015 09:33:36 PM
-// Design Name: 
-// Module Name: PS2Receiver
-// Project Name: Nexys4DDR Keyboard Demo
-// Target Devices: Nexys4DDR
-// Tool Versions: 
-// Description: PS2 Receiver module used to shift in keycodes from a keyboard plugged into the PS2 port
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
 
 module PS2Receiver(
     input clk,
@@ -77,7 +57,7 @@ always@(posedge clk) begin
         oflag <= 1'b1;
         dataprev <= datacur;
     end else
-        oflag <= 'b0;
+        oflag <= 1'b0;
     pflag <= flag;
 end
 

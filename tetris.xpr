@@ -59,8 +59,37 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sources_1/new/Keyboard_Receiver.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/debouncer.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/keyboard_out.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/main.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/imports/hdl/PS2Receiver.v">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../Users/dave9/Desktop/vivado_proj/Basys-3-Keyboard.srcs/sources_1/imports/hdl/PS2Receiver.v"/>
           <Attr Name="ImportTime" Val="1535345032"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -70,6 +99,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/hdl/bin2ascii.v">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../Users/dave9/Desktop/vivado_proj/Basys-3-Keyboard.srcs/sources_1/imports/hdl/bin2ascii.v"/>
           <Attr Name="ImportTime" Val="1535345032"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -79,6 +109,7 @@
       </File>
       <File Path="$PPRDIR/../../../Users/dave9/Desktop/vivado_proj/Basys-3-Keyboard.srcs/sources_1/imports/hdl/debouncer.v">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -86,6 +117,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/hdl/uart_buf_con.v">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../Users/dave9/Desktop/vivado_proj/Basys-3-Keyboard.srcs/sources_1/imports/hdl/uart_buf_con.v"/>
           <Attr Name="ImportTime" Val="1535345032"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -95,6 +127,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/hdl/uart_tx.v">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../Users/dave9/Desktop/vivado_proj/Basys-3-Keyboard.srcs/sources_1/imports/hdl/uart_tx.v"/>
           <Attr Name="ImportTime" Val="1535345032"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -103,21 +136,6 @@
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/new/top_keyboard.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/debouncer.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/main.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -133,10 +151,17 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/selected_key_press.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="top_keyboard"/>
-        <Option Name="TopAutoSet" Val="TRUE"/>
+        <Option Name="TopModule" Val="main"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
