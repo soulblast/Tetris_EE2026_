@@ -24,9 +24,7 @@ module block_color(
     input [2:0] block,
     output reg [15:0] color
     );
-    
-    
-    
+     
     always @ (*)
         begin
             case(block)

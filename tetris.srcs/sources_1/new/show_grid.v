@@ -19,8 +19,10 @@ module show_grid (input CLOCK, output reg [15:0] oled_grid,
     wire [12:0] row, col; //0 to 8191
     wire [12:0] cur_pixel, cur_row, cur_col, g_row, g_col, rev_row; //stores the current pixel index
     reg [12:0] sel_row = 0, sel_col = 0;
+    
     get_coords coords_0(.pixels(pix_index), .row(col), .col(rev_row));//PORTRAIT MODE
     assign row = 95-rev_row;
+    //row, col ranges are in portrait mode, see below diagram
     //               Left 
     // FPGA    Bot |     |Top          
     //              Right    
@@ -34,11 +36,7 @@ module show_grid (input CLOCK, output reg [15:0] oled_grid,
     
    /************ ALWAYS LOOP ***********************************************/
     //40 by 80 grid; ie 10 by 20 blocks
-    always @ (posedge CLOCK) begin  
-        
-    
-    
-     
+    always @ (posedge CLOCK) begin   
         if(g_row % 2 == 1 && g_col % 2 == 1) //odd odd = grey
             oled_grid <= green;
         else if(g_row % 2 == 1 && g_col % 2 == 0)

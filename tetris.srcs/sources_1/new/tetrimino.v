@@ -21,17 +21,17 @@
 
 
 module tetrimino(
-    input [12:0] posx,
-    input [12:0] posy,
+    input [12:0] posx,//0 to 9
+    input [12:0] posy,//0 to 21
     input [1:0] rotation,
     input [2:0] block,
-    output reg [12:0] blk1,
+    output reg [12:0] blk1,// divide 10 to get posy; %10 to get posx;
     output reg [12:0] blk2,
     output reg [12:0] blk3,
     output reg [12:0] blk4);
     
     
-    wire [12:0] posxy;
+    wire [12:0] posxy; 
     assign posxy = posx + 10 * posy;
     
    always @ (*)

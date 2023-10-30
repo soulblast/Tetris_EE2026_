@@ -2,10 +2,10 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Mon Oct 30 22:29:49 2023
-# Process ID: 18372
+# Start of session at: Mon Oct 30 22:22:27 2023
+# Process ID: 8236
 # Current directory: C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14060 C:\Users\Administrator\Desktop\Yongjing_desktop_backup\NUS_Studies\Y2S1\EE2026\Lab\Tetris_EE2026_\tetris.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent18428 C:\Users\Administrator\Desktop\Yongjing_desktop_backup\NUS_Studies\Y2S1\EE2026\Lab\Tetris_EE2026_\tetris.xpr
 # Log file: C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/vivado.log
 # Journal file: C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_\vivado.jou
 #-----------------------------------------------------------
@@ -13,16 +13,13 @@ start_gui
 open_project C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.xpr
 INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
 Current project path is 'C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_'
+INFO: [Project 1-313] Project file moved from 'C:/EE2026 lab/Project/Tetris_EE2026_' since last save.
 Scanning sources...
 Finished scanning sources
-WARNING: [filemgmt 56-3] IPUserFilesDir: Could not find the directory 'C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.ip_user_files'.
+WARNING: [filemgmt 56-2] IPUserFilesDir: Could not find the directory 'C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.ip_user_files', nor could it be found using path 'C:/EE2026 lab/Project/Tetris_EE2026_/tetris.ip_user_files'.
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
 update_compile_order -fileset sources_1
-close [ open C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/new/grid_to_pix_coords.v w ]
-add_files C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/new/grid_to_pix_coords.v
-update_compile_order -fileset sources_1
-close [ open C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/new/yyx_to_grid_coords.v w ]
-add_files C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/new/yyx_to_grid_coords.v
-update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Oct 30 22:23:13 2023...

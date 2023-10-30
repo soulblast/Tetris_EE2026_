@@ -58,11 +58,20 @@ module main(input CLOCK, output [0:7] JC);
   //GRID>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
     wire [15:0] oled_grid; 
     show_grid grid_0(.CLOCK(CLOCK), .oled_grid(oled_grid), .pix_index(pix_index)); 
+  //BLOCK>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
     wire [15:0] block_color;
-    wire block_posx;
-    slow_drop drop0(.CLOCK(CLOCK), .block_pos(block_posx));
-    tetrimino un0(.posx(), posy(), rotation(), block(), blk1(), blk2(), blk3(), blk4()); 
+    wire [12:0] block_pos; 
+    wire block_posy; 
+    slow_drop drop0(.CLOCK(CLOCK), .block_pos(block_posy));
+    
+    reg [12:0] t_posx = 0, t_posy = 0;
+    reg [1:0] t_rotation = 0;
+    reg [2:0] t_block = 0; 
+    wire [12:0] blk1_yyx, blk2_yyx, blk3_yyx, blk4_yyx; //grid rows and cols
+    tetrimino un0(.posx(t_posx), .posy(t_posy), .rotation(t_rotation), .block(t_block), 
+                    .blk1(blk1_yyx), .blk2(blk2_yyx), .blk3(blk3_yyx), .blk4(blk4_yyx)); //position is in yyx form 
     always @ (posedge CLOCK) begin
+        
         oled_data <= oled_grid;
     end
     
