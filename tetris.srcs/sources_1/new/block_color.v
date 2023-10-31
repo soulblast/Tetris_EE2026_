@@ -52,7 +52,7 @@ module block_color(
                    color = 16'b11111_000000_00000;
                 end
 
-                6: begin
+                6: begin // green
                    color = 16'b00000_111111_00000;  
                 end  
 

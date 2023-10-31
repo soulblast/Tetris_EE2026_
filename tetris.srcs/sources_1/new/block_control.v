@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 22.10.2023 17:42:10
+// Create Date: 10/31/2023 03:01:45 PM
 // Design Name: 
-// Module Name: rng_block
+// Module Name: block_control
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,10 +20,13 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module rng_block(input next, output reg [2:0] nextblock);
+module block_control(input curr, output [2:0] curr_blk, next_blk);
 
-always @ (*)
-    begin
-      nextblock = {$random} % 5;   
-    end
+wire next;
+wire [2:0] temp_next, temp_curr;
+currentblock curr0(.curr(curr), .curr_blk(temp_current), .next_blk(temp_next), .next(next));
+nextblock next0(.next(next), .next_blk(temp_next));
+
+assign curr_blk = temp_curr;
+assign next_blk = temp_next;
 endmodule

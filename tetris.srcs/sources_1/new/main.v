@@ -67,6 +67,9 @@ module main(input CLOCK, output [0:7] JC);
     wire [15:0] oled_grid; 
     show_grid grid_0(.CLOCK(CLOCK), .oled_grid(oled_grid), .pix_index(pix_index)); 
   //BLOCK>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
+    block_control ctrl0(.curr(), .curr_blk(), .next_blk());
+
+
     wire [15:0] block_color;
     wire [12:0] block_pos; 
     wire block_posy; 
