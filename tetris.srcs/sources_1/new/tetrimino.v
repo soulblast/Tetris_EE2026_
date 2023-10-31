@@ -39,7 +39,7 @@ module tetrimino(
         case (block)
         0: begin  // I
            case (rotation)
-           0: begin //horizontal    //    ##X#
+           0: begin //horizontal    //    ####
               blk1 = posxy;
               blk2 = posxy - 1;
               blk3 = posxy - 2;
@@ -47,10 +47,10 @@ module tetrimino(
            end
                                        
            1: begin // vertical        //   # 
-              blk1 = posxy;            //   #
-              blk2 = posxy - 10;       //   X
-              blk3 = posxy - 20;       //   #
-              blk4 = posxy + 10;
+              blk1 = posxy + 1;            //   #
+              blk2 = posxy - 9;       //   #
+              blk3 = posxy - 19       //   #
+              blk4 = posxy + 11;
            end
            
            2: begin // horizontal        //   #X##
@@ -191,9 +191,9 @@ module tetrimino(
            
            2: begin                 //   #X
               blk1 = posxy;         //    ## 
-              blk2 = posxy - 1;
-              blk3 = posxy + 10;
-              blk4 = posxy + 11;          
+              blk2 = posxy + 1;
+              blk3 = posxy - 10;
+              blk4 = posxy - 11;          
            end
            
            3: begin
@@ -223,9 +223,9 @@ module tetrimino(
            
            2: begin                 //     X#
               blk1 = posxy;         //    ## 
-              blk2 = posxy + 1;
-              blk3 = posxy + 10;
-              blk4 = posxy + 9;          
+              blk2 = posxy - 1;
+              blk3 = posxy - 10;
+              blk4 = posxy - 9;          
            end
            
            3: begin
