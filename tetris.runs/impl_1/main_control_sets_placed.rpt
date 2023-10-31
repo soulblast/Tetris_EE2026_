@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Tue Oct 31 02:55:21 2023
+| Date         : Tue Oct 31 13:02:17 2023
 | Host         : soulblast running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file main_control_sets_placed.rpt
 | Design       : main
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    19 |
-| Unused register locations in slices containing registers |    82 |
+| Number of unique control sets                            |    28 |
+| Unused register locations in slices containing registers |   136 |
 +----------------------------------------------------------+-------+
 
 
@@ -34,7 +34,7 @@ Table of Contents
 +--------+--------------+
 | Fanout | Control Sets |
 +--------+--------------+
-|      2 |           12 |
+|      2 |           21 |
 |      4 |            1 |
 |      8 |            1 |
 |    16+ |            5 |
@@ -52,35 +52,44 @@ Table of Contents
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |              72 |           13 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             150 |           25 |
+| Yes          | Yes                   | No                     |             168 |           33 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+-------------------------+----------------------------------------+---------------------------------------+------------------+----------------+
-|       Clock Signal      |              Enable Signal             |            Set/Reset Signal           | Slice Load Count | Bel Load Count |
-+-------------------------+----------------------------------------+---------------------------------------+------------------+----------------+
-|  CLOCK_IBUF_BUFG        |                                        |                                       |                1 |              2 |
-|  CLOCK_IBUF_BUFG        | unit1/keys                             | unit1/SR[0]                           |                1 |              2 |
-|  CLOCK_IBUF_BUFG        | unit1/keys_reg[16]                     | unit1/SR[4]                           |                1 |              2 |
-|  CLOCK_IBUF_BUFG        | unit1/keys_reg[14]                     | unit1/SR[2]                           |                1 |              2 |
-|  CLOCK_IBUF_BUFG        | unit1/p_1_out[1]                       | unit1/SR[3]                           |                1 |              2 |
-|  CLOCK_IBUF_BUFG        | unit1/p_1_out[0]                       | unit1/SR[1]                           |                1 |              2 |
-|  CLOCK_IBUF_BUFG        | unit1/p_1_out[2]                       | unit1/SR[5]                           |                1 |              2 |
-|  CLOCK_IBUF_BUFG        | unit1/p_1_out[3]                       | unit1/SR[6]                           |                1 |              2 |
-|  stable_reg_i_2_n_0     | unit1/unit1/db_clk/clear               |                                       |                1 |              2 |
-|  stable_reg_i_2_n_0     | unit1/unit1/db_clk/key_out_i_1_n_0     |                                       |                1 |              2 |
-|  stable_reg_i_2_n_0     | unit1/unit1/db_data/stable_i_1__0_n_0  |                                       |                1 |              2 |
-|  stable_reg_i_2_n_0     | unit1/unit1/db_data/key_out_i_1__0_n_0 |                                       |                1 |              2 |
-|  stable_reg_i_2_n_0     |                                        |                                       |                2 |              4 |
-| ~unit1/unit1/db_clk/clk | unit1/unit1/count                      | unit1/unit1/count[3]_i_1_n_0          |                2 |              8 |
-| ~unit1/unit1/db_clk/clk |                                        |                                       |                3 |             18 |
-|  CLOCK_IBUF_BUFG        | unit1/unit1/E[0]                       |                                       |                5 |             32 |
-|  stable_reg_i_2_n_0     | unit1/unit1/out_flag_i_1_n_0           |                                       |                4 |             32 |
-|  stable_reg_i_2_n_0     | unit1/unit1/db_clk/count               | unit1/unit1/db_clk/clear              |                8 |             64 |
-|  stable_reg_i_2_n_0     | unit1/unit1/db_data/count              | unit1/unit1/db_data/stable_i_1__0_n_0 |                8 |             64 |
-+-------------------------+----------------------------------------+---------------------------------------+------------------+----------------+
++---------------------------+------------------------------------------+-----------------------------------------+------------------+----------------+
+|        Clock Signal       |               Enable Signal              |             Set/Reset Signal            | Slice Load Count | Bel Load Count |
++---------------------------+------------------------------------------+-----------------------------------------+------------------+----------------+
+|  CLOCK_IBUF_BUFG          |                                          |                                         |                1 |              2 |
+|  CLOCK_IBUF_BUFG          | u1/unit/keys                             | u1/unit/SR[0]                           |                1 |              2 |
+|  CLOCK_IBUF_BUFG          | u1/unit/keys_reg[10]                     | u1/unit/SR[10]                          |                1 |              2 |
+|  CLOCK_IBUF_BUFG          | u1/unit/keys_reg[14]                     | u1/unit/SR[14]                          |                1 |              2 |
+|  CLOCK_IBUF_BUFG          | u1/unit/keys_reg[15]                     | u1/unit/SR[15]                          |                1 |              2 |
+|  CLOCK_IBUF_BUFG          | u1/unit/p_1_out[3]                       | u1/unit/SR[4]                           |                1 |              2 |
+|  CLOCK_IBUF_BUFG          | u1/unit/p_1_out[1]                       | u1/unit/SR[2]                           |                1 |              2 |
+|  CLOCK_IBUF_BUFG          | u1/unit/p_1_out[9]                       | u1/unit/SR[11]                          |                1 |              2 |
+|  CLOCK_IBUF_BUFG          | u1/unit/p_1_out[8]                       | u1/unit/SR[9]                           |                1 |              2 |
+|  CLOCK_IBUF_BUFG          | u1/unit/p_1_out[2]                       | u1/unit/SR[3]                           |                1 |              2 |
+|  CLOCK_IBUF_BUFG          | u1/unit/p_1_out[5]                       | u1/unit/SR[6]                           |                1 |              2 |
+|  CLOCK_IBUF_BUFG          | u1/unit/p_1_out[4]                       | u1/unit/SR[5]                           |                1 |              2 |
+|  CLOCK_IBUF_BUFG          | u1/unit/p_1_out[0]                       | u1/unit/SR[1]                           |                1 |              2 |
+|  CLOCK_IBUF_BUFG          | u1/unit/p_1_out[6]                       | u1/unit/SR[7]                           |                1 |              2 |
+|  CLOCK_IBUF_BUFG          | u1/unit/p_1_out[7]                       | u1/unit/SR[8]                           |                1 |              2 |
+|  CLOCK_IBUF_BUFG          | u1/unit/p_1_out[10]                      | u1/unit/SR[12]                          |                1 |              2 |
+|  CLOCK_IBUF_BUFG          | u1/unit/p_1_out[11]                      | u1/unit/SR[13]                          |                1 |              2 |
+|  stable_reg_i_2_n_0       | u1/unit/unit1/db_clk/clear               |                                         |                1 |              2 |
+|  stable_reg_i_2_n_0       | u1/unit/unit1/db_clk/key_out_i_1_n_0     |                                         |                1 |              2 |
+|  stable_reg_i_2_n_0       | u1/unit/unit1/db_data/stable_i_1__0_n_0  |                                         |                1 |              2 |
+|  stable_reg_i_2_n_0       | u1/unit/unit1/db_data/key_out_i_1__0_n_0 |                                         |                1 |              2 |
+|  stable_reg_i_2_n_0       |                                          |                                         |                2 |              4 |
+| ~u1/unit/unit1/db_clk/clk | u1/unit/unit1/count                      | u1/unit/unit1/count[3]_i_1_n_0          |                1 |              8 |
+| ~u1/unit/unit1/db_clk/clk |                                          |                                         |                3 |             18 |
+|  CLOCK_IBUF_BUFG          | u1/unit/unit1/E[0]                       |                                         |                4 |             32 |
+|  stable_reg_i_2_n_0       | u1/unit/unit1/out_flag_i_1_n_0           |                                         |                5 |             32 |
+|  stable_reg_i_2_n_0       | u1/unit/unit1/db_clk/count               | u1/unit/unit1/db_clk/clear              |                8 |             64 |
+|  stable_reg_i_2_n_0       | u1/unit/unit1/db_data/count              | u1/unit/unit1/db_data/stable_i_1__0_n_0 |                8 |             64 |
++---------------------------+------------------------------------------+-----------------------------------------+------------------+----------------+
 
 
