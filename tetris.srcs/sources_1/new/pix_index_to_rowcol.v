@@ -24,9 +24,9 @@
 //pixels: 0 to 6143
 //ROWS WORK!
 
-module get_coords(input [12:0] pixels, output [12:0] row, col); //landscape
+module pix_to_vertical_rowcol(input [12:0] pixels, output [12:0] vrow, vcol); //Vertical
 //no. of full rows above 
-assign col = pixels % 96;
-assign row = pixels / 96;
+assign vrow = pixels % 96;
+assign vcol = pixels / 96;
 
 endmodule

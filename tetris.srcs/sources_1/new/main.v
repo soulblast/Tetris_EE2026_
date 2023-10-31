@@ -54,6 +54,14 @@ module main(input CLOCK, output [0:7] JC);
  // J = 4;
  // Z = 5;
  // S = 6;
+  //COORDS
+  //pix_index --> row, col
+    wire [12:0] v_row, v_col, blk1_g_row, blk2_g_row ,blk3_g_row, blk4_g_row,
+                blk1_g_col, blk2_g_col ,blk3_g_col, blk4_g_col;
+    
+    reg [12:0] g_row, g_col; 
+    pix_to_vertical_rowcol vert0(.pixels(pix_index), .vrow(v_row), .vcol(v_col));
+    oled_to_grid_coords blockgrid0(.row(v_row), .col(v_col), .g_row(g_row), .g_col(g_col));
   
   //GRID>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
     wire [15:0] oled_grid; 
@@ -70,10 +78,24 @@ module main(input CLOCK, output [0:7] JC);
     wire [12:0] blk1_yyx, blk2_yyx, blk3_yyx, blk4_yyx; //grid rows and cols
     tetrimino un0(.posx(t_posx), .posy(t_posy), .rotation(t_rotation), .block(t_block), 
                     .blk1(blk1_yyx), .blk2(blk2_yyx), .blk3(blk3_yyx), .blk4(blk4_yyx)); //position is in yyx form 
-    always @ (posedge CLOCK) begin
-        
-        oled_data <= oled_grid;
-    end
     
+    yyx_to_grid_coords yyx_convert1(.yyx(blk1_yyx), .g_row(blk1_g_row), .g_col(blk1_g_col));
+    yyx_to_grid_coords yyx_convert2(.yyx(blk2_yyx), .g_row(blk2_g_row), .g_col(blk2_g_col));
+    yyx_to_grid_coords yyx_convert3(.yyx(blk3_yyx), .g_row(blk3_g_row), .g_col(blk3_g_col));
+    yyx_to_grid_coords yyx_convert4(.yyx(blk4_yyx), .g_row(blk4_g_row), .g_col(blk4_g_col));
+     
+    block_color color0(.block(t_block), .color(block_color)); 
+        
+    always @ (posedge CLOCK) begin
+      if ((g_row == blk1_g_row && g_col == blk1_g_col) || (g_row == blk2_g_row && g_col == blk2_g_col) ||
+          (g_row == blk3_g_row && g_col == blk3_g_col) || (g_row == blk4_g_row && g_col == blk4_g_col))
+        begin
+            oled_data <= block_color;   
+        end
+      else
+        begin  
+            oled_data <= oled_grid;
+        end
+    end
     
 endmodule

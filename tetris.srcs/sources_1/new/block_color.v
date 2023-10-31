@@ -47,6 +47,15 @@ module block_color(
                 4: begin // purple
                    color = 16'b10100_001101_11111;
                 end
+
+                5: begin // red
+                   color = 16'b11111_000000_00000;
+                end
+
+                6: begin
+                   color = 16'b00000_111111_00000;  
+                end  
+
             endcase
         end
     

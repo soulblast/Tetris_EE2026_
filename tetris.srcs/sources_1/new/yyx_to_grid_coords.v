@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module yyx_to_grid_coords(input [12:0] yyx, output [12:0] row, col);
-    assign row = yyx / 10;
-    assign col = yyx % 10;
+module yyx_to_grid_coords(input [12:0] yyx, output [12:0] g_row, g_col);
+    assign g_row = yyx / 10;
+    assign g_col = yyx % 10;
 endmodule
