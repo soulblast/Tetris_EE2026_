@@ -20,11 +20,11 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module block_control(input curr, output [2:0] curr_blk, next_blk);
+module block_spawn(input curr, output [2:0] curr_blk, next_blk);
 
 wire next;
 wire [2:0] temp_next, temp_curr;
-currentblock curr0(.curr(curr), .curr_blk(temp_current), .next_blk(temp_next), .next(next));
+currentblock curr0(.curr(curr), .curr_blk(temp_curr), .next_blk(temp_next), .next(next));
 nextblock next0(.next(next), .next_blk(temp_next));
 
 assign curr_blk = temp_curr;

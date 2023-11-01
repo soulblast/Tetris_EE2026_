@@ -49,10 +49,9 @@ module main(input CLOCK, output [0:7] JC);
         .vccen(JC[6]),
         .pmoden(JC[7]));
   
- //
  // I = 0;
  // O = 1;
- // T = 2;  // swapped T and J  index
+ // T = 2;
  // L = 3;
  // J = 4;
  // Z = 5;
@@ -77,10 +76,15 @@ module main(input CLOCK, output [0:7] JC);
     
     reg [12:0] t_g_col = 8, t_g_row = 0;
     reg [1:0] t_rotation = 0;
-    reg [2:0] t_block = 0; 
+    wire [2:0] t_block = 0; 
+    wire [2:0] t_future;
+    //current flag doesnt exist yet
+    block_spawn spawn0(.curr(current_flag), .curr_blk(t_block), .next_blk(t_future));
+    
     wire [12:0] blk1_yyx, blk2_yyx, blk3_yyx, blk4_yyx; //grid rows and cols
     tetrimino un0(.posx(t_g_col), .posy(t_g_row), .rotation(t_rotation), .block(t_block),  // temp output L
                     .blk1(blk1_yyx), .blk2(blk2_yyx), .blk3(blk3_yyx), .blk4(blk4_yyx)); //position is in yyx form 
+   
     reg [12:0] n_t_g_col = 0, n_t_g_row = 0;
     reg [1:0] n_t_rotation = 0;
     reg [2:0] n_t_block = 0; 
@@ -132,13 +136,12 @@ module main(input CLOCK, output [0:7] JC);
         //collision check
         if(n_t_g_row == 
     */
+   
     yyx_to_grid_coords yyx_convert1(.yyx(blk1_yyx), .g_row(blk1_g_row), .g_col(blk1_g_col));
     yyx_to_grid_coords yyx_convert2(.yyx(blk2_yyx), .g_row(blk2_g_row), .g_col(blk2_g_col));
     yyx_to_grid_coords yyx_convert3(.yyx(blk3_yyx), .g_row(blk3_g_row), .g_col(blk3_g_col));
     yyx_to_grid_coords yyx_convert4(.yyx(blk4_yyx), .g_row(blk4_g_row), .g_col(blk4_g_col));
-     
- 
-        
+           
     always @ (posedge CLOCK) begin
       t_g_row <= block_posy;  
 
