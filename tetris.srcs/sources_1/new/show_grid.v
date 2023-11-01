@@ -38,13 +38,13 @@ module show_grid (input CLOCK, output reg [15:0] oled_grid,
     //40 by 80 grid; ie 10 by 20 blocks
     always @ (posedge CLOCK) begin   
         if(g_row % 2 == 1 && g_col % 2 == 1) //odd odd = grey
-            oled_grid <= green;
+            oled_grid <= grey;
         else if(g_row % 2 == 1 && g_col % 2 == 0)
-            oled_grid <= blue;
+            oled_grid <= black;
         else if(g_row % 2 == 0 && g_col % 2 == 1)
-            oled_grid <= blue;
+            oled_grid <= black;
         else if(g_row % 2 == 0 && g_col % 2 == 0)
-            oled_grid <= green;
+            oled_grid <= grey;
             
         if(g_col <= 2 || g_col >= 13)
             oled_grid <= red;

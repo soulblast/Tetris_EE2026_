@@ -22,14 +22,14 @@
 
 module slow_drop(
     input CLOCK,
-    output reg block_posx
+    output reg [12:0] block_posy
     );
-    wire clock1hz;
-    flexi_clock_D(CLOCK, 1000000000, clock1hz); // drops by 1 block every second
+    wire clock2hz;
+    flexi_clock_D(CLOCK, 500000000, clock2hz); // drops by 1 block every second
     
-    always @ (posedge clock1hz)
+    always @ (posedge clock2hz)
         begin
-            block_posx <= block_posx + 1;
+            block_posy <= block_posy + 1;
         end
     
 endmodule

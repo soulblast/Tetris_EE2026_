@@ -62,7 +62,7 @@ module main(input CLOCK, output [0:7] JC);
     wire [12:0] v_row, v_col, blk1_g_row, blk2_g_row ,blk3_g_row, blk4_g_row,
                 blk1_g_col, blk2_g_col ,blk3_g_col, blk4_g_col;
     
-    reg [12:0] g_row, g_col; 
+    wire [12:0] g_row, g_col; 
     pix_to_vertical_rowcol vert0(.pixels(pix_index), .vrow(v_row), .vcol(v_col));
     oled_to_grid_coords blockgrid0(.row(v_row), .col(v_col), .g_row(g_row), .g_col(g_col));
   
@@ -72,14 +72,14 @@ module main(input CLOCK, output [0:7] JC);
   //BLOCK>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
     wire [15:0] block_color;
     wire [12:0] block_pos; 
-    wire block_posy; 
-    slow_drop drop0(.CLOCK(CLOCK), .block_pos(block_posy));
+    wire [12:0] block_posy; 
+    slow_drop drop0(.CLOCK(CLOCK), .block_posy(block_posy));
     
-    reg [12:0] t_g_col = 0, t_g_row = 0;
+    reg [12:0] t_g_col = 8, t_g_row = 0;
     reg [1:0] t_rotation = 0;
     reg [2:0] t_block = 0; 
     wire [12:0] blk1_yyx, blk2_yyx, blk3_yyx, blk4_yyx; //grid rows and cols
-    tetrimino un0(.posx(t_g_col), .posy(t_g_row), .rotation(t_rotation), .block(t_block), 
+    tetrimino un0(.posx(t_g_col), .posy(t_g_row), .rotation(t_rotation), .block(t_block),  // temp output L
                     .blk1(blk1_yyx), .blk2(blk2_yyx), .blk3(blk3_yyx), .blk4(blk4_yyx)); //position is in yyx form 
     reg [12:0] n_t_g_col = 0, n_t_g_row = 0;
     reg [1:0] n_t_rotation = 0;
@@ -87,7 +87,10 @@ module main(input CLOCK, output [0:7] JC);
     wire [12:0] n_blk1_yyx, n_blk2_yyx, n_blk3_yyx, n_blk4_yyx; //grid rows and cols
     tetrimino un1(.posx(n_t_g_col), .posy(n_t_g_row), .rotation(n_t_rotation), .block(n_t_block), 
                      .blk1(n_blk1_yyx), .blk2(n_blk2_yyx), .blk3(n_blk3_yyx), .blk4(n_blk4_yyx)); //position is in yyx form 
-    
+  
+    block_color color0(.block(t_block), .color(block_color));
+  
+  /*  
     wire [32:0] key;
     reg cnt_8Hz = 0;
     always @ (posedge CLK_8Hz) begin
@@ -128,15 +131,17 @@ module main(input CLOCK, output [0:7] JC);
         
         //collision check
         if(n_t_g_row == 
-    
+    */
     yyx_to_grid_coords yyx_convert1(.yyx(blk1_yyx), .g_row(blk1_g_row), .g_col(blk1_g_col));
     yyx_to_grid_coords yyx_convert2(.yyx(blk2_yyx), .g_row(blk2_g_row), .g_col(blk2_g_col));
     yyx_to_grid_coords yyx_convert3(.yyx(blk3_yyx), .g_row(blk3_g_row), .g_col(blk3_g_col));
     yyx_to_grid_coords yyx_convert4(.yyx(blk4_yyx), .g_row(blk4_g_row), .g_col(blk4_g_col));
      
-    block_color color0(.block(t_block), .color(block_color)); 
+ 
         
     always @ (posedge CLOCK) begin
+      t_g_row <= block_posy;  
+
       if ((g_row == blk1_g_row && g_col == blk1_g_col) || (g_row == blk2_g_row && g_col == blk2_g_col) ||
           (g_row == blk3_g_row && g_col == blk3_g_col) || (g_row == blk4_g_row && g_col == blk4_g_col))
         begin
