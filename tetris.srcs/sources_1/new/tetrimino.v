@@ -49,7 +49,7 @@ module tetrimino(
            1: begin // vertical        //   # 
               blk1 = posxy + 1;            //   #
               blk2 = posxy - 9;       //   #
-              blk3 = posxy - 19       //   #
+              blk3 = posxy - 19;       //   #
               blk4 = posxy + 11;
            end
            
