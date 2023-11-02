@@ -1,0 +1,4 @@
+Running: xsim.dir/sim_block_spawn_behav/xsimk.exe -simmode gui -wdb sim_block_spawn_behav.wdb -simrunnum 0 -socket 51119
+Design successfully loaded
+Design Loading Memory Usage: 6312 KB (Peak: 6312 KB)
+Design Loading CPU Usage: 0 ms

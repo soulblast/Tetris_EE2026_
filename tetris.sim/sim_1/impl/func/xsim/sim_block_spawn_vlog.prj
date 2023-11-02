@@ -1,0 +1,8 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"sim_block_spawn_func_impl.v" \
+"../../../../../tetris.srcs/sources_1/imports/new/block_spawn.v" \
+"../../../../../tetris.srcs/sim_1/new/sim_block_spawn.v" \
+
+# Do not sort compile order
+nosort
