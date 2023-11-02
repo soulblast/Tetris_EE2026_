@@ -26,6 +26,7 @@ wire [2:0] temp_blk;
 
 rng_block u0(.next(next), .nextblock(temp_blk));
 
+
 always @ (*)
   begin
 
@@ -33,8 +34,8 @@ always @ (*)
         begin
             next_blk = temp_blk;
         end
-
-
+    
+    
   end
 
 endmodule

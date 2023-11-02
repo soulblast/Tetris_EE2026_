@@ -72,14 +72,17 @@ module main(input CLOCK, output [0:7] JC);
     wire [15:0] block_color;
     wire [12:0] block_pos; 
     wire [12:0] block_posy; 
-    slow_drop drop0(.CLOCK(CLOCK), .block_posy(block_posy));
+    reg current_flag = 0;
+    slow_drop drop0(.CLOCK(CLOCK), .current(current_flag), .block_posy(block_posy));
     
-    reg [12:0] t_g_col = 8, t_g_row = 0;
+    reg [12:0] t_g_col = 8, t_g_row = 2;                // col from 3 to 12 , row from 2 to 21,
     reg [1:0] t_rotation = 0;
-    wire [2:0] t_block = 0; 
+    wire [2:0] t_block;
     wire [2:0] t_future;
-    //current flag doesnt exist yet
+    
+
     block_spawn spawn0(.curr(current_flag), .curr_blk(t_block), .next_blk(t_future));
+    
     
     wire [12:0] blk1_yyx, blk2_yyx, blk3_yyx, blk4_yyx; //grid rows and cols
     tetrimino un0(.posx(t_g_col), .posy(t_g_row), .rotation(t_rotation), .block(t_block),  // temp output L
@@ -142,8 +145,30 @@ module main(input CLOCK, output [0:7] JC);
     yyx_to_grid_coords yyx_convert3(.yyx(blk3_yyx), .g_row(blk3_g_row), .g_col(blk3_g_col));
     yyx_to_grid_coords yyx_convert4(.yyx(blk4_yyx), .g_row(blk4_g_row), .g_col(blk4_g_col));
            
+           
+           //to do: detect when block has reached bottom, and show next tetrimino
+    reg [12:0] n_blk1_g_row, n_blk2_g_row, n_blk3_g_row, n_blk4_g_row,
+                           n_blk1_g_col, n_blk2_g_col, n_blk3_g_col, n_blk4_g_col;
+    reg dead_block = 0;
     always @ (posedge CLOCK) begin
       t_g_row <= block_posy;  
+      
+        n_blk1_g_col <= blk1_g_col;
+        n_blk1_g_row <= blk1_g_row;
+        n_blk2_g_col <= blk2_g_col;
+        n_blk2_g_row <= blk2_g_row;
+        n_blk3_g_col <= blk3_g_col;
+        n_blk3_g_row <= blk3_g_row;
+        n_blk4_g_col <= blk4_g_col;
+        n_blk4_g_row <= blk4_g_row;
+        
+        if(n_blk1_g_col >= 21 || n_blk2_g_col >= 21 || n_blk3_g_col >= 21 || n_blk4_g_col >= 21)
+        begin
+            dead_block <= 1;
+            current_flag <= 0;
+        end
+        
+        
 
       if ((g_row == blk1_g_row && g_col == blk1_g_col) || (g_row == blk2_g_row && g_col == blk2_g_col) ||
           (g_row == blk3_g_row && g_col == blk3_g_col) || (g_row == blk4_g_row && g_col == blk4_g_col))
@@ -154,6 +179,7 @@ module main(input CLOCK, output [0:7] JC);
         begin  
             oled_data <= oled_grid;
         end
+      
     end
     
 endmodule

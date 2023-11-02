@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module currentblock(input curr, input [2:0] next_blk, output reg [2:0] curr_blk, output next);
+module currentblock(input curr, input [2:0] next_blk, output reg [2:0] curr_blk, output reg next);
 
 always @ (*)
   begin
