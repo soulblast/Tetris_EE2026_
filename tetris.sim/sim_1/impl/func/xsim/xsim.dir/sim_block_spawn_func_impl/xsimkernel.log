@@ -2,3 +2,6 @@ Running: xsim.dir/sim_block_spawn_func_impl/xsimk.exe -simmode gui -wdb sim_bloc
 Design successfully loaded
 Design Loading Memory Usage: 6324 KB (Peak: 6324 KB)
 Design Loading CPU Usage: 31 ms
+Simulation completed
+Simulation Memory Usage: 6908 KB (Peak: 6908 KB)
+Simulation CPU Usage: 46 ms
