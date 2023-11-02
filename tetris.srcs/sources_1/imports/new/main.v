@@ -140,10 +140,10 @@ module main(input CLOCK, output [0:7] JC);
       //MOVE DOWN >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
       //DISPLAY TETRIMINO>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-//      if ((g_row == blk1_g_row && g_col == blk1_g_col) || 
-//            (g_row == blk2_g_row && g_col == blk2_g_col) ||
-//            (g_row == blk3_g_row && g_col == blk3_g_col) || 
-//            (g_row == blk4_g_row && g_col == blk4_g_col)) begin
+//      if ((g_row == b1_row && g_col == b1_col) || 
+//            (g_row == b2_row && g_col == b2_col) ||
+//            (g_row == b3_row && g_col == b3_col) || 
+//            (g_row == b4_row && g_col == b4_col)) begin
 //            oled_data <= block_color;   
 //      end 
 //      if (occupied[g_row][g_col] == 1) begin
