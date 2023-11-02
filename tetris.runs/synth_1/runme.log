@@ -14,9 +14,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 18796 
+INFO: Helper process launched with PID 13376 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 356.848 ; gain = 99.770
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 356.391 ; gain = 99.336
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'main' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:23]
 INFO: [Synth 8-6157] synthesizing module 'flexi_clock_D' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/flexi_clock.v:22]
@@ -94,11 +94,10 @@ INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Admi
 INFO: [Synth 8-6155] done synthesizing module 'block_color' (9#1) [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/block_color.v:23]
 INFO: [Synth 8-6157] synthesizing module 'yyxx_to_grid_coords' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/yyx_to_grid_coords.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'yyxx_to_grid_coords' (10#1) [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/yyx_to_grid_coords.v:23]
-WARNING: [Synth 8-6014] Unused sequential element occupied2_reg was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:144]
 INFO: [Synth 8-6155] done synthesizing module 'main' (11#1) [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:23]
 WARNING: [Synth 8-3331] design main has unconnected port JC[2]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 411.652 ; gain = 154.574
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 411.789 ; gain = 154.734
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -111,10 +110,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 411.652 ; gain = 154.574
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 411.789 ; gain = 154.734
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 411.652 ; gain = 154.574
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 411.789 ; gain = 154.734
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -431,71 +430,71 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 752.977 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 753.285 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 752.977 ; gain = 495.898
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 753.285 ; gain = 496.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 752.977 ; gain = 495.898
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 753.285 ; gain = 496.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 752.977 ; gain = 495.898
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 753.285 ; gain = 496.230
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Oled_Display'
 INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "fsm_next_state0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-4471] merging register 'occupied_reg[21][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-INFO: [Synth 8-4471] merging register 'occupied_reg[20][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-INFO: [Synth 8-4471] merging register 'occupied_reg[19][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-INFO: [Synth 8-4471] merging register 'occupied_reg[18][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-INFO: [Synth 8-4471] merging register 'occupied_reg[17][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-INFO: [Synth 8-4471] merging register 'occupied_reg[16][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-INFO: [Synth 8-4471] merging register 'occupied_reg[15][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-INFO: [Synth 8-4471] merging register 'occupied_reg[14][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-INFO: [Synth 8-4471] merging register 'occupied_reg[13][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-INFO: [Synth 8-4471] merging register 'occupied_reg[12][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-INFO: [Synth 8-4471] merging register 'occupied_reg[11][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-INFO: [Synth 8-4471] merging register 'occupied_reg[10][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-INFO: [Synth 8-4471] merging register 'occupied_reg[9][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-INFO: [Synth 8-4471] merging register 'occupied_reg[8][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-INFO: [Synth 8-4471] merging register 'occupied_reg[7][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-INFO: [Synth 8-4471] merging register 'occupied_reg[6][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-INFO: [Synth 8-4471] merging register 'occupied_reg[5][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-INFO: [Synth 8-4471] merging register 'occupied_reg[4][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-INFO: [Synth 8-4471] merging register 'occupied_reg[3][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-INFO: [Synth 8-4471] merging register 'occupied_reg[2][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-INFO: [Synth 8-4471] merging register 'occupied_reg[1][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-INFO: [Synth 8-4471] merging register 'occupied_reg[0][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-WARNING: [Synth 8-6014] Unused sequential element occupied_reg[21] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-WARNING: [Synth 8-6014] Unused sequential element occupied_reg[20] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-WARNING: [Synth 8-6014] Unused sequential element occupied_reg[19] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-WARNING: [Synth 8-6014] Unused sequential element occupied_reg[18] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-WARNING: [Synth 8-6014] Unused sequential element occupied_reg[17] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-WARNING: [Synth 8-6014] Unused sequential element occupied_reg[16] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-WARNING: [Synth 8-6014] Unused sequential element occupied_reg[15] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-WARNING: [Synth 8-6014] Unused sequential element occupied_reg[14] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-WARNING: [Synth 8-6014] Unused sequential element occupied_reg[13] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-WARNING: [Synth 8-6014] Unused sequential element occupied_reg[12] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-WARNING: [Synth 8-6014] Unused sequential element occupied_reg[11] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-WARNING: [Synth 8-6014] Unused sequential element occupied_reg[10] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-WARNING: [Synth 8-6014] Unused sequential element occupied_reg[9] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-WARNING: [Synth 8-6014] Unused sequential element occupied_reg[8] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-WARNING: [Synth 8-6014] Unused sequential element occupied_reg[7] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-WARNING: [Synth 8-6014] Unused sequential element occupied_reg[6] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-WARNING: [Synth 8-6014] Unused sequential element occupied_reg[5] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-WARNING: [Synth 8-6014] Unused sequential element occupied_reg[4] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-WARNING: [Synth 8-6014] Unused sequential element occupied_reg[3] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-WARNING: [Synth 8-6014] Unused sequential element occupied_reg[2] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-WARNING: [Synth 8-6014] Unused sequential element occupied_reg[1] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
-WARNING: [Synth 8-6014] Unused sequential element occupied_reg[0] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:143]
+INFO: [Synth 8-4471] merging register 'occupied_reg[21][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+INFO: [Synth 8-4471] merging register 'occupied_reg[20][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+INFO: [Synth 8-4471] merging register 'occupied_reg[19][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+INFO: [Synth 8-4471] merging register 'occupied_reg[18][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+INFO: [Synth 8-4471] merging register 'occupied_reg[17][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+INFO: [Synth 8-4471] merging register 'occupied_reg[16][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+INFO: [Synth 8-4471] merging register 'occupied_reg[15][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+INFO: [Synth 8-4471] merging register 'occupied_reg[14][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+INFO: [Synth 8-4471] merging register 'occupied_reg[13][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+INFO: [Synth 8-4471] merging register 'occupied_reg[12][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+INFO: [Synth 8-4471] merging register 'occupied_reg[11][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+INFO: [Synth 8-4471] merging register 'occupied_reg[10][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+INFO: [Synth 8-4471] merging register 'occupied_reg[9][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+INFO: [Synth 8-4471] merging register 'occupied_reg[8][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+INFO: [Synth 8-4471] merging register 'occupied_reg[7][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+INFO: [Synth 8-4471] merging register 'occupied_reg[6][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+INFO: [Synth 8-4471] merging register 'occupied_reg[5][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+INFO: [Synth 8-4471] merging register 'occupied_reg[4][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+INFO: [Synth 8-4471] merging register 'occupied_reg[3][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+INFO: [Synth 8-4471] merging register 'occupied_reg[2][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+INFO: [Synth 8-4471] merging register 'occupied_reg[1][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+INFO: [Synth 8-4471] merging register 'occupied_reg[0][15:0]' into 'occupied_reg[22][15:0]' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+WARNING: [Synth 8-6014] Unused sequential element occupied_reg[21] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+WARNING: [Synth 8-6014] Unused sequential element occupied_reg[20] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+WARNING: [Synth 8-6014] Unused sequential element occupied_reg[19] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+WARNING: [Synth 8-6014] Unused sequential element occupied_reg[18] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+WARNING: [Synth 8-6014] Unused sequential element occupied_reg[17] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+WARNING: [Synth 8-6014] Unused sequential element occupied_reg[16] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+WARNING: [Synth 8-6014] Unused sequential element occupied_reg[15] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+WARNING: [Synth 8-6014] Unused sequential element occupied_reg[14] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+WARNING: [Synth 8-6014] Unused sequential element occupied_reg[13] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+WARNING: [Synth 8-6014] Unused sequential element occupied_reg[12] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+WARNING: [Synth 8-6014] Unused sequential element occupied_reg[11] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+WARNING: [Synth 8-6014] Unused sequential element occupied_reg[10] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+WARNING: [Synth 8-6014] Unused sequential element occupied_reg[9] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+WARNING: [Synth 8-6014] Unused sequential element occupied_reg[8] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+WARNING: [Synth 8-6014] Unused sequential element occupied_reg[7] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+WARNING: [Synth 8-6014] Unused sequential element occupied_reg[6] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+WARNING: [Synth 8-6014] Unused sequential element occupied_reg[5] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+WARNING: [Synth 8-6014] Unused sequential element occupied_reg[4] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+WARNING: [Synth 8-6014] Unused sequential element occupied_reg[3] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+WARNING: [Synth 8-6014] Unused sequential element occupied_reg[2] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+WARNING: [Synth 8-6014] Unused sequential element occupied_reg[1] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
+WARNING: [Synth 8-6014] Unused sequential element occupied_reg[0] was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/main.v:105]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -539,7 +538,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'blk3_reg' [C:/Users/Adminis
 WARNING: [Synth 8-327] inferring latch for variable 'blk4_reg' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/tetrimino.v:47]
 WARNING: [Synth 8-327] inferring latch for variable 'color_reg' [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/block_color.v:32]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 752.977 ; gain = 495.898
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 753.285 ; gain = 496.230
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -554,16 +553,14 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input     32 Bit       Adders := 3     
 	   2 Input     17 Bit       Adders := 1     
-	   2 Input     13 Bit       Adders := 12    
+	   2 Input     13 Bit       Adders := 11    
 	   2 Input      6 Bit       Adders := 1     
 +---Registers : 
 	               40 Bit    Registers := 1     
 	               17 Bit    Registers := 1     
 	               16 Bit    Registers := 4     
-	               13 Bit    Registers := 2     
 	                6 Bit    Registers := 1     
-	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 6     
+	                1 Bit    Registers := 4     
 +---Muxes : 
 	   2 Input     40 Bit        Muxes := 3     
 	  32 Input     32 Bit        Muxes := 1     
@@ -574,7 +571,6 @@ Detailed RTL Component Info :
 	   8 Input     16 Bit        Muxes := 1     
 	   8 Input     13 Bit        Muxes := 1     
 	   4 Input     13 Bit        Muxes := 17    
-	   2 Input     13 Bit        Muxes := 1     
 	  32 Input      6 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 2     
@@ -591,15 +587,9 @@ Start RTL Hierarchical Component Statistics
 Hierarchical RTL Component report 
 Module main 
 Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     13 Bit       Adders := 1     
 +---Registers : 
 	               16 Bit    Registers := 3     
-	               13 Bit    Registers := 2     
-	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 3     
-+---Muxes : 
-	   2 Input     13 Bit        Muxes := 1     
+	                1 Bit    Registers := 1     
 Module T_to_m 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -666,6 +656,7 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-6014] Unused sequential element clock1/NEW_CLK_reg was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/flexi_clock.v:30]
 WARNING: [Synth 8-6014] Unused sequential element clock2/NEW_CLK_reg was removed.  [C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/new/flexi_clock.v:30]
 INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
@@ -800,31 +791,9 @@ WARNING: [Synth 8-3332] Sequential element (oled_data_reg[5]) is unused and will
 WARNING: [Synth 8-3332] Sequential element (oled_data_reg[4]) is unused and will be removed from module main.
 WARNING: [Synth 8-3332] Sequential element (oled_data_reg[1]) is unused and will be removed from module main.
 WARNING: [Synth 8-3332] Sequential element (oled_data_reg[0]) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (dead_reg) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (t_g_col_reg[12]) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (t_g_col_reg[11]) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (t_g_col_reg[10]) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (t_g_col_reg[9]) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (t_g_col_reg[8]) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (t_g_col_reg[7]) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (t_g_col_reg[6]) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (t_g_col_reg[5]) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (t_g_col_reg[4]) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (t_g_col_reg[3]) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (t_g_col_reg[2]) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (t_g_col_reg[1]) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (t_g_col_reg[0]) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (clock1/NEW_CLK_reg) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (fallen_reg) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (t_g_row_reg[12]) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (t_g_row_reg[11]) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (t_g_row_reg[10]) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (t_g_row_reg[9]) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (t_g_row_reg[8]) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (t_g_row_reg[7]) is unused and will be removed from module main.
-INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3332] Sequential element (occupied_reg[22][0]) is unused and will be removed from module main.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 752.977 ; gain = 495.898
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 753.285 ; gain = 496.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -851,13 +820,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 752.977 ; gain = 495.898
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 753.285 ; gain = 496.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 752.977 ; gain = 495.898
+Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 753.285 ; gain = 496.230
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -869,7 +838,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 781.238 ; gain = 524.160
+Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 782.531 ; gain = 525.477
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -893,7 +862,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 781.238 ; gain = 524.160
+Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 782.531 ; gain = 525.477
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -906,7 +875,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 781.238 ; gain = 524.160
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 782.531 ; gain = 525.477
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -918,25 +887,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 781.238 ; gain = 524.160
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 782.531 ; gain = 525.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 781.238 ; gain = 524.160
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 782.531 ; gain = 525.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 781.238 ; gain = 524.160
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 782.531 ; gain = 525.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 781.238 ; gain = 524.160
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 782.531 ; gain = 525.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -979,11 +948,11 @@ Report Instance Areas:
 |5     |  oled_0     |Oled_Display  |   484|
 +------+-------------+--------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 781.238 ; gain = 524.160
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 782.531 ; gain = 525.477
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 140 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 781.238 ; gain = 182.836
-Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 781.238 ; gain = 524.160
+Synthesis finished with 0 errors, 0 critical warnings and 109 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 782.531 ; gain = 183.980
+Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 782.531 ; gain = 525.477
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 85 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -994,11 +963,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   FDE_1 => FDRE (inverted pins: C): 32 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-118 Infos, 232 Warnings, 100 Critical Warnings and 0 Errors encountered.
+117 Infos, 211 Warnings, 100 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 781.238 ; gain = 536.895
+synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 782.531 ; gain = 538.523
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.runs/synth_1/main.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file main_utilization_synth.rpt -pb main_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 781.238 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Thu Nov  2 21:34:17 2023...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 782.531 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  2 21:57:40 2023...
