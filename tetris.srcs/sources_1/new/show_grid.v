@@ -46,7 +46,8 @@ module show_grid (input CLOCK, output reg [15:0] oled_grid,
         else if(g_row % 2 == 0 && g_col % 2 == 0)
             oled_grid <= grey;
             
-        if(g_col <= 2 || g_col >= 13)
+            //tetris grid: row: 1 to 22, col: 3 to 12
+        if(g_col <= 2 || g_col >= 13 || g_row == 0 || g_row == 23)
             oled_grid <= red;
     end  
   

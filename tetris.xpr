@@ -18,6 +18,7 @@
     <Option Name="CompiledLibDirRiviera" Val="$PCACHEDIR/compile_simlib/riviera"/>
     <Option Name="CompiledLibDirActivehdl" Val="$PCACHEDIR/compile_simlib/activehdl"/>
     <Option Name="BoardPart" Val=""/>
+    <Option Name="SourceMgmtMode" Val="DisplayOnly"/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
@@ -151,7 +152,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/yyx_to_grid_coords.v">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/yyx_to_grid_coords.v"/>
           <Attr Name="ImportTime" Val="1698905844"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -161,7 +161,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/display_tetrimino.v">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -169,7 +168,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/block_spawn.v">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/block_spawn.v"/>
           <Attr Name="ImportTime" Val="1698905844"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -179,7 +177,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/currentblock.v">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/currentblock.v"/>
           <Attr Name="ImportTime" Val="1698905844"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -189,7 +186,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/grid_to_pix_coords.v">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/grid_to_pix_coords.v"/>
           <Attr Name="ImportTime" Val="1698905844"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -199,7 +195,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/nextblock.v">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/nextblock.v"/>
           <Attr Name="ImportTime" Val="1698905844"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -209,7 +204,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/rng_block.v">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/rng_block.v"/>
           <Attr Name="ImportTime" Val="1698905844"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -219,7 +213,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/slow_drop.v">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/slow_drop.v"/>
           <Attr Name="ImportTime" Val="1698905844"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -229,7 +222,105 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/get_next_state.v">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/tetris.srcs/sources_1/new/T_to_m.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/T_to_m.v"/>
+          <Attr Name="ImportTime" Val="1698939237"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/tetris.srcs/sim_1/new/sim_tetri.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sim_1/new/sim_tetri.v"/>
+          <Attr Name="ImportTime" Val="1698940533"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/tetris.srcs/sources_1/new/pix_to_vertical_rowcol.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/pix_to_vertical_rowcol.v"/>
+          <Attr Name="ImportTime" Val="1698939252"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/tetris.srcs/sources_1/new/block_color.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/block_color.v"/>
+          <Attr Name="ImportTime" Val="1698939277"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/tetris.srcs/sources_1/new/get_coords.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/get_coords.v"/>
+          <Attr Name="ImportTime" Val="1698939308"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/tetris.srcs/sources_1/new/Oled_Display.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/Oled_Display.v"/>
+          <Attr Name="ImportTime" Val="1698939245"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/tetris.srcs/sources_1/new/show_grid.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/show_grid.v"/>
+          <Attr Name="ImportTime" Val="1698939265"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/tetris.srcs/sources_1/new/flexi_clock.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/flexi_clock.v"/>
+          <Attr Name="ImportTime" Val="1698939151"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/tetris.srcs/sources_1/new/oled_to_grid_coords.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/oled_to_grid_coords.v"/>
+          <Attr Name="ImportTime" Val="1698939258"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/tetris.srcs/sources_1/new/tetrimino.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/tetrimino.v"/>
+          <Attr Name="ImportTime" Val="1698939272"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/tetris.srcs/sources_1/new/main.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/main.v"/>
+          <Attr Name="ImportTime" Val="1698997971"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -238,7 +329,6 @@
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="main"/>
-        <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -264,7 +354,6 @@
       </File>
       <File Path="$PSRCDIR/sim_1/new/sim_block_spawn.v">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -272,7 +361,6 @@
       </File>
       <File Path="$PSRCDIR/sim_1/new/sim_rng.v">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -280,7 +368,6 @@
       </File>
       <File Path="$PSRCDIR/sim_1/new/sim_slow_drop.v">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>

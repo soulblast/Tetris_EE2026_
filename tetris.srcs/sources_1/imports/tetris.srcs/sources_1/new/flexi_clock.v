@@ -19,7 +19,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 //basys clock: 100 MHz means 5ns high, 5ns low, 10ns between each pair of posedges 
-module flexi_clock_D(input CLOCK, input [31:0] Tns, output reg NEW_CLK); 
+module flexi_clock(input CLOCK, input [31:0] Tns, output reg NEW_CLK); 
     wire [31:0] m; 
     T_to_m t_0(Tns, m);
     reg [31:0] COUNT = 0; 
