@@ -21,8 +21,11 @@
 
 
 module main(input CLOCK, 
-            input [15:0] sw, 
-            output [0:7] JC); 
+            input [15:0] sw,
+            input PS2Clk,
+            input PS2Data,
+            output [0:7] JC,
+            output reg [15:0] led); 
    // CLOCK >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
     wire CLK_6p25M;
         flexi_clock clock0 (.CLOCK(CLOCK), .Tns(160), .NEW_CLK(CLK_6p25M));    
@@ -34,7 +37,11 @@ module main(input CLOCK,
      reg [15:0] green = 16'b00000_111111_00000, red = 16'b11111_000000_00000, blue = 16'b00000_000000_11111,
                 black = 16'b00000_000000_00000, cur_colour = 16'b00000_000000_11111, grey = 16'b00100_000100_00100,
                 light_grey = 16'b01000_001000_01000, purple = 16'b00111_000000_00111;
-   
+   //Keyboard Input
+   wire [31:0] key_output;
+   selected_key_press kb(.clk(CLOCK), .PS2Clk(PS2Clk), .PS2Data(PS2Data), .keys(key_output));
+    
+    
     //OLED DISPLAY >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
       reg oled_reset = 0;
        wire [12:0] pix_index;
@@ -71,7 +78,7 @@ module main(input CLOCK,
     show_grid grid_0(.CLOCK(CLOCK), .oled_grid(oled_grid), .pix_index(pix_index));
      
  // RANDOM>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..   
-    reg [31:0] rand = 111111111;   //210463105
+    reg [31:0] rand = 210463105;   //210463105
     reg below_10 = 0;
     reg [31:0] new = 521046310;
 //  //BLOCK>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
@@ -134,6 +141,7 @@ module main(input CLOCK,
    
     reg fallen = 0; 
     reg started = 0;
+    reg reset = 0;
     reg [15:0] occupied [23:0]; //22 x 10 = 220v 
     reg [15:0] n_occupied [23:0]; 
     reg [15:0] colour [0:23][0:15];
@@ -142,8 +150,7 @@ module main(input CLOCK,
     reg [15:0] wall [23:0]; //22 x 10 = 220v  
     reg [8:0] i, j, ni, nj;
     reg [5:0] total_rclears;
-    
-    reg [2315:0] cnt = 0; 
+     
     reg dead = 0;
     reg rotatedCW = 0, rotatedACW = 0;
     reg shiftedL = 0, shiftedR = 0;
@@ -176,7 +183,7 @@ module main(input CLOCK,
             end   //end of outer for loop
             started <= 1;
             //GENERATE RANDOM TETRIMINO>>>>>>>>>>>>>>>>>>>>>>
-            t_block <= 1; 
+            t_block <= 2; 
             pt_block <= t_block;
         end
         
@@ -208,27 +215,31 @@ module main(input CLOCK,
 //                else new <= new / 10;   
       //NEW BLOCK>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
 
-      //  SHIFT LEFT/RIGHT (1.5Hz) >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-        shift_counter <= (shift_counter == 66_666_666) ? 0 : shift_counter+1; 
-        if(sw[0] && shift_counter == 0) begin 
+      //  SHIFT LEFT/RIGHT (3Hz) >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        shift_counter <= (shift_counter == 33_333_333) ? 0 : shift_counter+1; 
+        led[2] <= 0;
+        led[0] <= 0;
+        if(key_output[18] && shift_counter == 0) begin 
             t_col <= (t_col == 3) ? 3 : t_col-1;  
-        end else if(sw[1] && shift_counter == 0) begin 
+            led[2] <= 1;
+        end else if(key_output[16] && shift_counter == 0) begin 
             t_col <= (t_col == 12) ? 12 : t_col+1;
+            led[0] <= 1;
         end 
        //ROTATE CLOCKWISE >>>>>>>>>>>>>>>>>>>>>>....
-        if(sw[3:2] == 2'b01 && !rotatedCW) begin 
+        if(key_output[12] == 2'b01 && !rotatedCW) begin 
             t_rotation <= t_rotation+1;
             rotatedCW <= 1; 
         end
-        if(!sw[2] && rotatedCW) begin
+        if(!key_output[12] && rotatedCW) begin
             rotatedCW <= 0;
         end
         //ROTATE ANTI CLOCKWISE >>>>>>>>>>>>>>>>>>>>>>....
-        if (sw[3:2] == 2'b10 && !rotatedACW) begin 
-            t_rotation <= (t_rotation == 0) ? 4 : t_rotation-1;
+        if (key_output[13] == 2'b10 && !rotatedACW) begin 
+            t_rotation <= (t_rotation == 0) ? 3 : t_rotation-1;
             rotatedACW <= 1; 
         end
-        if (!sw[3]) begin
+        if (!key_output[13] && rotatedACW) begin
             rotatedACW <= 0;
         end
         
@@ -262,7 +273,7 @@ module main(input CLOCK,
                 end
                 
                 1: begin
-                    rand <= 111111111; 
+                    rand <= 210463105; 
                 end
             endcase
             if (rand <= 10) begin
