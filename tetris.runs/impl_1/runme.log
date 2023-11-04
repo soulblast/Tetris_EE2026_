@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log main.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source main.tcl -notrace
+    with args -log score_display.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source score_display.tcl -notrace
 
 
 ****** Vivado v2018.2 (64-bit)
@@ -8,12 +8,13 @@
   **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
     ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 
-source main.tcl -notrace
-Command: link_design -top main -part xc7a35tcpg236-1
+source score_display.tcl -notrace
+Command: link_design -top score_display -part xc7a35tcpg236-1
 Design is defaulting to srcset: sources_1
 Design is defaulting to constrset: constrs_1
-INFO: [Netlist 29-17] Analyzing 21 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 374 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'score_display' is not ideal for floorplanning, since the cellview 'score_display' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-479] Netlist was created with Vivado 2018.2
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -114,77 +115,11 @@ Resolution: If [get_<value>] was used to populate the object, check to make sure
 WARNING: [Vivado 12-584] No ports matched 'sw[15]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:43]
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:43]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:82]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:82]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:83]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:83]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:84]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:84]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:85]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:85]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:86]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:86]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:87]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:87]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:88]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:88]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:89]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:89]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:90]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:90]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:91]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:91]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:92]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:92]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:93]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:93]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:94]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:94]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:95]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:95]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 WARNING: [Vivado 12-584] No ports matched 'dp'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:97]
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:97]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 WARNING: [Vivado 12-584] No ports matched 'dp'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:98]
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:98]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an[0]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:100]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:100]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an[0]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:101]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:101]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an[1]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:102]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:102]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an[1]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:103]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:103]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an[2]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:104]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:104]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an[2]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:105]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:105]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an[3]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:106]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:106]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an[3]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:107]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:107]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 WARNING: [Vivado 12-584] No ports matched 'btnC'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:111]
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:111]
@@ -222,14 +157,32 @@ Resolution: If [get_<value>] was used to populate the object, check to make sure
 WARNING: [Vivado 12-584] No ports matched 'RsTx'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:270]
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:270]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PS2Clk'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:274]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:274]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PS2Clk'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:275]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:275]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PS2Clk'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:276]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:276]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PS2Data'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:277]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:277]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PS2Data'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:278]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:278]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PS2Data'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:279]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:279]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc]
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-7 Infos, 68 Warnings, 68 Critical Warnings and 0 Errors encountered.
+7 Infos, 53 Warnings, 52 Critical Warnings and 0 Errors encountered.
 link_design completed successfully
-link_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 567.023 ; gain = 318.562
+link_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 572.430 ; gain = 323.477
 Command: opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
@@ -240,90 +193,90 @@ INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Project 1-461] DRC finished with 0 Errors
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.656 . Memory (MB): peak = 581.266 ; gain = 14.242
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.879 . Memory (MB): peak = 580.508 ; gain = 8.078
 
 Starting Cache Timing Information Task
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-Ending Cache Timing Information Task | Checksum: 119aa920e
+Ending Cache Timing Information Task | Checksum: c5915708
 
-Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 1135.805 ; gain = 554.539
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1138.637 ; gain = 558.129
 
 Starting Logic Optimization Task
 
 Phase 1 Retarget
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Opt 31-49] Retargeted 0 cell(s).
-Phase 1 Retarget | Checksum: 119aa920e
+Phase 1 Retarget | Checksum: c5915708
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 1135.805 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.246 . Memory (MB): peak = 1138.637 ; gain = 0.000
 INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
 
 Phase 2 Constant propagation
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Phase 2 Constant propagation | Checksum: 119aa920e
+Phase 2 Constant propagation | Checksum: 194a614b4
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.049 . Memory (MB): peak = 1135.805 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.348 . Memory (MB): peak = 1138.637 ; gain = 0.000
 INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
 
 Phase 3 Sweep
-Phase 3 Sweep | Checksum: 14feb4587
+Phase 3 Sweep | Checksum: 1402ea0e2
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.081 . Memory (MB): peak = 1135.805 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.446 . Memory (MB): peak = 1138.637 ; gain = 0.000
 INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
 
 Phase 4 BUFG optimization
-Phase 4 BUFG optimization | Checksum: 14feb4587
+Phase 4 BUFG optimization | Checksum: 1402ea0e2
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.094 . Memory (MB): peak = 1135.805 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.620 . Memory (MB): peak = 1138.637 ; gain = 0.000
 INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
 
 Phase 5 Shift Register Optimization
-Phase 5 Shift Register Optimization | Checksum: 1e5282344
+Phase 5 Shift Register Optimization | Checksum: 4a67a037
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.117 . Memory (MB): peak = 1135.805 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.878 . Memory (MB): peak = 1138.637 ; gain = 0.000
 INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
 
 Phase 6 Post Processing Netlist
-Phase 6 Post Processing Netlist | Checksum: 1e5282344
+Phase 6 Post Processing Netlist | Checksum: 4a67a037
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.120 . Memory (MB): peak = 1135.805 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.893 . Memory (MB): peak = 1138.637 ; gain = 0.000
 INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
 
 Starting Connectivity Check Task
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1135.805 ; gain = 0.000
-Ending Logic Optimization Task | Checksum: 1e5282344
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1138.637 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 4a67a037
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.126 . Memory (MB): peak = 1135.805 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.912 . Memory (MB): peak = 1138.637 ; gain = 0.000
 
 Starting Power Optimization Task
 INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
-Ending Power Optimization Task | Checksum: 1e5282344
+Ending Power Optimization Task | Checksum: 4a67a037
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1135.805 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1138.637 ; gain = 0.000
 
 Starting Final Cleanup Task
-Ending Final Cleanup Task | Checksum: 1e5282344
+Ending Final Cleanup Task | Checksum: 4a67a037
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1135.805 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1138.637 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
-23 Infos, 68 Warnings, 68 Critical Warnings and 0 Errors encountered.
+23 Infos, 53 Warnings, 52 Critical Warnings and 0 Errors encountered.
 opt_design completed successfully
-opt_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 1135.805 ; gain = 568.781
+opt_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1138.637 ; gain = 566.207
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 1135.805 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/EE2026 lab/Project/Tetris_EE2026_/tetris.runs/impl_1/main_opt.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_drc -file main_drc_opted.rpt -pb main_drc_opted.pb -rpx main_drc_opted.rpx
-Command: report_drc -file main_drc_opted.rpt -pb main_drc_opted.pb -rpx main_drc_opted.rpx
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.054 . Memory (MB): peak = 1138.637 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/EE2026 lab/Project/Tetris_EE2026_/tetris.runs/impl_1/score_display_opt.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file score_display_drc_opted.rpt -pb score_display_drc_opted.pb -rpx score_display_drc_opted.rpx
+Command: report_drc -file score_display_drc_opted.rpt -pb score_display_drc_opted.pb -rpx score_display_drc_opted.rpx
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
 INFO: [DRC 23-27] Running DRC with 2 threads
-INFO: [Coretcl 2-168] The results of DRC are in file C:/EE2026 lab/Project/Tetris_EE2026_/tetris.runs/impl_1/main_drc_opted.rpt.
+INFO: [Coretcl 2-168] The results of DRC are in file C:/EE2026 lab/Project/Tetris_EE2026_/tetris.runs/impl_1/score_display_drc_opted.rpt.
 report_drc completed successfully
 Command: place_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
@@ -342,43 +295,43 @@ INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 
 Phase 1 Placer Initialization
 
 Phase 1.1 Placer Initialization Netlist Sorting
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1135.805 ; gain = 0.000
-Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 10804afe0
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1138.637 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 132d8ba9
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1135.805 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1135.805 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1138.637 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1138.637 ; gain = 0.000
 
 Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 126ef2a01
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 125fe8a6d
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1136.723 ; gain = 0.918
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1144.074 ; gain = 5.438
 
 Phase 1.3 Build Placer Netlist Model
-Phase 1.3 Build Placer Netlist Model | Checksum: 1f0dad139
+Phase 1.3 Build Placer Netlist Model | Checksum: 16489d717
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1136.723 ; gain = 0.918
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1148.191 ; gain = 9.555
 
 Phase 1.4 Constrain Clocks/Macros
-Phase 1.4 Constrain Clocks/Macros | Checksum: 1f0dad139
+Phase 1.4 Constrain Clocks/Macros | Checksum: 16489d717
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1136.723 ; gain = 0.918
-Phase 1 Placer Initialization | Checksum: 1f0dad139
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1148.191 ; gain = 9.555
+Phase 1 Placer Initialization | Checksum: 16489d717
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1136.723 ; gain = 0.918
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1148.191 ; gain = 9.555
 
 Phase 2 Global Placement
 
 Phase 2.1 Floorplanning
-Phase 2.1 Floorplanning | Checksum: 1d58cfa1a
+Phase 2.1 Floorplanning | Checksum: 1a35d4b99
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1136.723 ; gain = 0.918
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1148.191 ; gain = 9.555
 
 Phase 2.2 Physical Synthesis In Placer
 INFO: [Physopt 32-65] No nets found for high-fanout optimization.
 INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1136.723 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1148.191 ; gain = 0.000
 
 Summary of Physical Synthesis Optimizations
 ============================================
@@ -392,52 +345,67 @@ Summary of Physical Synthesis Optimizations
 -----------------------------------------------------------------------------------------------------------------------------
 
 
-Phase 2.2 Physical Synthesis In Placer | Checksum: 181576a62
+Phase 2.2 Physical Synthesis In Placer | Checksum: 15b120908
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1136.723 ; gain = 0.918
-Phase 2 Global Placement | Checksum: 1778c2361
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1148.191 ; gain = 9.555
+Phase 2 Global Placement | Checksum: 1a34de33b
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1136.723 ; gain = 0.918
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1148.191 ; gain = 9.555
 
 Phase 3 Detail Placement
 
 Phase 3.1 Commit Multi Column Macros
-Phase 3.1 Commit Multi Column Macros | Checksum: 1778c2361
+Phase 3.1 Commit Multi Column Macros | Checksum: 1a34de33b
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1136.723 ; gain = 0.918
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1148.191 ; gain = 9.555
 
 Phase 3.2 Commit Most Macros & LUTRAMs
-Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 22e1c140b
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 11ac0d5bf
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1136.723 ; gain = 0.918
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1148.191 ; gain = 9.555
 
 Phase 3.3 Area Swap Optimization
-Phase 3.3 Area Swap Optimization | Checksum: 215a889fb
+Phase 3.3 Area Swap Optimization | Checksum: 1858265a2
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1136.723 ; gain = 0.918
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1148.191 ; gain = 9.555
 
 Phase 3.4 Pipeline Register Optimization
-Phase 3.4 Pipeline Register Optimization | Checksum: 215a889fb
+Phase 3.4 Pipeline Register Optimization | Checksum: 1858265a2
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1136.723 ; gain = 0.918
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1148.191 ; gain = 9.555
 
-Phase 3.5 Small Shape Detail Placement
-Phase 3.5 Small Shape Detail Placement | Checksum: 273d82d36
+Phase 3.5 Timing Path Optimizer
+Phase 3.5 Timing Path Optimizer | Checksum: 1858265a2
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1136.723 ; gain = 0.918
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1148.191 ; gain = 9.555
 
-Phase 3.6 Re-assign LUT pins
-Phase 3.6 Re-assign LUT pins | Checksum: 18bb0e13d
+Phase 3.6 Fast Optimization
+Phase 3.6 Fast Optimization | Checksum: 17296c2e2
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1136.723 ; gain = 0.918
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 1148.191 ; gain = 9.555
 
-Phase 3.7 Pipeline Register Optimization
-Phase 3.7 Pipeline Register Optimization | Checksum: 18bb0e13d
+Phase 3.7 Small Shape Detail Placement
+Phase 3.7 Small Shape Detail Placement | Checksum: 15bc65eba
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1136.723 ; gain = 0.918
-Phase 3 Detail Placement | Checksum: 18bb0e13d
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 1148.191 ; gain = 9.555
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1136.723 ; gain = 0.918
+Phase 3.8 Re-assign LUT pins
+Phase 3.8 Re-assign LUT pins | Checksum: 13164065a
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 1148.191 ; gain = 9.555
+
+Phase 3.9 Pipeline Register Optimization
+Phase 3.9 Pipeline Register Optimization | Checksum: 13164065a
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 1148.191 ; gain = 9.555
+
+Phase 3.10 Fast Optimization
+Phase 3.10 Fast Optimization | Checksum: 13164065a
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 1148.191 ; gain = 9.555
+Phase 3 Detail Placement | Checksum: 13164065a
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 1148.191 ; gain = 9.555
 
 Phase 4 Post Placement Optimization and Clean-Up
 
@@ -445,57 +413,58 @@ Phase 4.1 Post Commit Optimization
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 
 Phase 4.1.1 Post Placement Optimization
-Post Placement Optimization Initialization | Checksum: 160ffff99
+Post Placement Optimization Initialization | Checksum: 1a0a01b46
 
 Phase 4.1.1.1 BUFG Insertion
 INFO: [Place 46-31] BUFG insertion identified 0 candidate nets, 0 success, 0 skipped for placement/routing, 0 skipped for timing, 0 skipped for netlist change reason.
-Phase 4.1.1.1 BUFG Insertion | Checksum: 160ffff99
+Phase 4.1.1.1 BUFG Insertion | Checksum: 1a0a01b46
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1157.918 ; gain = 22.113
-INFO: [Place 30-746] Post Placement Timing Summary WNS=5.570. For the most accurate timing information please run report_timing.
-Phase 4.1.1 Post Placement Optimization | Checksum: 11c36a166
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:26 . Memory (MB): peak = 1177.488 ; gain = 38.852
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-14.788. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 18376feb8
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1157.918 ; gain = 22.113
-Phase 4.1 Post Commit Optimization | Checksum: 11c36a166
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:44 . Memory (MB): peak = 1177.488 ; gain = 38.852
+Phase 4.1 Post Commit Optimization | Checksum: 18376feb8
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1157.918 ; gain = 22.113
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:44 . Memory (MB): peak = 1177.488 ; gain = 38.852
 
 Phase 4.2 Post Placement Cleanup
-Phase 4.2 Post Placement Cleanup | Checksum: 11c36a166
+Phase 4.2 Post Placement Cleanup | Checksum: 18376feb8
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1157.918 ; gain = 22.113
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:44 . Memory (MB): peak = 1177.488 ; gain = 38.852
 
 Phase 4.3 Placer Reporting
-Phase 4.3 Placer Reporting | Checksum: 11c36a166
+Phase 4.3 Placer Reporting | Checksum: 18376feb8
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1157.918 ; gain = 22.113
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:44 . Memory (MB): peak = 1177.488 ; gain = 38.852
 
 Phase 4.4 Final Placement Cleanup
-Phase 4.4 Final Placement Cleanup | Checksum: ba47518d
+Phase 4.4 Final Placement Cleanup | Checksum: cccb9cb0
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1157.918 ; gain = 22.113
-Phase 4 Post Placement Optimization and Clean-Up | Checksum: ba47518d
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:44 . Memory (MB): peak = 1177.488 ; gain = 38.852
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: cccb9cb0
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1157.918 ; gain = 22.113
-Ending Placer Task | Checksum: 3c79277e
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:44 . Memory (MB): peak = 1177.488 ; gain = 38.852
+Ending Placer Task | Checksum: c2628cf7
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1157.918 ; gain = 22.113
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:44 . Memory (MB): peak = 1177.488 ; gain = 38.852
 INFO: [Common 17-83] Releasing license: Implementation
-47 Infos, 68 Warnings, 68 Critical Warnings and 0 Errors encountered.
+47 Infos, 53 Warnings, 52 Critical Warnings and 0 Errors encountered.
 place_design completed successfully
+place_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:45 . Memory (MB): peak = 1177.488 ; gain = 38.852
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 1162.531 ; gain = 4.578
-INFO: [Common 17-1381] The checkpoint 'C:/EE2026 lab/Project/Tetris_EE2026_/tetris.runs/impl_1/main_placed.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_io -file main_io_placed.rpt
-report_io: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.040 . Memory (MB): peak = 1165.570 ; gain = 0.000
-INFO: [runtcl-4] Executing : report_utilization -file main_utilization_placed.rpt -pb main_utilization_placed.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 1165.570 ; gain = 0.000
-INFO: [runtcl-4] Executing : report_control_sets -verbose -file main_control_sets_placed.rpt
-report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1165.570 ; gain = 0.000
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.408 . Memory (MB): peak = 1185.113 ; gain = 7.625
+INFO: [Common 17-1381] The checkpoint 'C:/EE2026 lab/Project/Tetris_EE2026_/tetris.runs/impl_1/score_display_placed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_io -file score_display_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.057 . Memory (MB): peak = 1185.113 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_utilization -file score_display_utilization_placed.rpt -pb score_display_utilization_placed.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 1185.113 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file score_display_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1185.113 ; gain = 0.000
 Command: route_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
@@ -507,98 +476,152 @@ INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more in
 
 Starting Routing Task
 INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
-Checksum: PlaceDB: d874f11 ConstDB: 0 ShapeSum: 2ef1d86d RouteDB: 0
+Checksum: PlaceDB: 9bae814f ConstDB: 0 ShapeSum: 26b40ba8 RouteDB: 0
 
 Phase 1 Build RT Design
-Phase 1 Build RT Design | Checksum: 14b5e87d1
+Phase 1 Build RT Design | Checksum: ecb3e990
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:18 . Memory (MB): peak = 1260.832 ; gain = 95.262
-Post Restoration Checksum: NetGraph: 67f463b8 NumContArr: e36a2419 Constraints: 0 Timing: 0
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:29 . Memory (MB): peak = 1279.781 ; gain = 94.668
+Post Restoration Checksum: NetGraph: bd80bb71 NumContArr: 2f332e1f Constraints: 0 Timing: 0
 
 Phase 2 Router Initialization
 
 Phase 2.1 Create Timer
-Phase 2.1 Create Timer | Checksum: 14b5e87d1
+Phase 2.1 Create Timer | Checksum: ecb3e990
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:18 . Memory (MB): peak = 1260.832 ; gain = 95.262
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:29 . Memory (MB): peak = 1279.805 ; gain = 94.691
 
 Phase 2.2 Fix Topology Constraints
-Phase 2.2 Fix Topology Constraints | Checksum: 14b5e87d1
+Phase 2.2 Fix Topology Constraints | Checksum: ecb3e990
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:18 . Memory (MB): peak = 1266.840 ; gain = 101.270
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:29 . Memory (MB): peak = 1285.770 ; gain = 100.656
 
 Phase 2.3 Pre Route Cleanup
-Phase 2.3 Pre Route Cleanup | Checksum: 14b5e87d1
+Phase 2.3 Pre Route Cleanup | Checksum: ecb3e990
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:18 . Memory (MB): peak = 1266.840 ; gain = 101.270
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:29 . Memory (MB): peak = 1285.770 ; gain = 100.656
  Number of Nodes with overlaps = 0
 
 Phase 2.4 Update Timing
-Phase 2.4 Update Timing | Checksum: 153090510
+Phase 2.4 Update Timing | Checksum: 15935b680
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1272.773 ; gain = 107.203
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.604  | TNS=0.000  | WHS=0.008  | THS=0.000  |
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:30 . Memory (MB): peak = 1292.664 ; gain = 107.551
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-14.294| TNS=-305.002| WHS=-0.068 | THS=-0.104 |
 
-Phase 2 Router Initialization | Checksum: 171452d26
+Phase 2 Router Initialization | Checksum: 93a56b11
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1272.773 ; gain = 107.203
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:30 . Memory (MB): peak = 1294.137 ; gain = 109.023
 
 Phase 3 Initial Routing
-Phase 3 Initial Routing | Checksum: 1311a7760
+Phase 3 Initial Routing | Checksum: 236cf6f65
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1272.773 ; gain = 107.203
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:32 . Memory (MB): peak = 1294.512 ; gain = 109.398
 
 Phase 4 Rip-up And Reroute
 
 Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 1405
+ Number of Nodes with overlaps = 535
+ Number of Nodes with overlaps = 246
+ Number of Nodes with overlaps = 139
+ Number of Nodes with overlaps = 70
+ Number of Nodes with overlaps = 45
+ Number of Nodes with overlaps = 12
  Number of Nodes with overlaps = 21
+ Number of Nodes with overlaps = 7
+ Number of Nodes with overlaps = 10
+ Number of Nodes with overlaps = 7
  Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.316  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-16.358| TNS=-349.327| WHS=N/A    | THS=N/A    |
 
-Phase 4.1 Global Iteration 0 | Checksum: 19fec80df
+Phase 4.1 Global Iteration 0 | Checksum: 12e7897e4
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1272.773 ; gain = 107.203
-Phase 4 Rip-up And Reroute | Checksum: 19fec80df
+Time (s): cpu = 00:01:02 ; elapsed = 00:00:51 . Memory (MB): peak = 1296.590 ; gain = 111.477
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1272.773 ; gain = 107.203
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 622
+ Number of Nodes with overlaps = 457
+ Number of Nodes with overlaps = 282
+ Number of Nodes with overlaps = 169
+ Number of Nodes with overlaps = 93
+ Number of Nodes with overlaps = 41
+ Number of Nodes with overlaps = 9
+ Number of Nodes with overlaps = 6
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-16.111| TNS=-347.287| WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 1732faf02
+
+Time (s): cpu = 00:01:29 ; elapsed = 00:01:07 . Memory (MB): peak = 1298.637 ; gain = 113.523
+
+Phase 4.3 Global Iteration 2
+ Number of Nodes with overlaps = 852
+ Number of Nodes with overlaps = 422
+ Number of Nodes with overlaps = 251
+ Number of Nodes with overlaps = 127
+ Number of Nodes with overlaps = 102
+ Number of Nodes with overlaps = 45
+ Number of Nodes with overlaps = 21
+ Number of Nodes with overlaps = 23
+ Number of Nodes with overlaps = 9
+ Number of Nodes with overlaps = 12
+ Number of Nodes with overlaps = 6
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-16.043| TNS=-347.321| WHS=N/A    | THS=N/A    |
+
+Phase 4.3 Global Iteration 2 | Checksum: 102e70683
+
+Time (s): cpu = 00:02:03 ; elapsed = 00:01:30 . Memory (MB): peak = 1300.461 ; gain = 115.348
+Phase 4 Rip-up And Reroute | Checksum: 102e70683
+
+Time (s): cpu = 00:02:03 ; elapsed = 00:01:30 . Memory (MB): peak = 1300.461 ; gain = 115.348
 
 Phase 5 Delay and Skew Optimization
 
 Phase 5.1 Delay CleanUp
-Phase 5.1 Delay CleanUp | Checksum: 19fec80df
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1272.773 ; gain = 107.203
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 153d6f2b8
+
+Time (s): cpu = 00:02:03 ; elapsed = 00:01:31 . Memory (MB): peak = 1300.461 ; gain = 115.348
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-15.963| TNS=-345.641| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+Phase 5.1 Delay CleanUp | Checksum: 1a683c4a5
+
+Time (s): cpu = 00:02:03 ; elapsed = 00:01:31 . Memory (MB): peak = 1301.465 ; gain = 116.352
 
 Phase 5.2 Clock Skew Optimization
-Phase 5.2 Clock Skew Optimization | Checksum: 19fec80df
+Phase 5.2 Clock Skew Optimization | Checksum: 1a683c4a5
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1272.773 ; gain = 107.203
-Phase 5 Delay and Skew Optimization | Checksum: 19fec80df
+Time (s): cpu = 00:02:03 ; elapsed = 00:01:31 . Memory (MB): peak = 1301.465 ; gain = 116.352
+Phase 5 Delay and Skew Optimization | Checksum: 1a683c4a5
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1272.773 ; gain = 107.203
+Time (s): cpu = 00:02:03 ; elapsed = 00:01:31 . Memory (MB): peak = 1301.465 ; gain = 116.352
 
 Phase 6 Post Hold Fix
 
 Phase 6.1 Hold Fix Iter
 
 Phase 6.1.1 Update Timing
-Phase 6.1.1 Update Timing | Checksum: 164f6384a
+Phase 6.1.1 Update Timing | Checksum: 1cc23c0f4
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1272.773 ; gain = 107.203
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.409  | TNS=0.000  | WHS=0.442  | THS=0.000  |
+Time (s): cpu = 00:02:03 ; elapsed = 00:01:31 . Memory (MB): peak = 1301.465 ; gain = 116.352
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-15.903| TNS=-339.348| WHS=0.275  | THS=0.000  |
 
-Phase 6.1 Hold Fix Iter | Checksum: 164f6384a
+Phase 6.1 Hold Fix Iter | Checksum: 1cc23c0f4
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1272.773 ; gain = 107.203
-Phase 6 Post Hold Fix | Checksum: 164f6384a
+Time (s): cpu = 00:02:03 ; elapsed = 00:01:31 . Memory (MB): peak = 1301.465 ; gain = 116.352
+Phase 6 Post Hold Fix | Checksum: 1cc23c0f4
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1272.773 ; gain = 107.203
+Time (s): cpu = 00:02:03 ; elapsed = 00:01:31 . Memory (MB): peak = 1301.465 ; gain = 116.352
 
 Phase 7 Route finalize
 
 Router Utilization Summary
-  Global Vertical Routing Utilization    = 0.0946345 %
-  Global Horizontal Routing Utilization  = 0.0711869 %
+  Global Vertical Routing Utilization    = 1.22204 %
+  Global Horizontal Routing Utilization  = 1.61036 %
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
@@ -607,76 +630,104 @@ Router Utilization Summary
   Number of Partially Routed Nets     = 0
   Number of Node Overlaps             = 0
 
-Phase 7 Route finalize | Checksum: 13360a180
+Congestion Report
+North Dir 1x1 Area, Max Cong = 72.0721%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 47.7477%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 73.5294%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 79.4118%, No Congested Regions.
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1272.773 ; gain = 107.203
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+
+Phase 7 Route finalize | Checksum: 1cbee95a3
+
+Time (s): cpu = 00:02:03 ; elapsed = 00:01:31 . Memory (MB): peak = 1301.465 ; gain = 116.352
 
 Phase 8 Verifying routed nets
 
  Verification completed successfully
-Phase 8 Verifying routed nets | Checksum: 13360a180
+Phase 8 Verifying routed nets | Checksum: 1cbee95a3
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1272.773 ; gain = 107.203
+Time (s): cpu = 00:02:04 ; elapsed = 00:01:31 . Memory (MB): peak = 1301.465 ; gain = 116.352
 
 Phase 9 Depositing Routes
-Phase 9 Depositing Routes | Checksum: 696e48bf
+Phase 9 Depositing Routes | Checksum: 22e5d59e8
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1272.773 ; gain = 107.203
+Time (s): cpu = 00:02:04 ; elapsed = 00:01:32 . Memory (MB): peak = 1301.465 ; gain = 116.352
 
 Phase 10 Post Router Timing
-INFO: [Route 35-57] Estimated Timing Summary | WNS=5.409  | TNS=0.000  | WHS=0.442  | THS=0.000  |
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-15.903| TNS=-339.348| WHS=0.275  | THS=0.000  |
 
-INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
-Phase 10 Post Router Timing | Checksum: 696e48bf
+WARNING: [Route 35-328] Router estimated timing not met.
+Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
+Phase 10 Post Router Timing | Checksum: 22e5d59e8
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1272.773 ; gain = 107.203
+Time (s): cpu = 00:02:04 ; elapsed = 00:01:32 . Memory (MB): peak = 1301.465 ; gain = 116.352
 INFO: [Route 35-16] Router Completed Successfully
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1272.773 ; gain = 107.203
+Time (s): cpu = 00:02:04 ; elapsed = 00:01:32 . Memory (MB): peak = 1301.465 ; gain = 116.352
 
 Routing Is Done.
 INFO: [Common 17-83] Releasing license: Implementation
-64 Infos, 68 Warnings, 68 Critical Warnings and 0 Errors encountered.
+66 Infos, 54 Warnings, 52 Critical Warnings and 0 Errors encountered.
 route_design completed successfully
-route_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1272.773 ; gain = 107.203
+route_design: Time (s): cpu = 00:02:06 ; elapsed = 00:01:33 . Memory (MB): peak = 1301.465 ; gain = 116.352
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.092 . Memory (MB): peak = 1272.773 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/EE2026 lab/Project/Tetris_EE2026_/tetris.runs/impl_1/main_routed.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_drc -file main_drc_routed.rpt -pb main_drc_routed.pb -rpx main_drc_routed.rpx
-Command: report_drc -file main_drc_routed.rpt -pb main_drc_routed.pb -rpx main_drc_routed.rpx
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.509 . Memory (MB): peak = 1301.465 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/EE2026 lab/Project/Tetris_EE2026_/tetris.runs/impl_1/score_display_routed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file score_display_drc_routed.rpt -pb score_display_drc_routed.pb -rpx score_display_drc_routed.rpx
+Command: report_drc -file score_display_drc_routed.rpt -pb score_display_drc_routed.pb -rpx score_display_drc_routed.rpx
 INFO: [DRC 23-27] Running DRC with 2 threads
-INFO: [Coretcl 2-168] The results of DRC are in file C:/EE2026 lab/Project/Tetris_EE2026_/tetris.runs/impl_1/main_drc_routed.rpt.
+INFO: [Coretcl 2-168] The results of DRC are in file C:/EE2026 lab/Project/Tetris_EE2026_/tetris.runs/impl_1/score_display_drc_routed.rpt.
 report_drc completed successfully
-INFO: [runtcl-4] Executing : report_methodology -file main_methodology_drc_routed.rpt -pb main_methodology_drc_routed.pb -rpx main_methodology_drc_routed.rpx
-Command: report_methodology -file main_methodology_drc_routed.rpt -pb main_methodology_drc_routed.pb -rpx main_methodology_drc_routed.rpx
+INFO: [runtcl-4] Executing : report_methodology -file score_display_methodology_drc_routed.rpt -pb score_display_methodology_drc_routed.pb -rpx score_display_methodology_drc_routed.rpx
+Command: report_methodology -file score_display_methodology_drc_routed.rpt -pb score_display_methodology_drc_routed.pb -rpx score_display_methodology_drc_routed.rpx
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [DRC 23-133] Running Methodology with 2 threads
-INFO: [Coretcl 2-1520] The results of Report Methodology are in file C:/EE2026 lab/Project/Tetris_EE2026_/tetris.runs/impl_1/main_methodology_drc_routed.rpt.
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file C:/EE2026 lab/Project/Tetris_EE2026_/tetris.runs/impl_1/score_display_methodology_drc_routed.rpt.
 report_methodology completed successfully
-INFO: [runtcl-4] Executing : report_power -file main_power_routed.rpt -pb main_power_summary_routed.pb -rpx main_power_routed.rpx
-Command: report_power -file main_power_routed.rpt -pb main_power_summary_routed.pb -rpx main_power_routed.rpx
+INFO: [runtcl-4] Executing : report_power -file score_display_power_routed.rpt -pb score_display_power_summary_routed.pb -rpx score_display_power_routed.rpx
+Command: report_power -file score_display_power_routed.rpt -pb score_display_power_summary_routed.pb -rpx score_display_power_routed.rpx
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 Running Vector-less Activity Propagation...
 
 Finished Running Vector-less Activity Propagation
-76 Infos, 68 Warnings, 68 Critical Warnings and 0 Errors encountered.
+78 Infos, 54 Warnings, 52 Critical Warnings and 0 Errors encountered.
 report_power completed successfully
-INFO: [runtcl-4] Executing : report_route_status -file main_route_status.rpt -pb main_route_status.pb
-INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file main_timing_summary_routed.rpt -pb main_timing_summary_routed.pb -rpx main_timing_summary_routed.rpx -warn_on_violation 
+INFO: [runtcl-4] Executing : report_route_status -file score_display_route_status.rpt -pb score_display_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file score_display_timing_summary_routed.rpt -pb score_display_timing_summary_routed.pb -rpx score_display_timing_summary_routed.rpx -warn_on_violation 
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max, Timing Stage: Requireds.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
-INFO: [runtcl-4] Executing : report_incremental_reuse -file main_incremental_reuse_routed.rpt
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+INFO: [runtcl-4] Executing : report_incremental_reuse -file score_display_incremental_reuse_routed.rpt
 INFO: [Vivado_Tcl 4-545] No incremental reuse to report, no incremental placement and routing data was found.
-INFO: [runtcl-4] Executing : report_clock_utilization -file main_clock_utilization_routed.rpt
-INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file main_bus_skew_routed.rpt -pb main_bus_skew_routed.pb -rpx main_bus_skew_routed.rpx
+INFO: [runtcl-4] Executing : report_clock_utilization -file score_display_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file score_display_bus_skew_routed.rpt -pb score_display_bus_skew_routed.pb -rpx score_display_bus_skew_routed.rpx
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max, Timing Stage: Requireds.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
-Command: write_bitstream -force main.bit
+Command: write_bitstream -force score_display.bit
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
 Running DRC as a precondition to command write_bitstream
@@ -699,13 +750,13 @@ Loading route data...
 Processing options...
 Creating bitmap...
 Creating bitstream...
-Writing bitstream ./main.bit...
+Writing bitstream ./score_display.bit...
 INFO: [Vivado 12-1842] Bitgen Completed Successfully.
 INFO: [Project 1-120] WebTalk data collection is mandatory when using a WebPACK part without a full Vivado license. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
 Access is denied.
 Access is denied.
 INFO: [Common 17-83] Releasing license: Implementation
-94 Infos, 69 Warnings, 68 Critical Warnings and 0 Errors encountered.
+96 Infos, 55 Warnings, 53 Critical Warnings and 0 Errors encountered.
 write_bitstream completed successfully
-write_bitstream: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1710.465 ; gain = 405.727
-INFO: [Common 17-206] Exiting Vivado at Tue Oct 31 13:02:50 2023...
+write_bitstream: Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1723.305 ; gain = 395.391
+INFO: [Common 17-206] Exiting Vivado at Sat Nov  4 19:09:24 2023...

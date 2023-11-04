@@ -12,7 +12,7 @@ module main(
     //Instantiate selected key_press
     selected_key_press u1(.clk(CLOCK), .PS2Clk(PS2Clk), .PS2Data(PS2Data), .keys(key_output));
     
-    assign led = key_output[15:0];
+    assign led[3:0] = key_output[19:16];
     /*
     wire [15:0] receive_keycode;
     //Instantiate keyboard module.

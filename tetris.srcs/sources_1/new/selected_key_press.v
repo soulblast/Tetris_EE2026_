@@ -143,6 +143,13 @@ module selected_key_press(
             else if(receive_keycode[7:0] == 8'h23) begin //D key
                 keys[18] <= 1;
             end
+            
+            if (receive_keycode == 16'hf01d) begin
+                keys[19] <= 0;
+            end
+            else if(receive_keycode[7:0] == 8'h1d)begin
+                keys[19] <= 1;
+            end 
         end
     
 endmodule

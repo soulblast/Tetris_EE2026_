@@ -1,18 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1698728466">
-  <File Type="PA-TCL" Name="main.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="main_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="main_reports.tcl"/>
-  <File Type="RDS-RDS" Name="main.vds"/>
-  <File Type="RDS-UTIL" Name="main_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="main_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="main.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="main_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="main_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1699095907">
+  <File Type="PA-TCL" Name="score_display.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="score_display_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="score_display_reports.tcl"/>
+  <File Type="RDS-RDS" Name="score_display.vds"/>
+  <File Type="RDS-UTIL" Name="score_display_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="score_display_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="score_display.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="score_display_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="score_display_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/seven_segment_encoder.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/var_clk.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/score_display.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/Keyboard_Receiver.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -20,6 +42,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/debouncer.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -27,6 +50,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/keyboard_out.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -34,6 +58,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/selected_key_press.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -41,6 +66,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/main.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -102,17 +128,9 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/var_clk.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="main"/>
+      <Option Name="TopModule" Val="score_display"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

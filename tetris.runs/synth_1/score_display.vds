@@ -1,0 +1,516 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Sat Nov  4 19:05:09 2023
+# Process ID: 44492
+# Current directory: C:/EE2026 lab/Project/Tetris_EE2026_/tetris.runs/synth_1
+# Command line: vivado.exe -log score_display.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source score_display.tcl
+# Log file: C:/EE2026 lab/Project/Tetris_EE2026_/tetris.runs/synth_1/score_display.vds
+# Journal file: C:/EE2026 lab/Project/Tetris_EE2026_/tetris.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source score_display.tcl -notrace
+Command: synth_design -top score_display -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 45948 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 355.809 ; gain = 99.340
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'score_display' [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/new/score_display.v:4]
+	Parameter single bound to: 10 - type: integer 
+	Parameter double bound to: 25 - type: integer 
+	Parameter triple bound to: 45 - type: integer 
+	Parameter tetris bound to: 90 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'var_clk' [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/new/var_clk.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'var_clk' (1#1) [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/new/var_clk.v:4]
+INFO: [Synth 8-6157] synthesizing module 'seven_segment_encoder' [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/new/seven_segment_encoder.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'seven_segment_encoder' (2#1) [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/new/seven_segment_encoder.v:4]
+WARNING: [Synth 8-689] width (32) of port connection 'digit' does not match port width (4) of module 'seven_segment_encoder' [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/new/score_display.v:78]
+WARNING: [Synth 8-689] width (32) of port connection 'digit' does not match port width (4) of module 'seven_segment_encoder' [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/new/score_display.v:79]
+WARNING: [Synth 8-689] width (32) of port connection 'digit' does not match port width (4) of module 'seven_segment_encoder' [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/new/score_display.v:80]
+WARNING: [Synth 8-689] width (32) of port connection 'digit' does not match port width (4) of module 'seven_segment_encoder' [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/new/score_display.v:81]
+WARNING: [Synth 8-3848] Net led in module/entity score_display does not have driver. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/new/score_display.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'score_display' (3#1) [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/new/score_display.v:4]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[15]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[14]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[13]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[12]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[11]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[10]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[9]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[8]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[7]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[6]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[5]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[4]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[3]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[2]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[1]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 410.551 ; gain = 154.082
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 410.551 ; gain = 154.082
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 410.551 ; gain = 154.082
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc]
+WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:12]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:13]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:13]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:14]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:14]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:15]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:15]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:16]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:16]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:17]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:17]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[3]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[3]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[4]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:20]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:20]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[4]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:21]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[5]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:22]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[5]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:23]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:23]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[6]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:24]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:24]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[6]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:25]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:25]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[7]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:26]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:26]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[7]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:27]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:27]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[8]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:28]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:28]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[8]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:29]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:29]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[9]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:30]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:30]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[9]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:31]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:31]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[10]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:32]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:32]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[10]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:33]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:33]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[11]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:34]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:34]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[11]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:35]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:35]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[12]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:36]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:36]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[12]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:37]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:37]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[13]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:38]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:38]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[13]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:39]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:39]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[14]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:40]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:40]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[14]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:41]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:41]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[15]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:42]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:42]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[15]'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:43]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:43]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'dp'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:97]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:97]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'dp'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:98]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:98]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btnC'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:111]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:111]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btnC'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:112]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:112]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btnU'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:113]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:113]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btnU'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:114]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:114]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btnL'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:115]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:115]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btnL'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:116]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:116]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btnR'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:117]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:117]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btnR'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:118]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:118]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btnD'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:119]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:119]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btnD'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:120]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:120]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'RsTx'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:269]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:269]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'RsTx'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:270]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:270]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PS2Clk'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:274]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:274]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PS2Clk'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:275]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:275]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PS2Clk'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:276]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:276]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PS2Data'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:277]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:277]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PS2Data'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:278]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:278]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PS2Data'. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:279]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc:279]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/score_display_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/score_display_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 731.867 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 731.867 ; gain = 475.398
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 731.867 ; gain = 475.398
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 731.867 ; gain = 475.398
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "out_clk0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-802] inferred FSM for state register 'seg_cycle_reg' in module 'score_display'
+INFO: [Synth 8-5544] ROM "an" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "seg_cycle" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                               00 |                               00
+                 iSTATE0 |                               01 |                               01
+                 iSTATE1 |                               10 |                               10
+                 iSTATE2 |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'seg_cycle_reg' using encoding 'sequential' in module 'score_display'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 731.867 ; gain = 475.398
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	                7 Bit    Registers := 5     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   4 Input      7 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module score_display 
+Detailed RTL Component Info : 
++---Registers : 
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   4 Input      7 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+Module var_clk 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module seven_segment_encoder 
+Detailed RTL Component Info : 
++---Registers : 
+	                7 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5545] ROM "out_clk0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-3331] design score_display has unconnected port led[15]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[14]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[13]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[12]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[11]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[10]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[9]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[8]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[7]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[6]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[5]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[4]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[3]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[2]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[1]
+WARNING: [Synth 8-3331] design score_display has unconnected port led[0]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 731.867 ; gain = 475.398
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:33 ; elapsed = 00:00:38 . Memory (MB): peak = 746.172 ; gain = 489.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 760.840 ; gain = 504.371
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:41 . Memory (MB): peak = 803.852 ; gain = 547.383
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 803.852 ; gain = 547.383
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 803.852 ; gain = 547.383
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 803.852 ; gain = 547.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 803.852 ; gain = 547.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 803.852 ; gain = 547.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 803.852 ; gain = 547.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |   373|
+|3     |LUT1   |    33|
+|4     |LUT2   |   314|
+|5     |LUT3   |   459|
+|6     |LUT4   |   360|
+|7     |LUT5   |   284|
+|8     |LUT6   |   760|
+|9     |FDRE   |   109|
+|10    |IBUF   |     1|
+|11    |OBUF   |    11|
+|12    |OBUFT  |    16|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+------------------------+------+
+|      |Instance |Module                  |Cells |
++------+---------+------------------------+------+
+|1     |top      |                        |  2721|
+|2     |  th     |var_clk                 |    63|
+|3     |  u2     |seven_segment_encoder   |    21|
+|4     |  u3     |seven_segment_encoder_0 |   136|
+|5     |  u4     |seven_segment_encoder_1 |    92|
+|6     |  unit5  |seven_segment_encoder_2 |   144|
++------+---------+------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 803.852 ; gain = 547.383
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 16 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:34 . Memory (MB): peak = 803.852 ; gain = 226.066
+Synthesis Optimization Complete : Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 803.852 ; gain = 547.383
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 374 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'score_display' is not ideal for floorplanning, since the cellview 'score_display' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+24 Infos, 90 Warnings, 52 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:45 . Memory (MB): peak = 803.852 ; gain = 560.273
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'C:/EE2026 lab/Project/Tetris_EE2026_/tetris.runs/synth_1/score_display.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file score_display_utilization_synth.rpt -pb score_display_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 803.852 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat Nov  4 19:05:58 2023...
