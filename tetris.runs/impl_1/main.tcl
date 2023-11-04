@@ -60,7 +60,6 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 
 start_step init_design
 set ACTIVE_STEP init_design
@@ -70,12 +69,12 @@ set rc [catch {
   create_project -in_memory -part xc7a35tcpg236-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.cache/wt [current_project]
-  set_property parent.project_path C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.xpr [current_project]
-  set_property ip_output_repo C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.cache/ip [current_project]
+  set_property webtalk.parent_dir {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.cache/wt} [current_project]
+  set_property parent.project_path {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.xpr} [current_project]
+  set_property ip_output_repo {{C:/EE2026 lab/Project/Tetris_EE2026_/tetris.cache/ip}} [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.runs/synth_1/main.dcp
-  read_xdc C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc
+  add_files -quiet {{C:/EE2026 lab/Project/Tetris_EE2026_/tetris.runs/synth_1/main.dcp}}
+  read_xdc {{C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc}}
   link_design -top main -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb
 } RESULT]

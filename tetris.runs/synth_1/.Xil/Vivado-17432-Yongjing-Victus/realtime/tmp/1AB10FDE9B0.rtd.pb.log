@@ -1,2 +1,0 @@
-xilinx rtfpga
-WARNING: [Synth 8-3332] Sequential element (NEW_CLK_reg) is unused and will be removed from module flexi_clock.

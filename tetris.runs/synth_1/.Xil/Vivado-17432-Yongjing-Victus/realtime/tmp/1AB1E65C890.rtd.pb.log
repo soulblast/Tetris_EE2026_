@@ -1,4 +1,0 @@
-xilinx rtfpga
-INFO: [Synth 8-3886] merging instance 'rand_reg[31]' (FDRE) to 'rand_reg[29]'
-INFO: [Synth 8-3886] merging instance 'rand_reg[29]' (FDRE) to 'rand_reg[30]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\rand_reg[30] )

@@ -71,7 +71,7 @@ module main(input CLOCK,
     show_grid grid_0(.CLOCK(CLOCK), .oled_grid(oled_grid), .pix_index(pix_index));
      
  // RANDOM>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..   
-    reg [31:0] rand = 210463105;
+    reg [31:0] rand = 210463105;   //210463105
     reg below_10 = 0;
     reg [31:0] new = 521046310;
 //  //BLOCK>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
@@ -155,6 +155,8 @@ module main(input CLOCK,
     
     reg [31:0] score = 0;
     
+    reg [2:0] clear_count = 0;
+    parameter max_clear = 4;
     always @ (posedge CLOCK) begin //every loop is 10ns
     //INITIALISE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
         if(!started) begin
@@ -174,7 +176,7 @@ module main(input CLOCK,
             end   //end of outer for loop
             started <= 1;
             //GENERATE RANDOM TETRIMINO>>>>>>>>>>>>>>>>>>>>>>
-            t_block <= {$urandom(13)} % 7; 
+            t_block <= 6; 
             pt_block <= t_block;
         end
         
@@ -268,6 +270,36 @@ module main(input CLOCK,
             end     
             else below_10 <= 0;
             
+            
+            if (dead) begin
+                clear_count <= 0;
+                for (i = 1; i <=22; i = i + 1) begin
+                    if (occupied[i] == 16'b0000_1111_1111_1111) begin
+                        clear_count = clear_count + 1;
+                    end
+                end
+                
+                if (clear_count > 0) begin
+                    for (i = 1; i <= 22 - max_clear; i = i + 1) begin
+                        if (i + clear_count <= 22) begin
+                            occupied[i] <= occupied[i + clear_count];
+                        end
+                        else begin
+                            occupied[i] <= 0; // Clear the top rows that are now empty
+                        end
+                    end
+                    // Clear the top rows explicitly if needed
+                    for (i = 22 - max_clear + 1; i <= 22; i = i + 1) begin
+                        occupied[i] <= 0;
+                    end
+                    dead = 0;
+                end
+                
+            
+            end
+            
+            
+            /*
             //UPDATE GRID>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
             for(i=1; i<=22; i=i+1) begin
                n_occupied[i] <= 16'b1110_0000_0000_0111;
@@ -293,6 +325,7 @@ module main(input CLOCK,
                     end
                 end
             end
+            */
         //Stop at Obstacles (May/may not be Dead yet)
         end else if(
            b1_row > 22 || b2_row > 22 || b3_row > 22 || b4_row > 22 ||  //Floor

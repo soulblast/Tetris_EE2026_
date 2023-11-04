@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc rfile:../../../tetris.srcs/constrs_1/new/Constraint.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:{C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc} rfile:../../../tetris.srcs/constrs_1/new/Constraint.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:7 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN W5 [get_ports CLOCK]
 set_property src_info {type:XDC file:1 line:12 export:INPUT save:INPUT read:READ} [current_design]
