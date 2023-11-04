@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/EE2026 lab/Project/Tetris_EE2026_/tetris.runs/synth_1'
+HD_PWD='C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

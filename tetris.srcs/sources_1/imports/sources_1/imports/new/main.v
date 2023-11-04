@@ -33,7 +33,7 @@ module main(input CLOCK,
     //COLOURS>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
      reg [15:0] green = 16'b00000_111111_00000, red = 16'b11111_000000_00000, blue = 16'b00000_000000_11111,
                 black = 16'b00000_000000_00000, cur_colour = 16'b00000_000000_11111, grey = 16'b00100_000100_00100,
-                light_grey = 16'b01000_001000_01000;
+                light_grey = 16'b01000_001000_01000, purple = 16'b00111_000000_00111;
    
     //OLED DISPLAY >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
       reg oled_reset = 0;
@@ -135,8 +135,13 @@ module main(input CLOCK,
     reg fallen = 0; 
     reg started = 0;
     reg [15:0] occupied [23:0]; //22 x 10 = 220v 
-    reg [15:0] wall [23:0]; //22 x 10 = 220v 
-    reg [8:0] i, j; 
+    reg [15:0] n_occupied [23:0]; 
+    reg [15:0] colour [0:23][0:15];
+    reg [15:0] n_colour [0:23][0:15];
+    
+    reg [15:0] wall [23:0]; //22 x 10 = 220v  
+    reg [8:0] i, j, ni, nj;
+    reg [5:0] total_rclears;
     
     reg [2315:0] cnt = 0; 
     reg dead = 0;
@@ -147,6 +152,8 @@ module main(input CLOCK,
     //should be the same as t_col 
     reg [31:0] shift_counter = 0; //0 to 66_666_666
     reg [31:0] fall_counter = 0; //0 to 24 999 999
+    
+    reg [31:0] score = 0;
     
     always @ (posedge CLOCK) begin //every loop is 10ns
     //INITIALISE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
@@ -159,6 +166,7 @@ module main(input CLOCK,
                         occupied[i][j] <= 1;
                     end else if(j<=2 || j>=13) begin //LEFT/RIGHT WALLS
                         wall[i][j] <= 1'b1; 
+                        occupied[i][j] <= 1;
                     end else begin //tetris grid: row: 1 to 22, col: 3 to 12
                         wall[i][j] <= 1'b0;
                     end 
@@ -234,6 +242,10 @@ module main(input CLOCK,
         occupied[b2_row][b2_col] <= 1;
         occupied[b3_row][b3_col] <= 1;
         occupied[b4_row][b4_col] <= 1;
+        colour[b1_row][b1_col] <= block_color;
+        colour[b2_row][b2_col] <= block_color;
+        colour[b3_row][b3_col] <= block_color;
+        colour[b4_row][b4_col] <= block_color;
             t_row <= 2;
             t_col <= 8;
             pt_row <= 2; 
@@ -253,11 +265,37 @@ module main(input CLOCK,
             endcase
             if (rand <= 10) begin
                 below_10 <= 1;  
-            end    
-              
+            end     
             else below_10 <= 0;
+            
+            //UPDATE GRID>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+            for(i=1; i<=22; i=i+1) begin
+               n_occupied[i] <= 16'b1110_0000_0000_0111;
+            end
+            ni <= 22; //Start filling in new grid from bottom
+            total_rclears <= 0;//Reset row clear counter
+            for(i=22; i>=1; i=i-1) begin // i is row, j is col
+                if(occupied[i] == 16'b1111_1111_1111_1111) begin 
+                    total_rclears <= total_rclears + 1; 
+                end else begin
+                    n_occupied[ni] <= occupied[i]; 
+                    for(j=3; j<=12; j=j+1) begin
+                       n_colour[ni][j] <= colour[i][j];
+                    end
+                    ni <= ni-1;
+                end
+             end 
+            if(total_rclears > 0) begin
+                for(i=1; i<=22; i=i+1) begin
+                    occupied[i] <= n_occupied[i]; 
+                    for(j=3; j<=12; j=j+1) begin
+                        colour[i][j] <= n_colour[i][j];
+                    end
+                end
+            end
         //Stop at Obstacles (May/may not be Dead yet)
-        end else if(b1_row > 22 || b2_row > 22 || b3_row > 22 || b4_row > 22 ||  //Floor
+        end else if(
+           b1_row > 22 || b2_row > 22 || b3_row > 22 || b4_row > 22 ||  //Floor
            b1_col < 3  || b2_col < 3  || b3_col < 3  || b4_col < 3  ||  //Left wall
            b1_col > 12 || b2_col > 12 || b3_col > 12 || b4_col > 12 || //Right wall
            occupied[b1_row][b1_col] == 1 || occupied[b2_row][b2_col] == 1 || //Obstacles
@@ -267,15 +305,19 @@ module main(input CLOCK,
            t_col <= pt_col;
            t_rotation <= pt_rotation;
         end   
-      
+          
+
+     //end of edit
      // DISPLAY TETRIMINO>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
       if   ((g_row == b1_row && g_col == b1_col) || 
             (g_row == b2_row && g_col == b2_col) ||
             (g_row == b3_row && g_col == b3_col) || 
             (g_row == b4_row && g_col == b4_col)) begin
-            oled_data <= block_color;   
+            oled_data <= block_color;
+      end else if(wall[g_row][g_col] == 1) begin
+            oled_data <= light_grey;   
       end else if (occupied[g_row][g_col] == 1) begin
-            oled_data <= light_grey;
+            oled_data <= colour[g_row][g_col];
       end else begin  
             oled_data <= oled_grid;
       end 

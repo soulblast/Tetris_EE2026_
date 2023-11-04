@@ -1,0 +1,15 @@
+xilinx rtfpga
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-3886] merging instance 'grid_0/oled_grid_reg[0]' (FDE) to 'grid_0/oled_grid_reg[4]'
+INFO: [Synth 8-3886] merging instance 'grid_0/oled_grid_reg[1]' (FDE) to 'grid_0/oled_grid_reg[4]'
+INFO: [Synth 8-3886] merging instance 'grid_0/oled_grid_reg[3]' (FDE) to 'grid_0/oled_grid_reg[4]'
+INFO: [Synth 8-3886] merging instance 'grid_0/oled_grid_reg[5]' (FDE) to 'grid_0/oled_grid_reg[12]'
+INFO: [Synth 8-3886] merging instance 'grid_0/oled_grid_reg[6]' (FDE) to 'grid_0/oled_grid_reg[12]'
+INFO: [Synth 8-3886] merging instance 'grid_0/oled_grid_reg[7]' (FDE) to 'grid_0/oled_grid_reg[13]'
+INFO: [Synth 8-3886] merging instance 'grid_0/oled_grid_reg[8]' (FDE) to 'grid_0/oled_grid_reg[12]'
+INFO: [Synth 8-3886] merging instance 'grid_0/oled_grid_reg[9]' (FDE) to 'grid_0/oled_grid_reg[12]'
+INFO: [Synth 8-3886] merging instance 'grid_0/oled_grid_reg[10]' (FDE) to 'grid_0/oled_grid_reg[12]'
+INFO: [Synth 8-3886] merging instance 'grid_0/oled_grid_reg[11]' (FDE) to 'grid_0/oled_grid_reg[12]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (grid_0/\oled_grid_reg[12] )
+WARNING: [Synth 8-3332] Sequential element (oled_grid_reg[12]) is unused and will be removed from module show_grid.
