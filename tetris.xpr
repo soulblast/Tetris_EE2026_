@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="38" Path="C:/EE2026 lab/Project/Tetris_EE2026_/tetris.xpr">
+<Project Version="7" Minor="38" Path="C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="64e131b348ab44989c09a5558053e036"/>
@@ -144,6 +144,14 @@
         <FileInfo>
           <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/imports/new/main.v"/>
           <Attr Name="ImportTime" Val="1699073515"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/collision_check.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>

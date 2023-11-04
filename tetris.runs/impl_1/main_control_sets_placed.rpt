@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Sat Nov  4 16:32:56 2023
-| Host         : soulblast running 64-bit major release  (build 9200)
+| Date         : Sat Nov  4 17:59:31 2023
+| Host         : Yongjing-Victus running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file main_control_sets_placed.rpt
 | Design       : main
 | Device       : xc7a35t
@@ -71,9 +71,9 @@ Table of Contents
 | ~CLK_6p25M_BUFG  | oled_0/delay[0]_i_1_n_1 |                                  |                5 |             40 |
 |  CLOCK_IBUF_BUFG | tetri0/rand_reg[0][0]   | tetri0/SR[0]                     |               23 |             58 |
 |  CLOCK_IBUF_BUFG |                         | fall_counter[31]_i_1_n_1         |                8 |             62 |
+| ~CLK_6p25M_BUFG  | oled_0/state            |                                  |                7 |             64 |
 |  CLOCK_IBUF_BUFG |                         | clock0/clear                     |                8 |             64 |
 |  CLOCK_IBUF_BUFG |                         | shift_counter[31]_i_1_n_1        |                9 |             64 |
-| ~CLK_6p25M_BUFG  | oled_0/state            |                                  |                7 |             64 |
 | ~CLK_6p25M_BUFG  |                         | oled_0/spi_word[39]_i_1_n_1      |               17 |             90 |
 |  n_0_4635_BUFG   |                         |                                  |               36 |            128 |
 |  CLOCK_IBUF_BUFG |                         |                                  |              312 |            802 |

@@ -128,7 +128,7 @@ module main(input CLOCK,
         .blk2_row(pb2_row),
         .blk3_row(pb3_row),
         .blk4_row(pb4_row));
-        
+         
     wire [15:0] block_color;  
     block_color color0(.block(t_block), .color(block_color)); 
    
@@ -147,6 +147,7 @@ module main(input CLOCK,
     //should be the same as t_col 
     reg [31:0] shift_counter = 0; //0 to 66_666_666
     reg [31:0] fall_counter = 0; //0 to 24 999 999
+     
     
     always @ (posedge CLOCK) begin //every loop is 10ns
     //INITIALISE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
@@ -174,10 +175,6 @@ module main(input CLOCK,
         fall_counter <= (fall_counter == 24_999_999) ? 0 : fall_counter+1;
         if(fall_counter == 0) begin 
             t_row <= (t_row==23) ? 22 : t_row+1;  
-            pt_row <= t_row;
-            pt_col <= pt_col;
-            pt_rotation <= t_rotation;  
-            pt_block <= t_block;
         end  
         
         
@@ -193,7 +190,6 @@ module main(input CLOCK,
 //                new_block <= new % 10;
                     
 //                if (new <= 100) begin
-//                    new <= 521046310;  
 //                end           
 //                else new <= new / 10;   
       //NEW BLOCK>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
@@ -203,14 +199,14 @@ module main(input CLOCK,
         if(sw[0] && shift_counter == 0) begin 
             t_col <= (t_col == 3) ? 3 : t_col-1;  
         end else if(sw[1] && shift_counter == 0) begin 
-            t_col <= (t_col == 12) ? 12 : t_col+1;
+            t_col <= (t_col == 12) ? 12 : t_col+1; 
         end 
        //ROTATE CLOCKWISE >>>>>>>>>>>>>>>>>>>>>>....
         if(sw[3:2] == 2'b01 && !rotatedCW) begin 
-            t_rotation <= t_rotation+1;
+            t_rotation <= t_rotation+1; 
             rotatedCW <= 1; 
         end
-        if(!sw[2] && rotatedCW) begin
+        if(!sw[2] && rotatedCW) begin 
             rotatedCW <= 0;
         end
         //ROTATE ANTI CLOCKWISE >>>>>>>>>>>>>>>>>>>>>>....
@@ -286,5 +282,4 @@ module main(input CLOCK,
       pt_block <= t_block;
       
     end //end of always block
-    
 endmodule
