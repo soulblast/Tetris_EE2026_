@@ -272,29 +272,7 @@ module main(input CLOCK,
             
             
 //            if (dead) begin
-                clear_count <= 0;
-                for (i = 1; i <=22; i = i + 1) begin
-                    if (occupied[i] == 16'b1111_1111_1111_1111) begin
-                        clear_count = clear_count + 1;
-                    end
-                end
-                
-                if (clear_count > 0) begin
-                    for (i = 1; i <= 22 - max_clear; i = i + 1) begin
-                        if (i + clear_count <= 22) begin
-                            occupied[i] <= occupied[i + clear_count];
-                        end
-                        else begin
-                            occupied[i] <= 16'b1110_0000_0000_0111; // Clear the top rows that are now empty
-                        end
-                    end
-                    // Clear the top rows explicitly if needed
-                    for (i = 22 - max_clear + 1; i <= 22; i = i + 1) begin
-                        occupied[i] <= 16'b1110_0000_0000_0111;
-                    end
-                    dead = 0;
-                end
-                
+
             
 //            end
             
@@ -338,7 +316,23 @@ module main(input CLOCK,
            t_col <= pt_col;
            t_rotation <= pt_rotation;
         end   
-          
+     
+        clear_count <= 0;
+        for (i = 1; i <=22; i = i + 1) begin
+            if (occupied[i] == 16'b1111_1111_1111_1111) begin
+                clear_count = clear_count + 1;
+            end
+        end
+        
+        if (clear_count > 0) begin
+            for (i = 1; i <= 22 - clear_count; i = i + 1) begin
+                if (i + clear_count <= 22) begin
+                    occupied[i+clear_count] <= occupied[i];
+                    occupied[i] <= 16'b1110_0000_0000_0111;
+                end 
+            end 
+        end
+        
 
      //end of edit
      // DISPLAY TETRIMINO>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
