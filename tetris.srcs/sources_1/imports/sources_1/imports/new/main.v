@@ -71,7 +71,7 @@ module main(input CLOCK,
     show_grid grid_0(.CLOCK(CLOCK), .oled_grid(oled_grid), .pix_index(pix_index));
      
  // RANDOM>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..   
-    reg [31:0] rand = 210463105;   //210463105
+    reg [31:0] rand = 111111111;   //210463105
     reg below_10 = 0;
     reg [31:0] new = 521046310;
 //  //BLOCK>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
@@ -176,7 +176,7 @@ module main(input CLOCK,
             end   //end of outer for loop
             started <= 1;
             //GENERATE RANDOM TETRIMINO>>>>>>>>>>>>>>>>>>>>>>
-            t_block <= 6; 
+            t_block <= 1; 
             pt_block <= t_block;
         end
         
@@ -262,7 +262,7 @@ module main(input CLOCK,
                 end
                 
                 1: begin
-                    rand <= 210463105; 
+                    rand <= 111111111; 
                 end
             endcase
             if (rand <= 10) begin
@@ -271,10 +271,10 @@ module main(input CLOCK,
             else below_10 <= 0;
             
             
-            if (dead) begin
+//            if (dead) begin
                 clear_count <= 0;
                 for (i = 1; i <=22; i = i + 1) begin
-                    if (occupied[i] == 16'b0000_1111_1111_1111) begin
+                    if (occupied[i] == 16'b1111_1111_1111_1111) begin
                         clear_count = clear_count + 1;
                     end
                 end
@@ -285,18 +285,18 @@ module main(input CLOCK,
                             occupied[i] <= occupied[i + clear_count];
                         end
                         else begin
-                            occupied[i] <= 0; // Clear the top rows that are now empty
+                            occupied[i] <= 16'b1110_0000_0000_0111; // Clear the top rows that are now empty
                         end
                     end
                     // Clear the top rows explicitly if needed
                     for (i = 22 - max_clear + 1; i <= 22; i = i + 1) begin
-                        occupied[i] <= 0;
+                        occupied[i] <= 16'b1110_0000_0000_0111;
                     end
                     dead = 0;
                 end
                 
             
-            end
+//            end
             
             
             /*
