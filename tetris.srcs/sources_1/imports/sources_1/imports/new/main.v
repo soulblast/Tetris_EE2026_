@@ -20,19 +20,22 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module main(input CLOCK, 
+module tetris_main(input CLOCK, 
             input [15:0] sw,
+            
+            //Keyboard
             input PS2Clk,
             input PS2Data,
-            output [0:7] JC, JA,
-            output reg [15:0] led); 
+            
+            input chosen,
+            
+            //No label - JC;
+            input [12:0] pix_index, pix_indexB,  //JC, JA 
+            output reg [15:0] oled_data,
+                               oled_dataB); 
    // CLOCK >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
     wire CLK_6p25M;
-        flexi_clock clock0 (.CLOCK(CLOCK), .Tns(160), .NEW_CLK(CLK_6p25M));    
-    wire CLK_4Hz;
-        flexi_clock clock1(.CLOCK(CLOCK), .Tns(250_000_000), .NEW_CLK(CLK_4Hz));
-    wire CLK_1_5Hz;                                                                 
-        flexi_clock clock2(.CLOCK(CLOCK), .Tns(666_666_667), .NEW_CLK(CLK_1_5Hz));
+        flexi_clock clock0 (.CLOCK(CLOCK), .Tns(160), .NEW_CLK(CLK_6p25M));     
     //COLOURS>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
      reg [15:0] green = 16'b00000_111111_00000, red = 16'b11111_000000_00000, blue = 16'b00000_000000_11111,
                 black = 16'b00000_000000_00000, cur_colour = 16'b00000_000000_11111, grey = 16'b00100_000100_00100,
@@ -40,45 +43,7 @@ module main(input CLOCK,
    //Keyboard Input
    wire [31:0] key_output;
    selected_key_press kb(.clk(CLOCK), .PS2Clk(PS2Clk), .PS2Data(PS2Data), .keys(key_output));
-    
-    
-    //OLED DISPLAY >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
-    reg oled_reset = 0;
-    wire [12:0] pix_index, pix_indexB;
-    reg [15:0] oled_data, oled_dataB;
-
-       
-     Oled_Display oled_0(
-        .clk(CLK_6p25M), //input
-        .reset(oled_reset),  //input
-        .frame_begin(),  //output
-        .sending_pixels(), //output
-        .sample_pixel(),  //output
-        .pixel_index(pix_index),  //output
-        .pixel_data(oled_data), //input
-        .cs(JC[0]), 
-        .sdin(JC[1]), 
-        .sclk(JC[3]), 
-        .d_cn(JC[4]), 
-        .resn(JC[5]), 
-        .vccen(JC[6]),
-        .pmoden(JC[7]));
-   
-   Oled_Display oled_1(
-        .clk(CLK_6p25M), //input
-        .reset(oled_reset),  //input
-        .frame_begin(),  //output
-        .sending_pixels(), //output
-        .sample_pixel(),  //output
-        .pixel_index(pix_indexB),  //output
-        .pixel_data(oled_dataB), //input
-        .cs(JA[0]), 
-        .sdin(JA[1]), 
-        .sclk(JA[3]), 
-        .d_cn(JA[4]), 
-        .resn(JA[5]), 
-        .vccen(JA[6]),
-        .pmoden(JA[7]));
+     
 
 //  //COORDS 
     wire [12:0]  blk1_g_row, blk2_g_row ,blk3_g_row, blk4_g_row,
@@ -110,8 +75,7 @@ module main(input CLOCK,
    
     reg [4:0] t_col = 8; reg [5:0] t_row = 2;              
     reg [1:0] t_rotation = 0;
-    reg [2:0] t_block = 0; //7 = no block 
-    
+    reg [2:0] t_block = 0; //7 = no block  
     wire [4:0] b1_col,
                 b2_col,
                 b3_col,
@@ -177,7 +141,7 @@ module main(input CLOCK,
         .blk3_row(pb3_row),
         .blk4_row(pb4_row));
         
-    wire [15:0] block_color, next_color;  
+    wire [15:0] block_color, next_color; 
     block_color color0(.block(t_block), .color(block_color)); 
     block_color color1(.block(new_block), .color(next_color));
 
@@ -209,235 +173,234 @@ module main(input CLOCK,
     always @ (posedge CLOCK) begin //every loop is 10ns
     //INITIALISE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
         //SPACEBAR - RESET
-        if (key_output[15]) begin
+        if (key_output[15] || !chosen) begin
             started <= 0;
-        end
-        if(!started) begin
-            for(i=0; i<24; i=i+1) begin // i is row, j is col
-                for(j=0; j<16; j=j+1) begin  
-                    occupied[i][j] <= 0;
-                    if(i>22) begin //BOTTOM 
-                        wall[i][j] <= 1'b1; 
-                        occupied[i][j] <= 1;
-                    end else if(j<=2 || j>=13) begin //LEFT/RIGHT WALLS
-                        wall[i][j] <= 1'b1; 
-                        occupied[i][j] <= 1;
-                    end else begin //tetris grid: row: 1 to 22, col: 3 to 12
-                        wall[i][j] <= 1'b0;
-                    end 
-                end
-            end   //end of outer for loop
-            started <= 1;
-            //GENERATE RANDOM TETRIMINO>>>>>>>>>>>>>>>>>>>>>>
-            t_block <= 5; 
-            new_block <= 1;
-            pt_block <= t_block;
-        end
-        
-        //FALL DOWN (4Hz) >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>         
-        fall_counter <= (fall_counter == 24_999_999) ? 0 : fall_counter+1;
-        if(fall_counter == 0) begin 
-            t_row <= (t_row==23) ? 22 : t_row+1;  
-            pt_row <= t_row;
-            pt_col <= pt_col;
-            pt_rotation <= t_rotation;  
-            pt_block <= t_block;
-        end  
-        
-        
-            //RESET TO START POS
-          
-//                t_block <= rand % 10;    
-//                if (rand <= 10) begin
-//                    rand <= 210463105;  
-//                end           
-//                rand <= rand / 10;
-                //rand <= (rand <= 100) ? 210463105 : rand;
-                
-//                new_block <= new % 10;
-                    
-//                if (new <= 100) begin
-//                    new <= 521046310;  
-//                end           
-//                else new <= new / 10;   
-      //NEW BLOCK>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
-
-      //  SHIFT LEFT/RIGHT (3Hz) >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-        shift_counter <= (shift_counter == 33_333_333) ? 0 : shift_counter+1; 
-        led[2] <= 0;
-        led[0] <= 0;
-        if(key_output[18] && shift_counter == 0) begin 
-            t_col <= (t_col == 3) ? 3 : t_col-1;  
-            led[2] <= 1;
-        end else if(key_output[16] && shift_counter == 0) begin 
-            t_col <= (t_col == 12) ? 12 : t_col+1;
-            led[0] <= 1;
+            oled_data <= 0;
+            oled_dataB <= 0; 
         end 
-       //ROTATE CLOCKWISE >>>>>>>>>>>>>>>>>>>>>>....
-       //W - ROTATE CW
-        if(key_output[19] == 2'b01 && !rotatedCW) begin 
-            t_rotation <= t_rotation+1;
-            rotatedCW <= 1; 
-        end
-        if(!key_output[19] && rotatedCW) begin
-            rotatedCW <= 0;
-        end
-        //ROTATE ANTI CLOCKWISE >>>>>>>>>>>>>>>>>>>>>>....
-        if (key_output[13] == 2'b10 && !rotatedACW) begin 
-            t_rotation <= (t_rotation == 0) ? 3 : t_rotation-1;
-            rotatedACW <= 1; 
-        end
-        if (!key_output[13] && rotatedACW) begin
-            rotatedACW <= 0;
-        end
-        
-   //  CHECK COLLISION 
-    //DEAD CONDITION: the new position is invalid and previously was on top of dead blocks
-    // i.e. the tetrimino has remained above deadblocks and had remained stationery on top of them 
-    // Check if the current piece has landed (by reaching the bottom or other blocks)
-    if (b1_row == 22 || b2_row == 22 || b3_row == 22 || b4_row == 22 ||
-        occupied[b1_row+1][b1_col] == 1 || occupied[b2_row+1][b2_col] == 1 || 
-        occupied[b3_row+1][b3_col] == 1 || occupied[b4_row+1][b4_col] == 1) begin
-        // Lock the current piece in place
-        occupied[b1_row][b1_col] <= 1;
-        occupied[b2_row][b2_col] <= 1;
-        occupied[b3_row][b3_col] <= 1;
-        occupied[b4_row][b4_col] <= 1;
-        colour[b1_row][b1_col] <= block_color;
-        colour[b2_row][b2_col] <= block_color;
-        colour[b3_row][b3_col] <= block_color;
-        colour[b4_row][b4_col] <= block_color;
-            t_row <= 2;
-            t_col <= 8;
-            pt_row <= 2; 
-            pt_col <= 8;  
-            t_rotation <= 0;
-            pt_rotation <= 0;
-            //GENERATE NEW RANDOM TETRIMINO>>>>>>>>>>
-            case (below_10)
-                0: begin
-                    t_block <= rand % 10;
-                    rand <= rand / 10;
-                end
-                
-                1: begin
-                    rand <= 210463105; 
-                end
-            endcase
-            if (rand <= 10) begin
-                below_10 <= 1;  
-            end     
-            else below_10 <= 0;
-            // SHOW RAND NEXT BLOCK>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-            case (n_below_10)
-                0: begin
-                    new_block <= new % 10;
-                    new <= new / 10;
-                end
-                
-                1: begin
-                    new <= 521046310;
+        if (chosen) begin
+            if(!started) begin
+                for(i=0; i<24; i=i+1) begin // i is row, j is col
+                    for(j=0; j<16; j=j+1) begin  
+                        occupied[i][j] <= 0;
+                        if(i>22) begin //BOTTOM 
+                            wall[i][j] <= 1'b1; 
+                            occupied[i][j] <= 1;
+                        end else if(j<=2 || j>=13) begin //LEFT/RIGHT WALLS
+                            wall[i][j] <= 1'b1; 
+                            occupied[i][j] <= 1;
+                        end else begin //tetris grid: row: 1 to 22, col: 3 to 12
+                            wall[i][j] <= 1'b0;
+                        end 
+                    end
+                end   //end of outer for loop
+                started <= 1;
+                //GENERATE RANDOM TETRIMINO>>>>>>>>>>>>>>>>>>>>>>
+                t_block <= 2; 
+                new_block <= 5;
+                pt_block <= t_block;
+            end
+            
+            //FALL DOWN (4Hz) >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>         
+            fall_counter <= (fall_counter == 24_999_999) ? 0 : fall_counter+1;
+            if(fall_counter == 0) begin 
+                t_row <= (t_row==23) ? 22 : t_row+1;  
+                pt_row <= t_row;
+                pt_col <= pt_col;
+                pt_rotation <= t_rotation;  
+                pt_block <= t_block;
+            end  
+            
+            
+                //RESET TO START POS
+              
+    //                t_block <= rand % 10;    
+    //                if (rand <= 10) begin
+    //                    rand <= 210463105;  
+    //                end           
+    //                rand <= rand / 10;
+                    //rand <= (rand <= 100) ? 210463105 : rand;
                     
-                end
-                endcase
-            if (new <= 10) begin
-                n_below_10 <= 1;  
-            end    
-                
-            else n_below_10 <= 0;
-
-
-            
-//            if (dead) begin
-
-            
-//            end
-            
-            
-            /*
-            //UPDATE GRID>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-            for(i=1; i<=22; i=i+1) begin
-               n_occupied[i] <= 16'b1110_0000_0000_0111;
-            end
-            ni <= 22; //Start filling in new grid from bottom
-            total_rclears <= 0;//Reset row clear counter
-            for(i=22; i>=1; i=i-1) begin // i is row, j is col
-                if(occupied[i] == 16'b1111_1111_1111_1111) begin 
-                    total_rclears <= total_rclears + 1; 
-                end else begin
-                    n_occupied[ni] <= occupied[i]; 
-                    for(j=3; j<=12; j=j+1) begin
-                       n_colour[ni][j] <= colour[i][j];
-                    end
-                    ni <= ni-1;
-                end
-             end 
-            if(total_rclears > 0) begin
-                for(i=1; i<=22; i=i+1) begin
-                    occupied[i] <= n_occupied[i]; 
-                    for(j=3; j<=12; j=j+1) begin
-                        colour[i][j] <= n_colour[i][j];
-                    end
-                end
-            end
-            */
-        //Stop at Obstacles (May/may not be Dead yet)
-        end else if(
-           b1_row > 22 || b2_row > 22 || b3_row > 22 || b4_row > 22 ||  //Floor
-           b1_col < 3  || b2_col < 3  || b3_col < 3  || b4_col < 3  ||  //Left wall
-           b1_col > 12 || b2_col > 12 || b3_col > 12 || b4_col > 12 || //Right wall
-           occupied[b1_row][b1_col] == 1 || occupied[b2_row][b2_col] == 1 || //Obstacles
-           occupied[b3_row][b3_col] == 1 || occupied[b4_row][b4_col] == 1 ) begin
-           //Back to previous pos
-           t_row <= pt_row; 
-           t_col <= pt_col;
-           t_rotation <= pt_rotation;
-        end   
-     
-        clear_count <= 0;
-        for (i = 1; i <=22; i = i + 1) begin
-            if (occupied[i] == 16'b1111_1111_1111_1111) begin
-                clear_count = clear_count + 1;
-            end
-        end
-        
-        if (clear_count > 0) begin
-            for (i = 1; i <= 22 - clear_count; i = i + 1) begin
-                if (i + clear_count <= 22) begin
-                    occupied[i+clear_count] <= occupied[i];
-                    occupied[i] <= 16'b1110_0000_0000_0111;
-                end 
+    //                new_block <= new % 10;
+                        
+    //                if (new <= 100) begin
+    //                    new <= 521046310;  
+    //                end           
+    //                else new <= new / 10;   
+          //NEW BLOCK>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+    
+          //  SHIFT LEFT/RIGHT (3Hz) >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+            shift_counter <= (shift_counter == 33_333_333) ? 0 : shift_counter+1;  
+            if(key_output[18] && shift_counter == 0) begin 
+                t_col <= (t_col == 3) ? 3 : t_col-1;   
+            end else if(key_output[16] && shift_counter == 0) begin 
+                t_col <= (t_col == 12) ? 12 : t_col+1; 
             end 
-        end
-        
-
-     //end of edit
-     // DISPLAY TETRIMINO>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-      if   ((g_row == b1_row && g_col == b1_col) || 
-            (g_row == b2_row && g_col == b2_col) ||
-            (g_row == b3_row && g_col == b3_col) || 
-            (g_row == b4_row && g_col == b4_col)) begin
-            oled_data <= block_color;
-      end else if(wall[g_row][g_col] == 1) begin
-            oled_data <= light_grey;   
-      end else if (occupied[g_row][g_col] == 1) begin
-            oled_data <= colour[g_row][g_col];
-      end else begin  
-            oled_data <= oled_grid;
-      end 
-      
-      pt_row <= t_row;
-      pt_col <= pt_col;
-      pt_rotation <= t_rotation;  
-      pt_block <= t_block;
-      // Display Next Block>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-        if ((b_row == b1_b_row && b_col == b1_b_col) || 
-            (b_row == b2_b_row && b_col == b2_b_col) ||
-            (b_row == b3_b_row && b_col == b3_b_col) || 
-            (b_row == b4_b_row && b_col == b4_b_col)) begin
-                oled_dataB <= next_color;
-        end else oled_dataB <= black;
+           //ROTATE CLOCKWISE >>>>>>>>>>>>>>>>>>>>>>....
+           //W - ROTATE CW
+            if(key_output[19] == 2'b01 && !rotatedCW) begin 
+                t_rotation <= t_rotation+1;
+                rotatedCW <= 1; 
+            end
+            if(!key_output[19] && rotatedCW) begin
+                rotatedCW <= 0;
+            end
+            //ROTATE ANTI CLOCKWISE >>>>>>>>>>>>>>>>>>>>>>....
+            if (key_output[13] == 2'b10 && !rotatedACW) begin 
+                t_rotation <= (t_rotation == 0) ? 3 : t_rotation-1;
+                rotatedACW <= 1; 
+            end
+            if (!key_output[13] && rotatedACW) begin
+                rotatedACW <= 0;
+            end
             
+       //  CHECK COLLISION 
+        //DEAD CONDITION: the new position is invalid and previously was on top of dead blocks
+        // i.e. the tetrimino has remained above deadblocks and had remained stationery on top of them 
+        // Check if the current piece has landed (by reaching the bottom or other blocks)
+        if (b1_row == 22 || b2_row == 22 || b3_row == 22 || b4_row == 22 ||
+            occupied[b1_row+1][b1_col] == 1 || occupied[b2_row+1][b2_col] == 1 || 
+            occupied[b3_row+1][b3_col] == 1 || occupied[b4_row+1][b4_col] == 1) begin
+            // Lock the current piece in place
+            occupied[b1_row][b1_col] <= 1;
+            occupied[b2_row][b2_col] <= 1;
+            occupied[b3_row][b3_col] <= 1;
+            occupied[b4_row][b4_col] <= 1;
+            colour[b1_row][b1_col] <= block_color;
+            colour[b2_row][b2_col] <= block_color;
+            colour[b3_row][b3_col] <= block_color;
+            colour[b4_row][b4_col] <= block_color;
+                t_row <= 2;
+                t_col <= 8;
+                pt_row <= 2; 
+                pt_col <= 8;  
+                t_rotation <= 0;
+                pt_rotation <= 0;
+                //GENERATE NEW RANDOM TETRIMINO>>>>>>>>>>
+                case (below_10)
+                    0: begin
+                        t_block <= rand % 10;
+                        rand <= rand / 10;
+                    end
+                    
+                    1: begin
+                        rand <= 210463105; 
+                    end
+                endcase
+                if (rand <= 10) begin
+                    below_10 <= 1;  
+                end     
+                else below_10 <= 0;
+                // SHOW RAND NEXT BLOCK>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                case (n_below_10)
+                    0: begin
+                        new_block <= new % 10;
+                        new <= new / 10;
+                    end
+                    
+                    1: begin
+                        new <= 521046310;
+                        
+                    end
+                    endcase
+                if (new <= 10) begin
+                    n_below_10 <= 1;  
+                end    
+                    
+                else n_below_10 <= 0;
+    
+    
+                
+    //            if (dead) begin
+    
+                
+    //            end
+                
+                
+                /*
+                //UPDATE GRID>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                for(i=1; i<=22; i=i+1) begin
+                   n_occupied[i] <= 16'b1110_0000_0000_0111;
+                end
+                ni <= 22; //Start filling in new grid from bottom
+                total_rclears <= 0;//Reset row clear counter
+                for(i=22; i>=1; i=i-1) begin // i is row, j is col
+                    if(occupied[i] == 16'b1111_1111_1111_1111) begin 
+                        total_rclears <= total_rclears + 1; 
+                    end else begin
+                        n_occupied[ni] <= occupied[i]; 
+                        for(j=3; j<=12; j=j+1) begin
+                           n_colour[ni][j] <= colour[i][j];
+                        end
+                        ni <= ni-1;
+                    end
+                 end 
+                if(total_rclears > 0) begin
+                    for(i=1; i<=22; i=i+1) begin
+                        occupied[i] <= n_occupied[i]; 
+                        for(j=3; j<=12; j=j+1) begin
+                            colour[i][j] <= n_colour[i][j];
+                        end
+                    end
+                end
+                */
+            //Stop at Obstacles (May/may not be Dead yet)
+            end else if(
+               b1_row > 22 || b2_row > 22 || b3_row > 22 || b4_row > 22 ||  //Floor
+               b1_col < 3  || b2_col < 3  || b3_col < 3  || b4_col < 3  ||  //Left wall
+               b1_col > 12 || b2_col > 12 || b3_col > 12 || b4_col > 12 || //Right wall
+               occupied[b1_row][b1_col] == 1 || occupied[b2_row][b2_col] == 1 || //Obstacles
+               occupied[b3_row][b3_col] == 1 || occupied[b4_row][b4_col] == 1 ) begin
+               //Back to previous pos
+               t_row <= pt_row; 
+               t_col <= pt_col;
+               t_rotation <= pt_rotation;
+            end   
+         
+            clear_count <= 0;
+            for (i = 1; i <=22; i = i + 1) begin
+                if (occupied[i] == 16'b1111_1111_1111_1111) begin
+                    clear_count = clear_count + 1;
+                end
+            end
+            
+            if (clear_count > 0) begin
+                for (i = 1; i <= 22 - clear_count; i = i + 1) begin
+                    if (i + clear_count <= 22) begin
+                        occupied[i+clear_count] <= occupied[i];
+                        occupied[i] <= 16'b1110_0000_0000_0111;
+                    end 
+                end 
+            end
+            
+    
+         //end of edit
+         // DISPLAY TETRIMINO>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+          if   ((g_row == b1_row && g_col == b1_col) || 
+                (g_row == b2_row && g_col == b2_col) ||
+                (g_row == b3_row && g_col == b3_col) || 
+                (g_row == b4_row && g_col == b4_col)) begin
+                oled_data <= block_color;
+          end else if(wall[g_row][g_col] == 1) begin
+                oled_data <= light_grey;   
+          end else if (occupied[g_row][g_col] == 1) begin
+                oled_data <= colour[g_row][g_col];
+          end else begin  
+                oled_data <= oled_grid;
+          end 
+          
+          pt_row <= t_row;
+          pt_col <= pt_col;
+          pt_rotation <= t_rotation;  
+          pt_block <= t_block;
+          // Display Next Block>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+            if ((b_row == b1_b_row && b_col == b1_b_col) || 
+                (b_row == b2_b_row && b_col == b2_b_col) ||
+                (b_row == b3_b_row && b_col == b3_b_col) || 
+                (b_row == b4_b_row && b_col == b4_b_col)) begin
+                    oled_dataB <= next_color;
+            end else oled_dataB <= black;
+        end //end of chosen   
     end //end of always block
     
 endmodule
