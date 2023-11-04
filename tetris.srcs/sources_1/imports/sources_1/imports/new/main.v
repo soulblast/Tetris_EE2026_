@@ -102,7 +102,7 @@ module main(input CLOCK,
      
  // RANDOM>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..   
     reg [31:0] rand = 210463105;
-    reg r_below_10 = 0;
+    reg below_10 = 0;
     reg n_below_10 = 0;
     reg [31:0] new = 521046310;
     reg [2:0] new_block = 0;
@@ -111,7 +111,7 @@ module main(input CLOCK,
     reg [4:0] t_col = 8; reg [5:0] t_row = 2;              
     reg [1:0] t_rotation = 0;
     reg [2:0] t_block = 0; //7 = no block 
-    reg [2:0] new_block = 0;
+    
     wire [4:0] b1_col,
                 b2_col,
                 b3_col,
@@ -177,7 +177,7 @@ module main(input CLOCK,
         .blk3_row(pb3_row),
         .blk4_row(pb4_row));
         
-    wire [15:0] block_color;  
+    wire [15:0] block_color, next_color;  
     block_color color0(.block(t_block), .color(block_color)); 
     block_color color1(.block(new_block), .color(next_color));
 
@@ -229,8 +229,8 @@ module main(input CLOCK,
             end   //end of outer for loop
             started <= 1;
             //GENERATE RANDOM TETRIMINO>>>>>>>>>>>>>>>>>>>>>>
-            t_block <= 2; 
-            new_block <= 5;
+            t_block <= 5; 
+            new_block <= 1;
             pt_block <= t_block;
         end
         

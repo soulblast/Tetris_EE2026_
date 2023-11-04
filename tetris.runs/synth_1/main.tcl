@@ -31,12 +31,17 @@ set_property ip_output_repo {c:/EE2026 lab/Project/Tetris_EE2026_/tetris.cache/i
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
   {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/Oled_Display.v}
+  {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/new/PS2_Receive.v}
   {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/T_to_m.v}
   {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/block_color.v}
   {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/flexi_clock.v}
   {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/get_coords.v}
+  {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/new/keyboard_out.v}
+  {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/oledB_to_grid_coords.v}
   {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/oled_to_grid_coords.v}
+  {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/new/own_debouncer.v}
   {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/pix_to_vertical_rowcol.v}
+  {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/new/selected_keypress.v}
   {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/show_grid.v}
   {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/tetrimino.v}
   {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/main.v}
