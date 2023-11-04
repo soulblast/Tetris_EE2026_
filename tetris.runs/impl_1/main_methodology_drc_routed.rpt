@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Sat Nov  4 15:38:08 2023
-| Host         : Yongjing-Victus running 64-bit major release  (build 9200)
+| Date         : Sat Nov  4 16:34:30 2023
+| Host         : soulblast running 64-bit major release  (build 9200)
 | Command      : report_methodology -file main_methodology_drc_routed.rpt -pb main_methodology_drc_routed.pb -rpx main_methodology_drc_routed.rpx
 | Design       : main
 | Device       : xc7a35tcpg236-1
@@ -23,171 +23,171 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 278
+             Violations found: 234
 +-----------+----------+-------------------------------+------------+
 | Rule      | Severity | Description                   | Violations |
 +-----------+----------+-------------------------------+------------+
 | TIMING-16 | Warning  | Large setup violation         | 31         |
 | TIMING-17 | Warning  | Non-clocked sequential cell   | 115        |
 | TIMING-18 | Warning  | Missing input or output delay | 24         |
-| TIMING-20 | Warning  | Non-clocked latch             | 108        |
+| TIMING-20 | Warning  | Non-clocked latch             | 64         |
 +-----------+----------+-------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
 TIMING-16#1 Warning
 Large setup violation  
-There is a large setup violation of -1.974 ns between rand_reg[2]/C (clocked by sys_clk_pin) and t_block_reg[1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.445 ns between rand_reg[1]/C (clocked by sys_clk_pin) and t_block_reg[2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#2 Warning
 Large setup violation  
-There is a large setup violation of -2.139 ns between rand_reg[2]/C (clocked by sys_clk_pin) and t_block_reg[2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.701 ns between rand_reg[1]/C (clocked by sys_clk_pin) and t_block_reg[1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#3 Warning
 Large setup violation  
-There is a large setup violation of -2.794 ns between rand_reg[4]/C (clocked by sys_clk_pin) and rand_reg[24]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.781 ns between rand_reg[3]/C (clocked by sys_clk_pin) and rand_reg[23]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#4 Warning
 Large setup violation  
-There is a large setup violation of -2.804 ns between rand_reg[4]/C (clocked by sys_clk_pin) and rand_reg[27]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.790 ns between rand_reg[3]/C (clocked by sys_clk_pin) and rand_reg[27]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#5 Warning
 Large setup violation  
-There is a large setup violation of -2.848 ns between rand_reg[4]/C (clocked by sys_clk_pin) and rand_reg[20]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.877 ns between rand_reg[3]/C (clocked by sys_clk_pin) and rand_reg[25]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#6 Warning
 Large setup violation  
-There is a large setup violation of -2.857 ns between rand_reg[4]/C (clocked by sys_clk_pin) and rand_reg[21]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.892 ns between rand_reg[3]/C (clocked by sys_clk_pin) and rand_reg[24]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#7 Warning
 Large setup violation  
-There is a large setup violation of -2.859 ns between rand_reg[4]/C (clocked by sys_clk_pin) and rand_reg[25]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.941 ns between rand_reg[3]/C (clocked by sys_clk_pin) and rand_reg[22]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#8 Warning
 Large setup violation  
-There is a large setup violation of -2.886 ns between rand_reg[4]/C (clocked by sys_clk_pin) and rand_reg[22]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.970 ns between rand_reg[3]/C (clocked by sys_clk_pin) and rand_reg[21]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#9 Warning
 Large setup violation  
-There is a large setup violation of -2.926 ns between rand_reg[4]/C (clocked by sys_clk_pin) and rand_reg[16]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.995 ns between rand_reg[3]/C (clocked by sys_clk_pin) and rand_reg[17]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#10 Warning
 Large setup violation  
-There is a large setup violation of -2.958 ns between rand_reg[4]/C (clocked by sys_clk_pin) and rand_reg[28]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.995 ns between rand_reg[3]/C (clocked by sys_clk_pin) and rand_reg[28]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#11 Warning
 Large setup violation  
-There is a large setup violation of -2.987 ns between rand_reg[4]/C (clocked by sys_clk_pin) and rand_reg[11]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.074 ns between rand_reg[3]/C (clocked by sys_clk_pin) and rand_reg[26]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#12 Warning
 Large setup violation  
-There is a large setup violation of -2.992 ns between rand_reg[4]/C (clocked by sys_clk_pin) and rand_reg[10]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.089 ns between rand_reg[3]/C (clocked by sys_clk_pin) and rand_reg[8]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#13 Warning
 Large setup violation  
-There is a large setup violation of -2.996 ns between rand_reg[4]/C (clocked by sys_clk_pin) and rand_reg[15]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.096 ns between rand_reg[3]/C (clocked by sys_clk_pin) and rand_reg[12]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#14 Warning
 Large setup violation  
-There is a large setup violation of -3.011 ns between rand_reg[4]/C (clocked by sys_clk_pin) and rand_reg[17]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.116 ns between rand_reg[3]/C (clocked by sys_clk_pin) and rand_reg[20]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#15 Warning
 Large setup violation  
-There is a large setup violation of -3.014 ns between rand_reg[4]/C (clocked by sys_clk_pin) and rand_reg[14]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.121 ns between rand_reg[3]/C (clocked by sys_clk_pin) and rand_reg[18]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#16 Warning
 Large setup violation  
-There is a large setup violation of -3.015 ns between rand_reg[4]/C (clocked by sys_clk_pin) and rand_reg[9]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.160 ns between rand_reg[3]/C (clocked by sys_clk_pin) and rand_reg[19]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#17 Warning
 Large setup violation  
-There is a large setup violation of -3.020 ns between rand_reg[4]/C (clocked by sys_clk_pin) and rand_reg[19]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.169 ns between rand_reg[3]/C (clocked by sys_clk_pin) and rand_reg[0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#18 Warning
 Large setup violation  
-There is a large setup violation of -3.049 ns between rand_reg[14]/C (clocked by sys_clk_pin) and rand_reg[4]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.169 ns between rand_reg[3]/C (clocked by sys_clk_pin) and rand_reg[7]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#19 Warning
 Large setup violation  
-There is a large setup violation of -3.063 ns between rand_reg[4]/C (clocked by sys_clk_pin) and rand_reg[23]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.181 ns between rand_reg[3]/C (clocked by sys_clk_pin) and rand_reg[14]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#20 Warning
 Large setup violation  
-There is a large setup violation of -3.078 ns between rand_reg[4]/C (clocked by sys_clk_pin) and rand_reg[12]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.188 ns between rand_reg[3]/C (clocked by sys_clk_pin) and rand_reg[11]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#21 Warning
 Large setup violation  
-There is a large setup violation of -3.101 ns between rand_reg[4]/C (clocked by sys_clk_pin) and rand_reg[18]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.264 ns between rand_reg[9]/C (clocked by sys_clk_pin) and rand_reg[2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#22 Warning
 Large setup violation  
-There is a large setup violation of -3.106 ns between rand_reg[4]/C (clocked by sys_clk_pin) and rand_reg[26]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.268 ns between rand_reg[3]/C (clocked by sys_clk_pin) and rand_reg[1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#23 Warning
 Large setup violation  
-There is a large setup violation of -3.136 ns between rand_reg[4]/C (clocked by sys_clk_pin) and rand_reg[6]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.268 ns between rand_reg[3]/C (clocked by sys_clk_pin) and rand_reg[5]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#24 Warning
 Large setup violation  
-There is a large setup violation of -3.145 ns between rand_reg[4]/C (clocked by sys_clk_pin) and rand_reg[7]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.299 ns between rand_reg[9]/C (clocked by sys_clk_pin) and rand_reg[3]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#25 Warning
 Large setup violation  
-There is a large setup violation of -3.188 ns between rand_reg[4]/C (clocked by sys_clk_pin) and rand_reg[3]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.316 ns between rand_reg[3]/C (clocked by sys_clk_pin) and rand_reg[16]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#26 Warning
 Large setup violation  
-There is a large setup violation of -3.201 ns between rand_reg[4]/C (clocked by sys_clk_pin) and rand_reg[8]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.331 ns between rand_reg[3]/C (clocked by sys_clk_pin) and rand_reg[13]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#27 Warning
 Large setup violation  
-There is a large setup violation of -3.208 ns between rand_reg[4]/C (clocked by sys_clk_pin) and rand_reg[1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.377 ns between rand_reg[3]/C (clocked by sys_clk_pin) and rand_reg[15]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#28 Warning
 Large setup violation  
-There is a large setup violation of -3.216 ns between rand_reg[4]/C (clocked by sys_clk_pin) and rand_reg[2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.391 ns between rand_reg[3]/C (clocked by sys_clk_pin) and rand_reg[10]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#29 Warning
 Large setup violation  
-There is a large setup violation of -3.249 ns between rand_reg[4]/C (clocked by sys_clk_pin) and rand_reg[0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.403 ns between rand_reg[3]/C (clocked by sys_clk_pin) and rand_reg[9]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#30 Warning
 Large setup violation  
-There is a large setup violation of -3.288 ns between rand_reg[4]/C (clocked by sys_clk_pin) and rand_reg[13]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.406 ns between rand_reg[3]/C (clocked by sys_clk_pin) and rand_reg[4]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#31 Warning
 Large setup violation  
-There is a large setup violation of -3.288 ns between rand_reg[4]/C (clocked by sys_clk_pin) and rand_reg[5]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.431 ns between rand_reg[3]/C (clocked by sys_clk_pin) and rand_reg[6]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-17#1 Warning
@@ -977,452 +977,232 @@ Related violations: <none>
 
 TIMING-20#19 Warning
 Non-clocked latch  
-The latch tetri0/blk1_row_reg[1] cannot be properly analyzed as its control pin tetri0/blk1_row_reg[1]/G is not reached by a timing clock
+The latch tetri0/blk1_row_reg[0]_rep cannot be properly analyzed as its control pin tetri0/blk1_row_reg[0]_rep/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#20 Warning
 Non-clocked latch  
-The latch tetri0/blk1_row_reg[2] cannot be properly analyzed as its control pin tetri0/blk1_row_reg[2]/G is not reached by a timing clock
+The latch tetri0/blk1_row_reg[1] cannot be properly analyzed as its control pin tetri0/blk1_row_reg[1]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#21 Warning
 Non-clocked latch  
-The latch tetri0/blk1_row_reg[3] cannot be properly analyzed as its control pin tetri0/blk1_row_reg[3]/G is not reached by a timing clock
+The latch tetri0/blk1_row_reg[1]_rep cannot be properly analyzed as its control pin tetri0/blk1_row_reg[1]_rep/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#22 Warning
 Non-clocked latch  
-The latch tetri0/blk1_row_reg[4] cannot be properly analyzed as its control pin tetri0/blk1_row_reg[4]/G is not reached by a timing clock
+The latch tetri0/blk1_row_reg[2] cannot be properly analyzed as its control pin tetri0/blk1_row_reg[2]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#23 Warning
 Non-clocked latch  
-The latch tetri0/blk1_row_reg[5] cannot be properly analyzed as its control pin tetri0/blk1_row_reg[5]/G is not reached by a timing clock
+The latch tetri0/blk1_row_reg[3] cannot be properly analyzed as its control pin tetri0/blk1_row_reg[3]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#24 Warning
 Non-clocked latch  
-The latch tetri0/blk2_col_reg[0] cannot be properly analyzed as its control pin tetri0/blk2_col_reg[0]/G is not reached by a timing clock
+The latch tetri0/blk1_row_reg[4] cannot be properly analyzed as its control pin tetri0/blk1_row_reg[4]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#25 Warning
 Non-clocked latch  
-The latch tetri0/blk2_col_reg[1] cannot be properly analyzed as its control pin tetri0/blk2_col_reg[1]/G is not reached by a timing clock
+The latch tetri0/blk1_row_reg[5] cannot be properly analyzed as its control pin tetri0/blk1_row_reg[5]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#26 Warning
 Non-clocked latch  
-The latch tetri0/blk2_col_reg[2] cannot be properly analyzed as its control pin tetri0/blk2_col_reg[2]/G is not reached by a timing clock
+The latch tetri0/blk2_col_reg[0] cannot be properly analyzed as its control pin tetri0/blk2_col_reg[0]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#27 Warning
 Non-clocked latch  
-The latch tetri0/blk2_col_reg[3] cannot be properly analyzed as its control pin tetri0/blk2_col_reg[3]/G is not reached by a timing clock
+The latch tetri0/blk2_col_reg[1] cannot be properly analyzed as its control pin tetri0/blk2_col_reg[1]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#28 Warning
 Non-clocked latch  
-The latch tetri0/blk2_col_reg[4] cannot be properly analyzed as its control pin tetri0/blk2_col_reg[4]/G is not reached by a timing clock
+The latch tetri0/blk2_col_reg[2] cannot be properly analyzed as its control pin tetri0/blk2_col_reg[2]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#29 Warning
 Non-clocked latch  
-The latch tetri0/blk2_row_reg[0] cannot be properly analyzed as its control pin tetri0/blk2_row_reg[0]/G is not reached by a timing clock
+The latch tetri0/blk2_col_reg[3] cannot be properly analyzed as its control pin tetri0/blk2_col_reg[3]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#30 Warning
 Non-clocked latch  
-The latch tetri0/blk2_row_reg[1] cannot be properly analyzed as its control pin tetri0/blk2_row_reg[1]/G is not reached by a timing clock
+The latch tetri0/blk2_col_reg[4] cannot be properly analyzed as its control pin tetri0/blk2_col_reg[4]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#31 Warning
 Non-clocked latch  
-The latch tetri0/blk2_row_reg[2] cannot be properly analyzed as its control pin tetri0/blk2_row_reg[2]/G is not reached by a timing clock
+The latch tetri0/blk2_row_reg[0] cannot be properly analyzed as its control pin tetri0/blk2_row_reg[0]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#32 Warning
 Non-clocked latch  
-The latch tetri0/blk2_row_reg[3] cannot be properly analyzed as its control pin tetri0/blk2_row_reg[3]/G is not reached by a timing clock
+The latch tetri0/blk2_row_reg[0]_rep cannot be properly analyzed as its control pin tetri0/blk2_row_reg[0]_rep/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#33 Warning
 Non-clocked latch  
-The latch tetri0/blk2_row_reg[4] cannot be properly analyzed as its control pin tetri0/blk2_row_reg[4]/G is not reached by a timing clock
+The latch tetri0/blk2_row_reg[1] cannot be properly analyzed as its control pin tetri0/blk2_row_reg[1]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#34 Warning
 Non-clocked latch  
-The latch tetri0/blk2_row_reg[5] cannot be properly analyzed as its control pin tetri0/blk2_row_reg[5]/G is not reached by a timing clock
+The latch tetri0/blk2_row_reg[1]_rep cannot be properly analyzed as its control pin tetri0/blk2_row_reg[1]_rep/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#35 Warning
 Non-clocked latch  
-The latch tetri0/blk3_col_reg[0] cannot be properly analyzed as its control pin tetri0/blk3_col_reg[0]/G is not reached by a timing clock
+The latch tetri0/blk2_row_reg[2] cannot be properly analyzed as its control pin tetri0/blk2_row_reg[2]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#36 Warning
 Non-clocked latch  
-The latch tetri0/blk3_col_reg[1] cannot be properly analyzed as its control pin tetri0/blk3_col_reg[1]/G is not reached by a timing clock
+The latch tetri0/blk2_row_reg[3] cannot be properly analyzed as its control pin tetri0/blk2_row_reg[3]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#37 Warning
 Non-clocked latch  
-The latch tetri0/blk3_col_reg[2] cannot be properly analyzed as its control pin tetri0/blk3_col_reg[2]/G is not reached by a timing clock
+The latch tetri0/blk2_row_reg[4] cannot be properly analyzed as its control pin tetri0/blk2_row_reg[4]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#38 Warning
 Non-clocked latch  
-The latch tetri0/blk3_col_reg[3] cannot be properly analyzed as its control pin tetri0/blk3_col_reg[3]/G is not reached by a timing clock
+The latch tetri0/blk2_row_reg[5] cannot be properly analyzed as its control pin tetri0/blk2_row_reg[5]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#39 Warning
 Non-clocked latch  
-The latch tetri0/blk3_col_reg[4] cannot be properly analyzed as its control pin tetri0/blk3_col_reg[4]/G is not reached by a timing clock
+The latch tetri0/blk3_col_reg[0] cannot be properly analyzed as its control pin tetri0/blk3_col_reg[0]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#40 Warning
 Non-clocked latch  
-The latch tetri0/blk3_row_reg[0] cannot be properly analyzed as its control pin tetri0/blk3_row_reg[0]/G is not reached by a timing clock
+The latch tetri0/blk3_col_reg[1] cannot be properly analyzed as its control pin tetri0/blk3_col_reg[1]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#41 Warning
 Non-clocked latch  
-The latch tetri0/blk3_row_reg[1] cannot be properly analyzed as its control pin tetri0/blk3_row_reg[1]/G is not reached by a timing clock
+The latch tetri0/blk3_col_reg[2] cannot be properly analyzed as its control pin tetri0/blk3_col_reg[2]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#42 Warning
 Non-clocked latch  
-The latch tetri0/blk3_row_reg[2] cannot be properly analyzed as its control pin tetri0/blk3_row_reg[2]/G is not reached by a timing clock
+The latch tetri0/blk3_col_reg[3] cannot be properly analyzed as its control pin tetri0/blk3_col_reg[3]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#43 Warning
 Non-clocked latch  
-The latch tetri0/blk3_row_reg[3] cannot be properly analyzed as its control pin tetri0/blk3_row_reg[3]/G is not reached by a timing clock
+The latch tetri0/blk3_col_reg[4] cannot be properly analyzed as its control pin tetri0/blk3_col_reg[4]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#44 Warning
 Non-clocked latch  
-The latch tetri0/blk3_row_reg[4] cannot be properly analyzed as its control pin tetri0/blk3_row_reg[4]/G is not reached by a timing clock
+The latch tetri0/blk3_row_reg[0] cannot be properly analyzed as its control pin tetri0/blk3_row_reg[0]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#45 Warning
 Non-clocked latch  
-The latch tetri0/blk3_row_reg[5] cannot be properly analyzed as its control pin tetri0/blk3_row_reg[5]/G is not reached by a timing clock
+The latch tetri0/blk3_row_reg[0]_rep cannot be properly analyzed as its control pin tetri0/blk3_row_reg[0]_rep/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#46 Warning
 Non-clocked latch  
-The latch tetri0/blk4_col_reg[0] cannot be properly analyzed as its control pin tetri0/blk4_col_reg[0]/G is not reached by a timing clock
+The latch tetri0/blk3_row_reg[1] cannot be properly analyzed as its control pin tetri0/blk3_row_reg[1]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#47 Warning
 Non-clocked latch  
-The latch tetri0/blk4_col_reg[1] cannot be properly analyzed as its control pin tetri0/blk4_col_reg[1]/G is not reached by a timing clock
+The latch tetri0/blk3_row_reg[1]_rep cannot be properly analyzed as its control pin tetri0/blk3_row_reg[1]_rep/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#48 Warning
 Non-clocked latch  
-The latch tetri0/blk4_col_reg[2] cannot be properly analyzed as its control pin tetri0/blk4_col_reg[2]/G is not reached by a timing clock
+The latch tetri0/blk3_row_reg[2] cannot be properly analyzed as its control pin tetri0/blk3_row_reg[2]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#49 Warning
 Non-clocked latch  
-The latch tetri0/blk4_col_reg[3] cannot be properly analyzed as its control pin tetri0/blk4_col_reg[3]/G is not reached by a timing clock
+The latch tetri0/blk3_row_reg[3] cannot be properly analyzed as its control pin tetri0/blk3_row_reg[3]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#50 Warning
 Non-clocked latch  
-The latch tetri0/blk4_col_reg[4] cannot be properly analyzed as its control pin tetri0/blk4_col_reg[4]/G is not reached by a timing clock
+The latch tetri0/blk3_row_reg[4] cannot be properly analyzed as its control pin tetri0/blk3_row_reg[4]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#51 Warning
 Non-clocked latch  
-The latch tetri0/blk4_row_reg[0] cannot be properly analyzed as its control pin tetri0/blk4_row_reg[0]/G is not reached by a timing clock
+The latch tetri0/blk3_row_reg[5] cannot be properly analyzed as its control pin tetri0/blk3_row_reg[5]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#52 Warning
 Non-clocked latch  
-The latch tetri0/blk4_row_reg[1] cannot be properly analyzed as its control pin tetri0/blk4_row_reg[1]/G is not reached by a timing clock
+The latch tetri0/blk4_col_reg[0] cannot be properly analyzed as its control pin tetri0/blk4_col_reg[0]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#53 Warning
 Non-clocked latch  
-The latch tetri0/blk4_row_reg[2] cannot be properly analyzed as its control pin tetri0/blk4_row_reg[2]/G is not reached by a timing clock
+The latch tetri0/blk4_col_reg[1] cannot be properly analyzed as its control pin tetri0/blk4_col_reg[1]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#54 Warning
 Non-clocked latch  
-The latch tetri0/blk4_row_reg[3] cannot be properly analyzed as its control pin tetri0/blk4_row_reg[3]/G is not reached by a timing clock
+The latch tetri0/blk4_col_reg[2] cannot be properly analyzed as its control pin tetri0/blk4_col_reg[2]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#55 Warning
 Non-clocked latch  
-The latch tetri0/blk4_row_reg[4] cannot be properly analyzed as its control pin tetri0/blk4_row_reg[4]/G is not reached by a timing clock
+The latch tetri0/blk4_col_reg[3] cannot be properly analyzed as its control pin tetri0/blk4_col_reg[3]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#56 Warning
 Non-clocked latch  
-The latch tetri0/blk4_row_reg[5] cannot be properly analyzed as its control pin tetri0/blk4_row_reg[5]/G is not reached by a timing clock
+The latch tetri0/blk4_col_reg[4] cannot be properly analyzed as its control pin tetri0/blk4_col_reg[4]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#57 Warning
 Non-clocked latch  
-The latch tetri_p/blk1_row_reg[0] cannot be properly analyzed as its control pin tetri_p/blk1_row_reg[0]/G is not reached by a timing clock
+The latch tetri0/blk4_row_reg[0] cannot be properly analyzed as its control pin tetri0/blk4_row_reg[0]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#58 Warning
 Non-clocked latch  
-The latch tetri_p/blk1_row_reg[1] cannot be properly analyzed as its control pin tetri_p/blk1_row_reg[1]/G is not reached by a timing clock
+The latch tetri0/blk4_row_reg[0]_rep cannot be properly analyzed as its control pin tetri0/blk4_row_reg[0]_rep/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#59 Warning
 Non-clocked latch  
-The latch tetri_p/blk1_row_reg[2] cannot be properly analyzed as its control pin tetri_p/blk1_row_reg[2]/G is not reached by a timing clock
+The latch tetri0/blk4_row_reg[1] cannot be properly analyzed as its control pin tetri0/blk4_row_reg[1]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#60 Warning
 Non-clocked latch  
-The latch tetri_p/blk1_row_reg[3] cannot be properly analyzed as its control pin tetri_p/blk1_row_reg[3]/G is not reached by a timing clock
+The latch tetri0/blk4_row_reg[1]_rep cannot be properly analyzed as its control pin tetri0/blk4_row_reg[1]_rep/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#61 Warning
 Non-clocked latch  
-The latch tetri_p/blk1_row_reg[4] cannot be properly analyzed as its control pin tetri_p/blk1_row_reg[4]/G is not reached by a timing clock
+The latch tetri0/blk4_row_reg[2] cannot be properly analyzed as its control pin tetri0/blk4_row_reg[2]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#62 Warning
 Non-clocked latch  
-The latch tetri_p/blk1_row_reg[5] cannot be properly analyzed as its control pin tetri_p/blk1_row_reg[5]/G is not reached by a timing clock
+The latch tetri0/blk4_row_reg[3] cannot be properly analyzed as its control pin tetri0/blk4_row_reg[3]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#63 Warning
 Non-clocked latch  
-The latch tetri_p/blk2_col_reg[0] cannot be properly analyzed as its control pin tetri_p/blk2_col_reg[0]/G is not reached by a timing clock
+The latch tetri0/blk4_row_reg[4] cannot be properly analyzed as its control pin tetri0/blk4_row_reg[4]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#64 Warning
 Non-clocked latch  
-The latch tetri_p/blk2_col_reg[2] cannot be properly analyzed as its control pin tetri_p/blk2_col_reg[2]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#65 Warning
-Non-clocked latch  
-The latch tetri_p/blk2_col_reg[3] cannot be properly analyzed as its control pin tetri_p/blk2_col_reg[3]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#66 Warning
-Non-clocked latch  
-The latch tetri_p/blk2_row_reg[0] cannot be properly analyzed as its control pin tetri_p/blk2_row_reg[0]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#67 Warning
-Non-clocked latch  
-The latch tetri_p/blk2_row_reg[1] cannot be properly analyzed as its control pin tetri_p/blk2_row_reg[1]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#68 Warning
-Non-clocked latch  
-The latch tetri_p/blk2_row_reg[2] cannot be properly analyzed as its control pin tetri_p/blk2_row_reg[2]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#69 Warning
-Non-clocked latch  
-The latch tetri_p/blk2_row_reg[3] cannot be properly analyzed as its control pin tetri_p/blk2_row_reg[3]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#70 Warning
-Non-clocked latch  
-The latch tetri_p/blk2_row_reg[4] cannot be properly analyzed as its control pin tetri_p/blk2_row_reg[4]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#71 Warning
-Non-clocked latch  
-The latch tetri_p/blk2_row_reg[5] cannot be properly analyzed as its control pin tetri_p/blk2_row_reg[5]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#72 Warning
-Non-clocked latch  
-The latch tetri_p/blk3_col_reg[0] cannot be properly analyzed as its control pin tetri_p/blk3_col_reg[0]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#73 Warning
-Non-clocked latch  
-The latch tetri_p/blk3_col_reg[0]_rep cannot be properly analyzed as its control pin tetri_p/blk3_col_reg[0]_rep/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#74 Warning
-Non-clocked latch  
-The latch tetri_p/blk3_col_reg[1] cannot be properly analyzed as its control pin tetri_p/blk3_col_reg[1]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#75 Warning
-Non-clocked latch  
-The latch tetri_p/blk3_col_reg[2] cannot be properly analyzed as its control pin tetri_p/blk3_col_reg[2]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#76 Warning
-Non-clocked latch  
-The latch tetri_p/blk3_col_reg[3] cannot be properly analyzed as its control pin tetri_p/blk3_col_reg[3]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#77 Warning
-Non-clocked latch  
-The latch tetri_p/blk3_row_reg[0] cannot be properly analyzed as its control pin tetri_p/blk3_row_reg[0]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#78 Warning
-Non-clocked latch  
-The latch tetri_p/blk3_row_reg[1] cannot be properly analyzed as its control pin tetri_p/blk3_row_reg[1]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#79 Warning
-Non-clocked latch  
-The latch tetri_p/blk3_row_reg[2] cannot be properly analyzed as its control pin tetri_p/blk3_row_reg[2]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#80 Warning
-Non-clocked latch  
-The latch tetri_p/blk3_row_reg[3] cannot be properly analyzed as its control pin tetri_p/blk3_row_reg[3]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#81 Warning
-Non-clocked latch  
-The latch tetri_p/blk3_row_reg[4] cannot be properly analyzed as its control pin tetri_p/blk3_row_reg[4]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#82 Warning
-Non-clocked latch  
-The latch tetri_p/blk3_row_reg[5] cannot be properly analyzed as its control pin tetri_p/blk3_row_reg[5]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#83 Warning
-Non-clocked latch  
-The latch tetri_p/blk4_col_reg[0] cannot be properly analyzed as its control pin tetri_p/blk4_col_reg[0]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#84 Warning
-Non-clocked latch  
-The latch tetri_p/blk4_col_reg[1] cannot be properly analyzed as its control pin tetri_p/blk4_col_reg[1]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#85 Warning
-Non-clocked latch  
-The latch tetri_p/blk4_col_reg[1]_rep cannot be properly analyzed as its control pin tetri_p/blk4_col_reg[1]_rep/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#86 Warning
-Non-clocked latch  
-The latch tetri_p/blk4_col_reg[1]_rep__0 cannot be properly analyzed as its control pin tetri_p/blk4_col_reg[1]_rep__0/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#87 Warning
-Non-clocked latch  
-The latch tetri_p/blk4_col_reg[1]_rep__1 cannot be properly analyzed as its control pin tetri_p/blk4_col_reg[1]_rep__1/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#88 Warning
-Non-clocked latch  
-The latch tetri_p/blk4_col_reg[1]_rep__2 cannot be properly analyzed as its control pin tetri_p/blk4_col_reg[1]_rep__2/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#89 Warning
-Non-clocked latch  
-The latch tetri_p/blk4_col_reg[1]_rep__3 cannot be properly analyzed as its control pin tetri_p/blk4_col_reg[1]_rep__3/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#90 Warning
-Non-clocked latch  
-The latch tetri_p/blk4_col_reg[1]_rep__4 cannot be properly analyzed as its control pin tetri_p/blk4_col_reg[1]_rep__4/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#91 Warning
-Non-clocked latch  
-The latch tetri_p/blk4_col_reg[2] cannot be properly analyzed as its control pin tetri_p/blk4_col_reg[2]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#92 Warning
-Non-clocked latch  
-The latch tetri_p/blk4_col_reg[2]_rep cannot be properly analyzed as its control pin tetri_p/blk4_col_reg[2]_rep/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#93 Warning
-Non-clocked latch  
-The latch tetri_p/blk4_col_reg[2]_rep__0 cannot be properly analyzed as its control pin tetri_p/blk4_col_reg[2]_rep__0/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#94 Warning
-Non-clocked latch  
-The latch tetri_p/blk4_col_reg[2]_rep__1 cannot be properly analyzed as its control pin tetri_p/blk4_col_reg[2]_rep__1/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#95 Warning
-Non-clocked latch  
-The latch tetri_p/blk4_col_reg[2]_rep__2 cannot be properly analyzed as its control pin tetri_p/blk4_col_reg[2]_rep__2/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#96 Warning
-Non-clocked latch  
-The latch tetri_p/blk4_col_reg[2]_rep__3 cannot be properly analyzed as its control pin tetri_p/blk4_col_reg[2]_rep__3/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#97 Warning
-Non-clocked latch  
-The latch tetri_p/blk4_col_reg[3] cannot be properly analyzed as its control pin tetri_p/blk4_col_reg[3]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#98 Warning
-Non-clocked latch  
-The latch tetri_p/blk4_col_reg[3]_rep cannot be properly analyzed as its control pin tetri_p/blk4_col_reg[3]_rep/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#99 Warning
-Non-clocked latch  
-The latch tetri_p/blk4_col_reg[3]_rep__0 cannot be properly analyzed as its control pin tetri_p/blk4_col_reg[3]_rep__0/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#100 Warning
-Non-clocked latch  
-The latch tetri_p/blk4_col_reg[3]_rep__1 cannot be properly analyzed as its control pin tetri_p/blk4_col_reg[3]_rep__1/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#101 Warning
-Non-clocked latch  
-The latch tetri_p/blk4_col_reg[3]_rep__2 cannot be properly analyzed as its control pin tetri_p/blk4_col_reg[3]_rep__2/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#102 Warning
-Non-clocked latch  
-The latch tetri_p/blk4_col_reg[3]_rep__3 cannot be properly analyzed as its control pin tetri_p/blk4_col_reg[3]_rep__3/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#103 Warning
-Non-clocked latch  
-The latch tetri_p/blk4_row_reg[0] cannot be properly analyzed as its control pin tetri_p/blk4_row_reg[0]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#104 Warning
-Non-clocked latch  
-The latch tetri_p/blk4_row_reg[1] cannot be properly analyzed as its control pin tetri_p/blk4_row_reg[1]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#105 Warning
-Non-clocked latch  
-The latch tetri_p/blk4_row_reg[2] cannot be properly analyzed as its control pin tetri_p/blk4_row_reg[2]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#106 Warning
-Non-clocked latch  
-The latch tetri_p/blk4_row_reg[3] cannot be properly analyzed as its control pin tetri_p/blk4_row_reg[3]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#107 Warning
-Non-clocked latch  
-The latch tetri_p/blk4_row_reg[4] cannot be properly analyzed as its control pin tetri_p/blk4_row_reg[4]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#108 Warning
-Non-clocked latch  
-The latch tetri_p/blk4_row_reg[5] cannot be properly analyzed as its control pin tetri_p/blk4_row_reg[5]/G is not reached by a timing clock
+The latch tetri0/blk4_row_reg[5] cannot be properly analyzed as its control pin tetri0/blk4_row_reg[5]/G is not reached by a timing clock
 Related violations: <none>
 
 

@@ -173,8 +173,14 @@ module main(input CLOCK,
         //FALL DOWN (4Hz) >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>         
         fall_counter <= (fall_counter == 24_999_999) ? 0 : fall_counter+1;
         if(fall_counter == 0) begin 
-            t_row <= (t_row==23) ? 23 : t_row+1;  
+            t_row <= (t_row==23) ? 22 : t_row+1;  
+            pt_row <= t_row;
+            pt_col <= pt_col;
+            pt_rotation <= t_rotation;  
+            pt_block <= t_block;
         end  
+        
+        
             //RESET TO START POS
           
 //                t_block <= rand % 10;    
@@ -219,21 +225,15 @@ module main(input CLOCK,
    //  CHECK COLLISION 
     //DEAD CONDITION: the new position is invalid and previously was on top of dead blocks
     // i.e. the tetrimino has remained above deadblocks and had remained stationery on top of them 
-    if(  (b1_row > 22 || b2_row > 22 || b3_row > 22 || b4_row > 22 ||  //Floor
-           b1_col < 3  || b2_col < 3  || b3_col < 3  || b4_col < 3  ||  //Left wall
-           b1_col > 12 || b2_col > 12 || b3_col > 12 || b4_col > 12 ||
-           occupied[b1_row][b1_col] == 1 || occupied[b2_row][b2_col] == 1 || 
-          occupied[b3_row][b3_col] == 1 || occupied[b4_row][b4_col] == 1 ||
-          wall[b1_row][b1_col] == 1 || wall[b2_row][b2_col] == 1 || 
-          wall[b3_row][b3_col] == 1 || wall[b4_row][b4_col] == 1 )
-         && (occupied[pb1_row+1][pb1_col] == 1 || 
-             occupied[pb2_row+1][pb2_col] == 1 ||
-             occupied[pb3_row+1][pb3_col] == 1 ||
-             occupied[pb4_row+1][pb4_col] == 1)) begin  
-          occupied[pb1_row][pb1_col] <= 1;
-          occupied[pb2_row][pb2_col] <= 1;
-          occupied[pb3_row][pb3_col] <= 1;
-          occupied[pb4_row][pb4_col] <= 1;
+    // Check if the current piece has landed (by reaching the bottom or other blocks)
+    if (b1_row == 22 || b2_row == 22 || b3_row == 22 || b4_row == 22 ||
+        occupied[b1_row+1][b1_col] == 1 || occupied[b2_row+1][b2_col] == 1 || 
+        occupied[b3_row+1][b3_col] == 1 || occupied[b4_row+1][b4_col] == 1) begin
+        // Lock the current piece in place
+        occupied[b1_row][b1_col] <= 1;
+        occupied[b2_row][b2_col] <= 1;
+        occupied[b3_row][b3_col] <= 1;
+        occupied[b4_row][b4_col] <= 1;
             t_row <= 2;
             t_col <= 8;
             pt_row <= 2; 

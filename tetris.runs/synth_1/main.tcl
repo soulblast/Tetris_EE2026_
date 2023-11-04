@@ -23,23 +23,23 @@ create_project -in_memory -part xc7a35tcpg236-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.cache/wt [current_project]
-set_property parent.project_path C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.xpr [current_project]
+set_property webtalk.parent_dir {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.cache/wt} [current_project]
+set_property parent.project_path {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.xpr} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.cache/ip [current_project]
+set_property ip_output_repo {c:/EE2026 lab/Project/Tetris_EE2026_/tetris.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
-  C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/Oled_Display.v
-  C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/T_to_m.v
-  C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/block_color.v
-  C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/flexi_clock.v
-  C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/get_coords.v
-  C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/oled_to_grid_coords.v
-  C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/pix_to_vertical_rowcol.v
-  C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/show_grid.v
-  C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/tetrimino.v
-  C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/main.v
+  {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/Oled_Display.v}
+  {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/T_to_m.v}
+  {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/block_color.v}
+  {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/flexi_clock.v}
+  {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/get_coords.v}
+  {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/oled_to_grid_coords.v}
+  {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/pix_to_vertical_rowcol.v}
+  {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/show_grid.v}
+  {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/tetrimino.v}
+  {C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/sources_1/imports/sources_1/imports/new/main.v}
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -49,8 +49,8 @@ read_verilog -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc
-set_property used_in_implementation false [get_files C:/Users/Administrator/Desktop/Yongjing_desktop_backup/NUS_Studies/Y2S1/EE2026/Lab/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc]
+read_xdc {{C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc}}
+set_property used_in_implementation false [get_files {{C:/EE2026 lab/Project/Tetris_EE2026_/tetris.srcs/constrs_1/new/Constraint.xdc}}]
 
 set_param ips.enableIPCacheLiteLoad 0
 close [open __synthesis_is_running__ w]
