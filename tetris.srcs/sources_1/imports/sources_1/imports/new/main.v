@@ -24,7 +24,7 @@ module main(input CLOCK,
             input [15:0] sw,
             input PS2Clk,
             input PS2Data,
-            output [0:7] JC,
+            output [0:7] JC, JA,
             output reg [15:0] led); 
    // CLOCK >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
     wire CLK_6p25M;
@@ -43,9 +43,10 @@ module main(input CLOCK,
     
     
     //OLED DISPLAY >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
-      reg oled_reset = 0;
-       wire [12:0] pix_index;
-       reg [15:0] oled_data;
+    reg oled_reset = 0;
+    wire [12:0] pix_index, pix_indexB;
+    reg [15:0] oled_data, oled_dataB;
+
        
      Oled_Display oled_0(
         .clk(CLK_6p25M), //input
@@ -63,6 +64,22 @@ module main(input CLOCK,
         .vccen(JC[6]),
         .pmoden(JC[7]));
    
+   Oled_Display oled_1(
+        .clk(CLK_6p25M), //input
+        .reset(oled_reset),  //input
+        .frame_begin(),  //output
+        .sending_pixels(), //output
+        .sample_pixel(),  //output
+        .pixel_index(pix_indexB),  //output
+        .pixel_data(oled_dataB), //input
+        .cs(JA[0]), 
+        .sdin(JA[1]), 
+        .sclk(JA[3]), 
+        .d_cn(JA[4]), 
+        .resn(JA[5]), 
+        .vccen(JA[6]),
+        .pmoden(JA[7]));
+
 //  //COORDS 
     wire [12:0]  blk1_g_row, blk2_g_row ,blk3_g_row, blk4_g_row,
                 blk1_g_col, blk2_g_col ,blk3_g_col, blk4_g_col;
@@ -71,16 +88,24 @@ module main(input CLOCK,
     wire [12:0] v_row, v_col;
     pix_to_vertical_rowcol vert0(.pixels(pix_index), .vrow(v_row), .vcol(v_col));
     oled_to_grid_coords blockgrid0(.row(v_row), .col(v_col), .g_row(g_row), .g_col(g_col));
-  
+// OLED A STUFF>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    wire [5:0]  b1_b_row, b2_b_row ,b3_b_row, b4_b_row,
+                 b1_b_col, b2_b_col ,b3_b_col, b4_b_col;
+
+    wire [12:0] h_row, h_col, b_row, b_col;
+    pix_to_vertical_rowcol hori0(.pixels(pix_indexB), .vrow(h_col), .vcol(h_row));
+    oledB_to_grid_coords blockgrid1(.row(h_row), .col(h_col), .g_row(b_row), .g_col(b_col));
 //  //GRID>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
 //   // col from 3 to 12 , row from 2 to 21,
     wire [15:0] oled_grid; 
     show_grid grid_0(.CLOCK(CLOCK), .oled_grid(oled_grid), .pix_index(pix_index));
      
  // RANDOM>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..   
-    reg [31:0] rand = 210463105;   //210463105
-    reg below_10 = 0;
+    reg [31:0] rand = 210463105;
+    reg r_below_10 = 0;
+    reg n_below_10 = 0;
     reg [31:0] new = 521046310;
+    reg [2:0] new_block = 0;
 //  //BLOCK>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
    
     reg [4:0] t_col = 8; reg [5:0] t_row = 2;              
@@ -96,6 +121,22 @@ module main(input CLOCK,
                 b3_row,
                 b4_row;         
     
+     tetrimino next_tetri0(
+       .t_col(2),//0 to 9  (0 to 15)
+       .t_row(2),//0 to 21  (0 to 23)
+       .rotation(0),
+       .block(new_block),//0 to 6
+       .blk1_col(b1_b_col),
+       .blk2_col(b2_b_col),
+       .blk3_col(b3_b_col),
+       .blk4_col(b4_b_col),
+       .blk1_row(b1_b_row),
+       .blk2_row(b2_b_row),
+       .blk3_row(b3_b_row),
+       .blk4_row(b4_b_row));
+
+
+
      tetrimino tetri0(
         .t_col(t_col),//0 to 9  (0 to 15)
         .t_row(t_row),//0 to 21  (0 to 23)
@@ -138,7 +179,8 @@ module main(input CLOCK,
         
     wire [15:0] block_color;  
     block_color color0(.block(t_block), .color(block_color)); 
-   
+    block_color color1(.block(new_block), .color(next_color));
+
     reg fallen = 0; 
     reg started = 0;
     reg reset = 0;
@@ -188,6 +230,7 @@ module main(input CLOCK,
             started <= 1;
             //GENERATE RANDOM TETRIMINO>>>>>>>>>>>>>>>>>>>>>>
             t_block <= 2; 
+            new_block <= 5;
             pt_block <= t_block;
         end
         
@@ -285,7 +328,25 @@ module main(input CLOCK,
                 below_10 <= 1;  
             end     
             else below_10 <= 0;
-            
+            // SHOW RAND NEXT BLOCK>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+            case (n_below_10)
+                0: begin
+                    new_block <= new % 10;
+                    new <= new / 10;
+                end
+                
+                1: begin
+                    new <= 521046310;
+                    
+                end
+                endcase
+            if (new <= 10) begin
+                n_below_10 <= 1;  
+            end    
+                
+            else n_below_10 <= 0;
+
+
             
 //            if (dead) begin
 
@@ -369,7 +430,14 @@ module main(input CLOCK,
       pt_col <= pt_col;
       pt_rotation <= t_rotation;  
       pt_block <= t_block;
-      
+      // Display Next Block>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        if ((b_row == b1_b_row && b_col == b1_b_col) || 
+            (b_row == b2_b_row && b_col == b2_b_col) ||
+            (b_row == b3_b_row && b_col == b3_b_col) || 
+            (b_row == b4_b_row && b_col == b4_b_col)) begin
+                oled_dataB <= next_color;
+        end else oled_dataB <= black;
+            
     end //end of always block
     
 endmodule
