@@ -1,5 +1,13 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
+<<<<<<< Updated upstream
     <Process Command="vivado.bat" Owner="Administrator" Host="YONGJING-VICTUS" Pid="320">
+=======
+<<<<<<<< Updated upstream:tetris.runs/synth_1/.vivado.begin.rst
+    <Process Command="vivado.bat" Owner="Administrator" Host="YONGJING-VICTUS" Pid="21980">
+========
+    <Process Command="vivado.bat" Owner="Administrator" Host="YONGJING-VICTUS" Pid="17708">
+>>>>>>>> Stashed changes:tetris.runs/impl_1/.vivado.begin.rst
+>>>>>>> Stashed changes
     </Process>
 </ProcessHandle>

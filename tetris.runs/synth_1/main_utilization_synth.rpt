@@ -1,7 +1,11 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+<<<<<<< Updated upstream
 | Date         : Thu Nov  2 21:34:17 2023
+=======
+| Date         : Sat Nov  4 22:42:15 2023
+>>>>>>> Stashed changes
 | Host         : Yongjing-Victus running 64-bit major release  (build 9200)
 | Command      : report_utilization -file main_utilization_synth.rpt -pb main_utilization_synth.pb
 | Design       : main
@@ -27,6 +31,7 @@ Table of Contents
 1. Slice Logic
 --------------
 
+<<<<<<< Updated upstream
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
@@ -39,6 +44,20 @@ Table of Contents
 | F7 Muxes                |    0 |     0 |     16300 |  0.00 |
 | F8 Muxes                |    0 |     0 |      8150 |  0.00 |
 +-------------------------+------+-------+-----------+-------+
+=======
++-------------------------+-------+-------+-----------+--------+
+|        Site Type        |  Used | Fixed | Available |  Util% |
++-------------------------+-------+-------+-----------+--------+
+| Slice LUTs*             | 25851 |     0 |     20800 | 124.28 |
+|   LUT as Logic          | 25851 |     0 |     20800 | 124.28 |
+|   LUT as Memory         |     0 |     0 |      9600 |   0.00 |
+| Slice Registers         |  1958 |     0 |     41600 |   4.71 |
+|   Register as Flip Flop |  1860 |     0 |     41600 |   4.47 |
+|   Register as Latch     |    98 |     0 |     41600 |   0.24 |
+| F7 Muxes                |   512 |     0 |     16300 |   3.14 |
+| F8 Muxes                |    40 |     0 |      8150 |   0.49 |
++-------------------------+-------+-------+-----------+--------+
+>>>>>>> Stashed changes
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
 
@@ -55,9 +74,15 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
+<<<<<<< Updated upstream
 | 0     |          Yes |           - |        Reset |
 | 2     |          Yes |         Set |            - |
 | 154   |          Yes |       Reset |            - |
+=======
+| 98    |          Yes |           - |        Reset |
+| 21    |          Yes |         Set |            - |
+| 1839  |          Yes |       Reset |            - |
+>>>>>>> Stashed changes
 +-------+--------------+-------------+--------------+
 
 
@@ -90,7 +115,11 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
+<<<<<<< Updated upstream
 | Bonded IOB                  |    9 |     0 |       106 |  8.49 |
+=======
+| Bonded IOB                  |   13 |     0 |       106 | 12.26 |
+>>>>>>> Stashed changes
 | Bonded IPADs                |    0 |     0 |        10 |  0.00 |
 | Bonded OPADs                |    0 |     0 |         4 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         5 |  0.00 |
@@ -115,7 +144,11 @@ Table of Contents
 +------------+------+-------+-----------+-------+
 |  Site Type | Used | Fixed | Available | Util% |
 +------------+------+-------+-----------+-------+
+<<<<<<< Updated upstream
 | BUFGCTRL   |    2 |     0 |        32 |  6.25 |
+=======
+| BUFGCTRL   |    3 |     0 |        32 |  9.38 |
+>>>>>>> Stashed changes
 | BUFIO      |    0 |     0 |        20 |  0.00 |
 | MMCME2_ADV |    0 |     0 |         5 |  0.00 |
 | PLLE2_ADV  |    0 |     0 |         5 |  0.00 |
@@ -146,6 +179,7 @@ Table of Contents
 7. Primitives
 -------------
 
+<<<<<<< Updated upstream
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
@@ -163,6 +197,28 @@ Table of Contents
 | OBUFT    |    1 |                  IO |
 | IBUF     |    1 |                  IO |
 +----------+------+---------------------+
+=======
++----------+-------+---------------------+
+| Ref Name |  Used | Functional Category |
++----------+-------+---------------------+
+| LUT4     | 18662 |                 LUT |
+| LUT6     | 11979 |                 LUT |
+| LUT5     |  2306 |                 LUT |
+| LUT3     |  1878 |                 LUT |
+| FDRE     |  1839 |        Flop & Latch |
+| LUT2     |  1492 |                 LUT |
+| MUXF7    |   512 |               MuxFx |
+| CARRY4   |   209 |          CarryLogic |
+| LDCE     |    98 |        Flop & Latch |
+| MUXF8    |    40 |               MuxFx |
+| LUT1     |    28 |                 LUT |
+| FDSE     |    21 |        Flop & Latch |
+| OBUF     |     7 |                  IO |
+| IBUF     |     5 |                  IO |
+| BUFG     |     3 |               Clock |
+| OBUFT    |     1 |                  IO |
++----------+-------+---------------------+
+>>>>>>> Stashed changes
 
 
 8. Black Boxes
