@@ -166,6 +166,10 @@ module main(input CLOCK,
     parameter max_clear = 4;
     always @ (posedge CLOCK) begin //every loop is 10ns
     //INITIALISE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
+        //SPACEBAR - RESET
+        if (key_output[15]) begin
+            started <= 0;
+        end
         if(!started) begin
             for(i=0; i<24; i=i+1) begin // i is row, j is col
                 for(j=0; j<16; j=j+1) begin  
@@ -227,11 +231,12 @@ module main(input CLOCK,
             led[0] <= 1;
         end 
        //ROTATE CLOCKWISE >>>>>>>>>>>>>>>>>>>>>>....
-        if(key_output[12] == 2'b01 && !rotatedCW) begin 
+       //W - ROTATE CW
+        if(key_output[19] == 2'b01 && !rotatedCW) begin 
             t_rotation <= t_rotation+1;
             rotatedCW <= 1; 
         end
-        if(!key_output[12] && rotatedCW) begin
+        if(!key_output[19] && rotatedCW) begin
             rotatedCW <= 0;
         end
         //ROTATE ANTI CLOCKWISE >>>>>>>>>>>>>>>>>>>>>>....
