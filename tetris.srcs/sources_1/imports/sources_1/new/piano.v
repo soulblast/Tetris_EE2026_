@@ -89,7 +89,7 @@ module piano(
     
     reg [6:0] seg_octave;
     
-    //Octave controller
+    //Octave controller & LED
     always @ (posedge clock)
     begin
 
@@ -132,56 +132,56 @@ module piano(
     
     always @ (posedge clock)
     begin
-    if ( sw[11:0] >= 1'd1 ) begin
-        if (sw[0] == 1)
-        begin
-        note_display <= 7'b0100111;
-        end
-        if (sw[0] == 0 && sw[1] == 1)
-        begin
-        note_display <= 7'b0100111;
-        end
-        if (sw[1:0] == 0 && sw[2] == 1)
-        begin
-        note_display <= 7'b0100001;
-        end
-        if (sw[2:0] == 0 && sw[3] == 1)
-        begin
-        note_display <= 7'b0100001;
-        end
-        if (sw[3:0] == 0 && sw[4] == 1)
-        begin
-        note_display <= 7'b0000110;
-        end
-        if (sw[4:0] == 0 && sw[5] == 1)
-        begin
-        note_display <= 7'b0001110;
-        end
-        if (sw[5:0] == 0 && sw[6] == 1)
-        begin
-        note_display <= 7'b0001110;
-        end
-        if (sw[6:0] == 0 && sw[7] == 1)
-        begin
-        note_display <= 7'b0010000;
-        end
-        if (sw[7:0] == 0 && sw[8] == 1)
-        begin
-        note_display <= 7'b0010000;
-        end
-        if (sw[8:0] == 0 && sw[9] == 1)
-        begin
-        note_display <= 7'b0001000;
-        end
-        if (sw[9:0] == 0 && sw[10] == 1)
-        begin
-        note_display <= 7'b0001000;
-        end
-        if (sw[10:0] == 0 && sw[11] == 1)
-        begin
-        note_display <= 7'b0000011;
-        end
-    end //end for if block
+        if ( sw[11:0] >= 1'd1 ) begin
+            if (sw[0] == 1)
+            begin
+            note_display <= 7'b0100111;
+            end
+            if (sw[0] == 0 && sw[1] == 1)
+            begin
+            note_display <= 7'b0100111;
+            end
+            if (sw[1:0] == 0 && sw[2] == 1)
+            begin
+            note_display <= 7'b0100001;
+            end
+            if (sw[2:0] == 0 && sw[3] == 1)
+            begin
+            note_display <= 7'b0100001;
+            end
+            if (sw[3:0] == 0 && sw[4] == 1)
+            begin
+            note_display <= 7'b0000110;
+            end
+            if (sw[4:0] == 0 && sw[5] == 1)
+            begin
+            note_display <= 7'b0001110;
+            end
+            if (sw[5:0] == 0 && sw[6] == 1)
+            begin
+            note_display <= 7'b0001110;
+            end
+            if (sw[6:0] == 0 && sw[7] == 1)
+            begin
+            note_display <= 7'b0010000;
+            end
+            if (sw[7:0] == 0 && sw[8] == 1)
+            begin
+            note_display <= 7'b0010000;
+            end
+            if (sw[8:0] == 0 && sw[9] == 1)
+            begin
+            note_display <= 7'b0001000;
+            end
+            if (sw[9:0] == 0 && sw[10] == 1)
+            begin
+            note_display <= 7'b0001000;
+            end
+            if (sw[10:0] == 0 && sw[11] == 1)
+            begin
+            note_display <= 7'b0000011;
+            end
+        end //end for if sw
     
         else begin 
         //reset if no notes played
@@ -196,6 +196,9 @@ module piano(
     flexible_clock slow (.clock(clock), .mvalue(49999), .myclk(slowclock));
 
     always @ (posedge slowclock) begin
+    if (chosen == 1)
+    begin
+    //Allow anodes to turn on
         if ( sw[13] == 1  || sw[14] == 1 || sw[15] == 1) begin
             case(seg_cycle)
                 2'b00: begin //AN[0]
@@ -230,7 +233,15 @@ module piano(
         seg[6:0] <= 7'b1111111;
         dp <= 1;
         end
-        
+    
+    end //end for if chosen
+    
+    else begin
+    an[3:0] <= 4'b1111;
+    seg[6:0] <= 7'b1111111;
+    dp <= 1;
+    end
+    
     end //always block
     
     //Tune controller

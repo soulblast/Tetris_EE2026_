@@ -403,11 +403,16 @@ module main_menu(
         
         //Chosen tetris
         if (chosen_tetris == 1)
-        begin
-        oled_data <= oled_tetris;
-        oled_data_JA <= oled_nxtblk;
+            begin
+            oled_data <= oled_tetris;
+            oled_data_JA <= oled_nxtblk;
+        end
+        else begin
+            oled_data_JA <= 0;
         end
         
-    end   
+    end
+        
+       
      
 endmodule
