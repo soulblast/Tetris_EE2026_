@@ -20,60 +20,31 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module tetris_main_test(
-            input clock,  
+module tetris_main(
+            input CLOCK,
+            input [15:0] sw,
+            
+            //Keyboard
             input PS2Clk,
             input PS2Data,
-            output [0:7] JC, JA); 
+            
+            input chosen,
+            
+            //No label - JC;
+            input [12:0] pix_index, pix_indexB,  //JC, JA 
+            output reg [15:0] oled_data,
+                               oled_dataB); 
    // CLOCK >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
     wire CLK_6p25M;
-        flexi_clock clock0 (.CLOCK(clock), .Tns(160), .NEW_CLK(CLK_6p25M));     
+        flexi_clock clock0 (.CLOCK(CLOCK), .Tns(160), .NEW_CLK(CLK_6p25M));     
     //COLOURS>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
      reg [15:0] green = 16'b00000_111111_00000, red = 16'b11111_000000_00000, blue = 16'b00000_000000_11111,
                 black = 16'b00000_000000_00000, cur_colour = 16'b00000_000000_11111, grey = 16'b00100_000100_00100,
                 light_grey = 16'b01000_001000_01000, purple = 16'b00111_000000_00111;
    //Keyboard Input
    wire [31:0] key_output;
-   selected_key_press kb(.clk(clock), .PS2Clk(PS2Clk), .PS2Data(PS2Data), .keys(key_output));
-    
-    
-    //OLED DISPLAY >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
-    reg oled_reset = 0;
-    wire [12:0] pix_index, pix_indexB;
-    reg [15:0] oled_data, oled_dataB;
-
-       
-     Oled_Display oled_0(
-        .clk(CLK_6p25M), //input
-        .reset(oled_reset),  //input
-        .frame_begin(),  //output
-        .sending_pixels(), //output
-        .sample_pixel(),  //output
-        .pixel_index(pix_index),  //output
-        .pixel_data(oled_data), //input
-        .cs(JC[0]), 
-        .sdin(JC[1]), 
-        .sclk(JC[3]), 
-        .d_cn(JC[4]), 
-        .resn(JC[5]), 
-        .vccen(JC[6]),
-        .pmoden(JC[7]));
-   
-   Oled_Display oled_1(
-        .clk(CLK_6p25M), //input
-        .reset(oled_reset),  //input
-        .frame_begin(),  //output
-        .sending_pixels(), //output
-        .sample_pixel(),  //output
-        .pixel_index(pix_indexB),  //output
-        .pixel_data(oled_dataB), //input
-        .cs(JA[0]), 
-        .sdin(JA[1]), 
-        .sclk(JA[3]), 
-        .d_cn(JA[4]), 
-        .resn(JA[5]), 
-        .vccen(JA[6]),
-        .pmoden(JA[7]));
+   selected_key_press kb(.clk(CLOCK), .PS2Clk(PS2Clk), .PS2Data(PS2Data), .keys(key_output));
+     
 
 //  //COORDS 
     wire [12:0]  blk1_g_row, blk2_g_row ,blk3_g_row, blk4_g_row,
@@ -93,7 +64,7 @@ module tetris_main_test(
 //  //GRID>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
 //   // col from 3 to 12 , row from 2 to 21,
     wire [15:0] oled_grid; 
-    show_grid grid_0(.CLOCK(clock), .oled_grid(oled_grid), .pix_index(pix_index));
+    show_grid grid_0(.CLOCK(CLOCK), .oled_grid(oled_grid), .pix_index(pix_index));
      
  // RANDOM>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..   
     reg [31:0] rand = 210463105;
@@ -197,12 +168,11 @@ module tetris_main_test(
     reg [31:0] shift_counter = 0; //0 to 66_666_666
     reg [31:0] fall_counter = 0; //0 to 24 999 999
   
-    
     reg [31:0] score = 0;
     
     reg [2:0] clear_count = 0;
     parameter max_clear = 4;
-    always @ (posedge clock) begin //every loop is 10ns
+    always @ (posedge CLOCK) begin //every loop is 10ns
     //INITIALISE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
         //SPACEBAR - RESET
         if (key_output[15]) begin
