@@ -5,6 +5,10 @@
 
   <h1 align="center">Tetris and Keyboard Entertainment System</h1> 
    <p align="center"> AY22/23 Sem 1 EE2026 project </p>
+   <p align="center">Chow Cheng En (A0252551L)</p>
+   <p align="center">Davidson Nga (A0252053R)</p>
+   <p align="center">Vimalapugazhan Purushothaman (A0259193U)</p>
+   <p align="center">Pan Yongjing (A0257283X)</p>
 
 ## Summary
 Our project is a two in one entertainment system consisting of a Tetris game and a monophonic Synthesiser. The system comprises 2 OLEDs, 1 Audio output, 1 Keyboard and the Basys 3 Board.
